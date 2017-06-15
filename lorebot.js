@@ -20,7 +20,7 @@ client.on("message", (message) => {
       case "test":
         break;
       case "blah":
-        message.author.sendMessage("hi " + message.author.username);
+        message.author.send("hi " + message.author.username);
         console.log("Sent " + config.prefix + cmd + " to " + message.author.username) ;
         break;
       case "roll":
@@ -35,31 +35,27 @@ client.on("message", (message) => {
         break;
       case "who":
         break;
-      case "recent":        
+      case "recent":
           break;
       case "gton":
         isGroupChat = true;
-        message.channel.send("**Group chat: Enabled");
+        message.channel.send("** Group chat: Enabled");
         break;
       case "gtoff":
         isGroupChat = false;
-        message.channel.send("**Group chat: Disabled");
+        message.channel.send("** Group chat: Disabled");
         break;
       case "help":
-        const helpStr = "```** IRC Lore Bot v(PLACEHOLDER) (Items: PLACEHOLDER) **\n" +
-        "!help    - Lists the different commands available\n" +
-        "!stat    - syntax: !stat <item>, example: !stat huma.shield\n" +
-        "!brief   - syntax: !brief <item>, example: !brief huma.shield\n" +
-        "!mark    - example: !mark kaput rgb cleric, or !mark kaput rgb\n" +
-        "!unmark  - unidentifies a character, example: !unmark kaput\n" +
-        "!who     - shows character info, example: !who Drunoob\n" +
-        "!gton    - turn on output group chat\n" +
-        "!gtoff   - turn off output to group chat\n" +
-        "!recent  - shows latest markings, optional !recent <num>\n" +
-        "!version - shows version history\n```";
-
-        (isGroupChat) ? message.channel.send(helpStr) : message.author.sendMessage(helpStr);
+        let helpStr = getHelp();
+        (isGroupChat) ? message.channel.send(helpStr) : message.author.send(helpStr);
         console.log("Sent " + config.prefix + cmd + " to " + message.author.username) ;
+        break;
+      case "version":
+        let versionMsg = "** Version unavailable";
+        if (typeof process.env.npm_package_version === "string") {
+          versionMsg = "** Version " + process.env.npm_package_version ;
+        }
+        (isGroupChat) ? message.channel.send(versionMsg) : message.author.send(versionMsg);
         break;
       default:
         break;
@@ -68,3 +64,22 @@ client.on("message", (message) => {
   }
   //if(message.author.id !== config.ownerID) return;
 });
+
+function getHelp() {
+  let version = "(n/a)";
+  if (typeof process.env.npm_package_version === "string") {
+    version = process.env.npm_package_version ;
+  }
+  var retvalue = "```** IRC Lore Bot v" + version + " (Items: PLACEHOLDER) **\n" +
+  "!help    - Lists the different commands available\n" +
+  "!stat    - syntax: !stat <item>, example: !stat huma.shield\n" +
+  "!brief   - syntax: !brief <item>, example: !brief huma.shield\n" +
+  "!mark    - example: !mark kaput rgb cleric, or !mark kaput rgb\n" +
+  "!unmark  - unidentifies a character, example: !unmark kaput\n" +
+  "!who     - shows character info, example: !who Drunoob\n" +
+  "!gton    - turn on output group chat\n" +
+  "!gtoff   - turn off output to group chat\n" +
+  "!recent  - shows latest markings, optional !recent <num>\n" +
+  "!version - shows version history\n```";
+  return retvalue;
+}
