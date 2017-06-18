@@ -31,5 +31,10 @@ Node and babel-polyfill
 }
 
 ```
+## Run Lorebot as a service
+```
+npm install -g forever
+forever start lorebot.js
+```
 ## Example
 ![Discord Lorebot](/lorebot.PNG?raw=true "Example of brief and stat")
