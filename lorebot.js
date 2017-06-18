@@ -51,7 +51,7 @@ var formatAffects = (pArg) => {
   let retvalue = "";
   let affectsArr = [];
   let sb = "";
-  let affectBy = /([A-Za-z_]+)\s*by\s*(-?\d+)/;
+  let affectBy = /([A-Za-z_\s]+)\s*by\s*([-+]?\d+)/;
   let match = null;
 
   affectsArr = pArg.trim().split(",");
@@ -61,7 +61,15 @@ var formatAffects = (pArg) => {
       match = affectBy.exec(affectsArr[i].toString().trim());
       //console.log("matched: " + affectsArr[i]);
       //console.log(match[1].toUpperCase().padEnd(14) + "by " + match[2]);
-      sb += "Affects".padEnd(9) + ": " + match[1].toUpperCase().padEnd(14) + "by " + match[2] + "\n";
+      if (match[1].trim() === "casting level" ||
+          match[1].trim() === "skill bash" ||
+          match[1].trim() === "spell slots" ) //keep these lower case
+      {
+          sb += "Affects".padEnd(9) + ": " + match[1].trim().padEnd(14) + "by " + match[2] + "\n";
+      }
+      else {
+        sb += "Affects".padEnd(9) + ": " + match[1].trim().toUpperCase().padEnd(14) + "by " + match[2] + "\n";
+      }
     }
     else {
       console.log("didn't match: " + affectsArr[i]);
