@@ -8,10 +8,10 @@ npm start
 ```
 
 ## Commands
--!stat
--!brief
--!help
--!version
+* !stat
+* !brief
+* !help
+* !version
 
 ## Dependencies
 
