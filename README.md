@@ -30,4 +30,4 @@ Node and babel-polyfill
 
 ```
 ## Example
-![Discord screenshot]()
+![Discord screenshot](/lorebot.PNG?raw=true "Optional Title")
