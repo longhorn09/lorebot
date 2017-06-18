@@ -1,5 +1,5 @@
 # LorebotJS
-Port of prior-gen IRC and Skype lorebots in support of Arctic text-based RPG. Also ported original Troggs XML schema to MySql database.
+Discord port of prior-gen IRC and Skype lorebots in support of Arctic text-based RPG. Also ported original Troggs XML schema to MySql database.
 
 ## Installation 
 ```
