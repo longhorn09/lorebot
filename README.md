@@ -1,6 +1,12 @@
 # LorebotJS
 Port of IRC and Skype lorebots in support of Arctic text-based dungeon RPG
 
+## Installation 
+```
+npm install
+npm start
+```
+
 ## Commands
 !stat
 !brief
