@@ -20,6 +20,30 @@ var pool = mysql.createPool({
   debug: false
 });
 
+/**
+* Function for parsing the lore from a post in Discord chat
+* @param {string} pAuthor
+* @param {string} pLore
+*/
+var parseLore = (pAuthor , pLore) => {
+  let affects = null, objName = null, tmpStr = null;
+  let attribName = null,attribName2 = null,attribValue2 = null,attribValue = null;
+  let itemType = null,matClass = null,material = null,weight = null,value = null,speed = null, power = null
+               ,accuracy = null,effects = null,itemIs  = null,charges = null;
+  let spell = null; // level
+  let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
+  let isUpdateSuccess = false;
+  let match = null;
+
+  match = (/^Object\s'(.+)'$/).exec(pLore.trim().split("\n")[0].trim());
+  objName = match[1];
+  console.log(`obj name: ${objName}` + "\n" + `${pLore}`);
+  for (let i = 0; i < pLore.split('\n').Length; i++)
+  {
+    console.log(`[${i}]: ${pLore[i]}`);
+  }
+
+}
 //##########################################################################
 //# Converts comma separated
 //##########################################################################
@@ -190,6 +214,7 @@ function ProcessBrief(message, isGchat)
     if (splitArr.length >= 1)
     {
       for (let i = 0; i < splitArr.length; i++)    {
+        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i])}%' `
         whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
       }
     }
@@ -226,8 +251,10 @@ function ProcessStat(message, isGchat)
     if (splitArr.length >= 1)
     {
       for (let i = 0; i < splitArr.length; i++)    {
+        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i])}%' `
         whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
       }
+      //console.log(whereClause);
     }
      handle_database(message,whereClause,searchItem);
     //console.log(myrows);
@@ -242,7 +269,9 @@ function ProcessStat(message, isGchat)
 
   }
 };
-
+//##############################################################################
+//# this is the main handling of messages from Discord
+//##############################################################################
 client.on("message", (message) => {
   let cmd = "";
   if (message.content.startsWith(config.prefix)) {
@@ -250,7 +279,7 @@ client.on("message", (message) => {
     //message.channel.send("pong!");
     //console.log("cmd: " + cmd);
     let parsedCmd = cmd.split(" ")[0];
-    console.log(parsedCmd);
+    //console.log(parsedCmd);
     switch(parsedCmd)
     {
       case "roll":
@@ -296,6 +325,18 @@ client.on("message", (message) => {
         break;
     }
     //message.author.sendMessage("Your message here.")
+  }
+  else if ((/^Object\s'(.+)'$/).test(message.content.trim().split("\n")[0].trim()) // fancy regex
+        && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
+  {
+    parseLore(message.author.username,message.content.trim());
+  }
+  else if (message.content.trim().indexOf(" is using:") >0)
+  {
+    console.log("look log:" + message.content.trim());
+  }
+  else {
+    //console.log(`Didn't match message: ${message.content.trim()}`);
   }
   //if(message.author.id !== config.ownerID) return;
 });
