@@ -1,4 +1,4 @@
-# LorebotJS
+# Lorebot
 Discord bot to support text-based RPG called [Arctic](http://mud.arctic.org).  
 Based on prior IRC and Skype Lorebot ports.  
 Credit Troggs for original XML schema circa 2003.  
