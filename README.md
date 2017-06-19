@@ -5,6 +5,8 @@ Credit Troggs for original XML schema circa 2003.
 
 ## Installation
 ```
+git clone https://github.com/longhorn09/lorebot.git
+cd lorebot
 npm install
 npm start
 ```
