@@ -20,7 +20,7 @@ npm start
 
 ## Dependencies
 
-Node and babel-polyfill
+Node, babel-polyfill, moment
 
 ## config.json
 ```
