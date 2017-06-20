@@ -11,6 +11,7 @@ var mysql = require('mysql');
 var isGroupChat = false;
 const MAX_ITEMS = 3;
 const BRIEF_LIMIT = 50;
+const MYSQL_DATETIME_FORMAT = "YYYY-MM-DD HH:mm:ss"; // for use with moment.format(MYSQL_DATETIME_FORMAT)
 
 var pool = mysql.createPool({
   connectionLimit: 100,
@@ -20,7 +21,6 @@ var pool = mysql.createPool({
   database: config.database,
   debug: false
 });
-
 
 /**
 * Function for parsing the lore from a post in Discord chat
@@ -36,14 +36,155 @@ var parseLore = (pAuthor , pLore) => {
   let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
   let isUpdateSuccess = false;
   let match = null;
-
-  match = (/^Object\s'(.+)'$/).exec(pLore.trim().split("\n")[0].trim());
+  let splitArr = [];
+  let is2part = false;
+  let attribRegex = /^([A-Z][A-Za-z\s]+)\:(.+)$/;   //do not use /g here or matching issues
+  //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+  //The behavior associated with the 'g' flag is different when the .exec() method is used.
+  match = (/^Object\s'(.+)'$/g).exec(pLore.trim().split("\n")[0].trim());
   objName = match[1];
-  console.log(`obj name: ${objName}` + "\n" + `${pLore}`);
-  for (let i = 0; i < pLore.split('\n').Length; i++)
+  console.log(`OBJECT_NAME: ${objName}`);
+
+  //1 check if item exists by OBJECT_NAME
+  //2 if item doesn't exist then insert it
+  //     either way, you get a LORE ID
+
+  //we don't need to start loop at item[0] because we already matched the Object name in row[0]
+  splitArr = pLore.trim().split("\n");
+  for (let i = 1; i < splitArr.length; i++)
   {
-    console.log(`[${i}]: ${pLore[i]}`);
+    //make sure to reset capture variables to null each loop
+    attribName = null, attribValue = null,
+    attribName2 = null, attribValue2 = null;
+    match = null;
+    is2part = false;
+
+    if (attribRegex.test(splitArr[i].toString().trim()) === true) {
+      //console.log(`splitArr[${i}] matched: ${splitArr[i].trim()}`);
+      match = attribRegex.exec(splitArr[i].toString().trim());
+      //match = attribRegex.exec(splitArr[i].trim());
+      if (match !== null)
+      {
+        //console.log(`[${i}] attrib: ${match[1].trim()}, val: ${match[2].trim()}`);
+        attribName = match[1].trim();
+        if (match[2].trim().indexOf(":")>0)
+        {
+          //console.log(`2 parter: ${match[2].trim()}`)  ;
+          if (/^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.test(match[2].trim())) //natural    Material:organic
+          {
+            is2part = true;
+            match = /^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.exec(match[2].trim()); //Make sure regex.exec() exactly matches regex.test() stmt 4 lines above
+            //console.log(match.length);
+            attribValue = match[1].trim();
+            attribName2 = match[2].trim();
+            attribValue2 = match[3].trim();
+          }
+          else {
+            console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
+          }
+        }
+        else {    // 1-parter
+          attribValue = match[2].trim();
+        }
+
+        /*
+        itemType = null;
+        matClass = null;
+        material = null;
+        weight = null;
+        value = null;
+        speed = null;
+        power  = null;
+        accuracy = null;
+        effects = null;
+        itemIs  = null;
+        charges = null;
+        spell = null;
+        restricts = null;
+        immune = null;
+        apply = null;
+        weapClass = null;
+        damage = null;*/
+
+/*
+        let itemType = null,matClass = null,material = null,weight = null,value = null,speed = null, power = null
+                     ,accuracy = null,effects = null,itemIs  = null,charges = null;
+        let spell = null; // level
+        let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
+  */
+        switch(attribName.toLowerCase()){
+          case "item type":
+            itemType = attribValue;
+            break;
+          case "mat class":
+            matClass = attribValue;
+            break;
+          case "material":
+            material = attribValue;
+            break;
+          case "weight":
+            weight = attribValue;
+            break;
+          case "value":
+            value = attribValue;
+            break;
+          case "speed":
+            speed = attribValue;
+            break;
+          case "power":
+            power = attribValue;
+            break;
+          case "accuracy":
+            accuracy = attribValue;
+            break;
+          case "effects":
+            effects = attribValue;
+            break;
+          case "item is":
+            itemIs = attribValue;
+            break;
+          case "charges":
+            charges = attribValue;
+            break;
+          case "level":
+            spell = attribValue;
+            break;
+          case "restricts":
+            restricts = attribValue;
+            break;
+          case "immune":
+            immune = attribValue;
+            break;
+          case "apply":
+            apply = attribValue;
+            break;
+          case "class":      ///// weapon class?
+            weapClass = attribValue;
+            break;
+          case "damage":
+            damage = attribValue;
+            break;
+          case "affects":
+            affects = attribValue;
+            break;
+        }
+
+        if (attribName2 !== null && attribValue2 !== null) { //2-parter
+          //console.log(`${attribName}: ${attribValue}`);
+        }
+        //console.log(`${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
+        console.log(`[${i}]: ${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
+      }
+    }
+    else{ //usually empty line, but may be Extra to be captured here
+      console.log(`splitArr[${i}] no match: ${splitArr[i].trim()}`);
+    }
+  }   //end of for loop
+
+  if (affects !== null) {
+    affects = affects.substring(0,affects.length-1); //cull the trailing comma
   }
+
 
 }
 //##########################################################################
@@ -373,7 +514,7 @@ client.on("message", (message) => {
     }
     //message.author.sendMessage("Your message here.")
   }
-  else if ((/^Object\s'(.+)'$/).test(message.content.trim().split("\n")[0].trim()) // fancy regex
+  else if ((/^Object\s'(.+)'$/g).test(message.content.trim().split("\n")[0].trim()) // fancy regex
         && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
   {
     parseLore(message.author.username,message.content.trim());
