@@ -1,6 +1,7 @@
 "use strict";
 require("babel-polyfill"); //https://babeljs.io/docs/usage/polyfill/
 const Discord = require("discord.js");
+var moment = require('moment');     // npm install moment
 const config = require('./config.json');
 const client = new Discord.Client();
 var express = require('express');
@@ -19,6 +20,7 @@ var pool = mysql.createPool({
   database: config.database,
   debug: false
 });
+
 
 /**
 * Function for parsing the lore from a post in Discord chat
@@ -212,16 +214,9 @@ function ProcessBrief(message, isGchat)
   let splitArr = [];
   let str = "",
     whereClause = " WHERE 1=1 ";
+  let dateTime = null;
 
-  let date = null,
-      time = null,
-      today = null,
-      dateTime = null;
-
-  today = new Date();
-  date = today.getFullYear() + '-' +(today.getMonth()+1) + '-' + today.getDate();
-  time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  dateTime = `${date} ${time}`;
+  dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
 
   if (message.content.trim().length > 6 && message.content.trim().substring(6,7) === " ")
   {
@@ -258,13 +253,17 @@ function ProcessStat(message, isGchat)
   let searchItem = "";
   let splitArr = [];
   let str = "",
-    whereClause = " WHERE 1=1 "
+    whereClause = " WHERE 1=1 ";
+
+  let dateTime = null;
 
   if (message.content.trim().length > 5 && message.content.trim().substring(5,6) === " ")
   {
     str = message.content.trim();
     searchItem = (str.substring(5,str.length)).trim().toLowerCase();
-    console.log(searchItem);
+    dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
+    console.log(`${dateTime} : ${message.author.username.toString().padEnd(40)} !stat ${searchItem}`);
+
     splitArr = searchItem.split(".");
     if (splitArr.length >= 1)
     {
