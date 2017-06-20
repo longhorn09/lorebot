@@ -211,13 +211,23 @@ function ProcessBrief(message, isGchat)
   let searchItem = "";
   let splitArr = [];
   let str = "",
-    whereClause = " WHERE 1=1 "
+    whereClause = " WHERE 1=1 ";
+
+  let date = null,
+      time = null,
+      today = null,
+      dateTime = null;
+
+  today = new Date();
+  date = today.getFullYear() + '-' +(today.getMonth()+1) + '-' + today.getDate();
+  time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  dateTime = `${date} ${time}`;
 
   if (message.content.trim().length > 6 && message.content.trim().substring(6,7) === " ")
   {
     str = message.content.trim();
     searchItem = (str.substring(6,str.length)).trim().toLowerCase();
-    //console.log(searchItem);
+    console.log(`${dateTime} : ${message.author.username.toString().padEnd(40)} !brief ${searchItem}`);
     splitArr = searchItem.split(".");
     if (splitArr.length >= 1)
     {
