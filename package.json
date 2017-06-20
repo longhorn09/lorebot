@@ -1,5 +1,5 @@
 {
-  "name": "lorebotjs",
+  "name": "lorebot",
   "version": "1.0.0",
   "description": "Port of IRC and Skype lorebots in support of Arctic text-based dungeon RPG",
   "main": "lorebot.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/longhorn09/lorebotjs.git"
+    "url": "git+https://github.com/longhorn09/lorebot.git"
   },
   "author": "norman@normstorm.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/longhorn09/lorebotjs/issues"
+    "url": "https://github.com/longhorn09/lorebot/issues"
   },
-  "homepage": "https://github.com/longhorn09/lorebotjs#readme",
+  "homepage": "https://github.com/longhorn09/lorebot#readme",
   "dependencies": {
     "discord.js": "^11.1.0",
     "express": "^4.15.3",
