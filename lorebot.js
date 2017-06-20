@@ -238,7 +238,6 @@ function handle_brief(pMsg,whereClause,pItem){
   });
 };
 
-
 function ProcessBrief(message, isGchat)
 {
   let searchItem = "";
