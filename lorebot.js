@@ -88,23 +88,23 @@ var  formatLore = (pMsg,pRows) => {
     sb = "";
     sb += `\nObject '${pRows[i].OBJECT_NAME}'\n`;
 
-    if (pRows[i].ITEM_TYPE) sb += `Item Type: ${pRows[i].ITEM_TYPE}\n`;
-    if (pRows[i].MAT_CLASS) sb += `Mat Class: ${(pRows[i].MAT_CLASS).padEnd(13)}Material : ${pRows[i].MATERIAL}\n`;
-    if (pRows[i].WEIGHT) sb +=    `Weight   : ${(pRows[i].WEIGHT.toString()).padEnd(13)}Value    : ${pRows[i].ITEM_VALUE}\n`;
-    if (pRows[i].AFFECTS) sb +=   `${formatAffects(pRows[i].AFFECTS)}`;
-    if (pRows[i].SPEED) sb +=     `Speed    : ${pRows[i].SPEED}\n`;
-    if (pRows[i].POWER) sb +=     `Power    : ${pRows[i].POWER}\n`;
-    if (pRows[i].ACCURACY) sb +=  `Accuracy : ${pRows[i].ACCURACY}\n`;
-    if (pRows[i].EFFECTS) sb +=   `Effects  : ${pRows[i].EFFECTS}\n`;
-    if (pRows[i].ITEM_IS) sb +=   `Item is  : ${pRows[i].ITEM_IS.toUpperCase()}\n`;
-    if (pRows[i].CHARGES) sb +=   `Charges  : ${pRows[i].CHARGES}\n`;
-    if (pRows[i].ITEM_LEVEL) sb +=`Level    : ${pRows[i].ITEM_LEVEL}\n`;
-    if (pRows[i].RESTRICTS) sb += `Restricts: ${pRows[i].RESTRICTS.toUpperCase()}\n`;
-    if (pRows[i].IMMUNE) sb +=    `Immune   : ${pRows[i].IMMUNE}\n`;
-    if (pRows[i].APPLY) sb +=     `Apply    : ${pRows[i].APPLY}\n`;
-    if (pRows[i].CLASS) sb +=     `Class    : ${pRows[i].CLASS}\n`;
-    if (pRows[i].DAMAGE) sb +=    `Damage   : ${pRows[i].DAMAGE}\n`;
-    if (pRows[i].SUBMITTER) sb += `Submitter: ${pRows[i].SUBMITTER} (${pRows[i].CREATE_DATE})\n`;
+    if (pRows[i].ITEM_TYPE != null) sb += `Item Type: ${pRows[i].ITEM_TYPE}\n`;
+    if (pRows[i].MAT_CLASS != null) sb += `Mat Class: ${(pRows[i].MAT_CLASS).padEnd(13)}Material : ${pRows[i].MATERIAL}\n`;
+    if (pRows[i].WEIGHT    != null) sb += `Weight   : ${(pRows[i].WEIGHT.toString()).padEnd(13)}Value    : ${pRows[i].ITEM_VALUE}\n`;
+    if (pRows[i].AFFECTS   != null) sb += `${formatAffects(pRows[i].AFFECTS)}`;
+    if (pRows[i].SPEED     != null) sb += `Speed    : ${pRows[i].SPEED}\n`;
+    if (pRows[i].POWER     != null) sb += `Power    : ${pRows[i].POWER}\n`;
+    if (pRows[i].ACCURACY  != null) sb += `Accuracy : ${pRows[i].ACCURACY}\n`;
+    if (pRows[i].EFFECTS   != null) sb += `Effects  : ${pRows[i].EFFECTS}\n`;
+    if (pRows[i].ITEM_IS   != null) sb += `Item is  : ${pRows[i].ITEM_IS.toUpperCase()}\n`;
+    if (pRows[i].CHARGES   != null) sb += `Charges  : ${pRows[i].CHARGES}\n`;
+    if (pRows[i].ITEM_LEVEL!= null) sb += `Level    : ${pRows[i].ITEM_LEVEL}\n`;
+    if (pRows[i].RESTRICTS != null) sb += `Restricts: ${pRows[i].RESTRICTS.toUpperCase()}\n`;
+    if (pRows[i].IMMUNE    != null) sb += `Immune   : ${pRows[i].IMMUNE}\n`;
+    if (pRows[i].APPLY     != null) sb += `Apply    : ${pRows[i].APPLY}\n`;
+    if (pRows[i].CLASS     != null) sb += `Class    : ${pRows[i].CLASS}\n`;
+    if (pRows[i].DAMAGE    != null) sb += `Damage   : ${pRows[i].DAMAGE}\n`;
+    if (pRows[i].SUBMITTER != null) sb += `Submitter: ${pRows[i].SUBMITTER} (${pRows[i].CREATE_DATE})\n`;
 
     //console.log("```" + sb + "```")
     pMsg.author.send("```" + sb + "```");
@@ -121,6 +121,37 @@ var formatBrief = (pMsg,pRows) => {
   }
   pMsg.author.send("```" + sb + "```");
   return sb;
+};
+
+//#################################################################################
+//# for !stat bronze.shield
+//#################################################################################
+function GetLoreCount(callback){
+  let sqlStr = "";
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":"Error in connection database"});
+      }
+    sqlStr = `call GetLoreCount() `;
+    //console.log(sqlStr);
+    connection.query(sqlStr,(err,rows) => {
+      connection.release();
+      if (!err) {
+        if (rows.length >= 0) {
+          return callback(rows[0][0].LoreCount);
+        }
+      }
+      else {
+        console.log(err);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database"});
+      return;
+    });
+  });
 };
 //#################################################################################
 //# for !stat bronze.shield
@@ -327,9 +358,9 @@ client.on("message", (message) => {
         message.channel.send("** Group chat: Disabled");
         break;
       case "help":
-        let helpStr = getHelp();
-        (isGroupChat) ? message.channel.send(helpStr) : message.author.send(helpStr);
-        console.log("Sent " + config.prefix + cmd + " to " + message.author.username) ;
+        let helpStr = getHelp(message);
+        //(isGroupChat) ? message.channel.send(helpStr) : message.author.send(helpStr);
+        //console.log("Sent " + config.prefix + cmd + " to " + message.author.username) ;
         break;
       case "version":
         let versionMsg = "** Version unavailable";
@@ -358,23 +389,27 @@ client.on("message", (message) => {
   //if(message.author.id !== config.ownerID) return;
 });
 
-function getHelp() {
+function getHelp(pMsg) {
   let version = "(n/a)";
   if (typeof process.env.npm_package_version === "string") {
     version = process.env.npm_package_version ;
   }
-  var retvalue = "```** IRC Lore Bot v" + version + " (Items: PLACEHOLDER) **\n" +
-  "!help    - Lists the different commands available\n" +
-  "!stat    - syntax: !stat <item>, example: !stat huma.shield\n" +
-  "!brief   - syntax: !brief <item>, example: !brief huma.shield\n" +
-  "!mark    - example: !mark kaput rgb cleric, or !mark kaput rgb\n" +
-  "!unmark  - unidentifies a character, example: !unmark kaput\n" +
-  "!who     - shows character info, example: !who Drunoob\n" +
-  "!gton    - turn on output group chat\n" +
-  "!gtoff   - turn off output to group chat\n" +
-  "!recent  - shows latest markings, optional !recent <num>\n" +
-  "!version - shows version history\n```";
-  return retvalue;
+  //https://stackoverflow.com/questions/21206696/how-to-return-value-from-node-js-function-which-contains-db-query
+  GetLoreCount((numRows) => {
+    let helpMsg  = "```** IRC Lore Bot v" + version + ` (Items: ${numRows}) **\n` +
+    "!help    - Lists the different commands available\n" +
+    "!stat    - syntax: !stat <item>, example: !stat huma.shield\n" +
+    "!brief   - syntax: !brief <item>, example: !brief huma.shield\n" +
+    "!mark    - example: !mark kaput rgb cleric, or !mark kaput rgb\n" +
+    "!unmark  - unidentifies a character, example: !unmark kaput\n" +
+    "!who     - shows character info, example: !who Drunoob\n" +
+    //"!gton    - turn on output group chat\n" +
+    //"!gtoff   - turn off output to group chat\n" +
+    "!recent  - shows latest markings, optional !recent <num>\n" +
+    "!version - shows version history\n```";
+    pMsg.author.send(helpMsg);
+  });
+  return;
 }
 
 
