@@ -22,7 +22,7 @@ npm start
 
 ## Dependencies
 ```
-# Node requird to run Javascript on the server-side
+# Node is required to run Javascript on the server-side
 sudo apt-get update
 sudo apt-get install nodejs
 sudo apt-get install npm
