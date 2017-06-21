@@ -3,7 +3,7 @@ Lorebot is a Discord bot written in JS to support a text-based RPG called [Arcti
 Arctic is like AD&D with only colored text, no graphics.  
 Lorebot will respond to commands prefixed by the exclamation mark.  
 The work is a continuation and port of prior IRC and Skype lorebots in support of the same text-based game.  
-Credit goes to an Arctic player named Troggs for the original XML-based IRC lorebot circa 2003.  
+Credit goes to an Arctic player named Troggs for the original XML-based IRC lorebot circa 2003. This bot is simply an evolution of the work started more than a decade ago by Troggs.
 
 ## Installation
 ```
