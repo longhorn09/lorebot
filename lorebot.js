@@ -413,8 +413,7 @@ function handle_database(pMsg,whereClause,pItem){
             pMsg.author.send(`${rows.length} item found for '${pItem}'`);
           }
           if (rows.length > 0) {
-
-            formatLore(pMsg,rows) ;
+            return formatLore(pMsg,rows) ;
           }
         }
       }
@@ -455,8 +454,7 @@ function handle_brief(pMsg,whereClause,pItem){
             pMsg.author.send(`${rows.length} item found for '${pItem}'`);
           }
           if (rows.length > 0) {
-
-            formatBrief(pMsg,rows) ;
+            return formatBrief(pMsg,rows);
           }
         }
       }
