@@ -19,8 +19,20 @@ npm start
 * !version
 
 ## Dependencies
+```
+# Node requird to run Javascript on the server-side
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
 
-Node, babel-polyfill, moment
+# Used for timestamp formatting in MySQL format, moment.format("YYYY-MM-DD HH:mm:ss")
+npm install moment
+
+# Install babel-polyfill to attain ES6+ functionality, primarily used for string.padEnd()
+npm install --save babel-polyfill
+
+
+```
 
 ## Run Lorebot as a service
 ```
