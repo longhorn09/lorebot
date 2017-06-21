@@ -1,5 +1,5 @@
 # lorebot
-Lorebot is a Discord bot to support a text-based RPG called [Arctic](http://mud.arctic.org).  
+Lorebot is a Discord bot written in JS to support a text-based RPG called [Arctic](http://mud.arctic.org).  
 Arctic is like AD&D with only colored text, no graphics.  
 Lorebot will respond to commands prefixed by the exclamation mark.  
 The work is a continuation and port of prior IRC and Skype lorebots in support of the same text-based game.  
