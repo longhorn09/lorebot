@@ -35,6 +35,10 @@ npm install --save babel-polyfill
 ```
 
 ## Run Lorebot as a service
+
+The following will daemonize lorebot that that it continues to run even after logging off the terminal. 
+It's not required to run lorebot highly recommended.
+
 ```
 npm install -g forever
 forever start lorebot.js
