@@ -1,7 +1,8 @@
 # lorebot
-Discord bot to support text-based RPG called [Arctic](http://mud.arctic.org).  
-Based on prior IRC and Skype Lorebot ports.  
-Credit Troggs for original XML schema circa 2003.  
+Lorebot is a Discord bot to support text-based RPG called [Arctic](http://mud.arctic.org). 
+It will respond to commands prefixed by the exclamation mark.
+It is a continuation and port of prior IRC and Skype lorebots in support of the same game.
+Credit goes to an Arctic player named Troggs for the original XML-based IRC lorebot circa 2003.  
 
 ## Installation
 ```
@@ -36,7 +37,8 @@ npm install --save babel-polyfill
 
 ## Run Lorebot as a service
 
-The following will daemonize lorebot that that it continues to run even after logging off the terminal. 
+The following will daemonize lorebot. 
+This will allow lorebot to continue running even after logging off the terminal. 
 It's not required to run lorebot highly recommended.
 
 ```
