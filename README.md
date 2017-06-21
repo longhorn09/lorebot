@@ -22,15 +22,19 @@ npm start
 
 ## Dependencies
 ```
-# Node is required to run Javascript on the server-side
-sudo apt-get update
+# NodeJS, a javascript runtime and package manager
+sudo apt-get update -y
 sudo apt-get install nodejs
 sudo apt-get install npm
 
-# Used for timestamp formatting in MySQL format, moment.format("YYYY-MM-DD HH:mm:ss")
+# MySQL database required
+sudo apt-get install mysql-server
+sudo mysql_secure_installation
+
+# For timestamp formatting in MySQL format, moment.format("YYYY-MM-DD HH:mm:ss")
 npm install moment
 
-# Install babel-polyfill to attain ES6+ functionality, primarily used for string.padEnd()
+# For ES6+ functionality, primarily used for string.padEnd()
 npm install --save babel-polyfill
 
 
