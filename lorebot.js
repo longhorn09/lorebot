@@ -31,10 +31,11 @@ var parseLore = (pAuthor , pLore) => {
   let affects = null, objName = null, tmpStr = null;
   let attribName = null,attribName2 = null,attribValue2 = null,attribValue = null;
   let itemType = null,matClass = null,material = null,weight = null,value = null,speed = null, power = null
-               ,accuracy = null,effects = null,itemIs  = null,charges = null;
+               ,accuracy = null,effects = null,itemIs  = null,charges = null, containerSize = null, capacity = null;
   let spell = null; // level
   let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
   let isUpdateSuccess = false;
+  let hasBlankLine = false;
   let match = null;
   let splitArr = [];
   let is2part = false;
@@ -85,6 +86,12 @@ var parseLore = (pAuthor , pLore) => {
         switch(attribName.toLowerCase()){
           case "item type":
             itemType = attribValue;
+            break;
+          case "contains":
+            containerSize = attribValeu;
+            break;
+          case "capacity":
+            capacity = attribValeu;
             break;
           case "mat class":
             matClass = attribValue;
@@ -148,6 +155,12 @@ var parseLore = (pAuthor , pLore) => {
           switch(attribName2.toLowerCase()) {
             case "item type":
               itemType = attribValue2;
+              break;
+            case "contains":
+              containerSize = attribValeu;
+              break;
+            case "capacity":
+              capacity = attribValeu;
               break;
             case "mat class":
               matClass = attribValue2;
@@ -219,36 +232,50 @@ var parseLore = (pAuthor , pLore) => {
   if (itemType !== null || matClass !== null || material !== null || weight !== null || value !== null
         || speed !== null || power !== null || accuracy !== null || effects !== null || itemIs !== null
         || charges !== null || spell !== null || restricts !== null || immune !== null  || apply !== null
-        || weapClass !== null || damage !== null || affects !== null)
+        || weapClass !== null || damage !== null || affects !== null || containerSize != null || capacity != null)
   {
-    //
-    // do not delete the following commented lines, good for debugging purposes
-    /*
-    if (objName   !== null) {console.log("Object name: ".padEnd(20) + objName);}
-    if (itemType  !== null) {console.log("Item type: ".padEnd(20) + itemType);}
-    if (matClass  !== null) {console.log("Mat class: ".padEnd(20) + matClass);}
-    if (material  !== null) {console.log("Material: ".padEnd(20) + material);}
-    if (weight    !== null) {console.log("Weight: ".padEnd(20) + weight);}
-    if (weight    !== null) {console.log("Value: ".padEnd(20) + value);}
-    if (speed     !== null) {console.log("Speed: ".padEnd(20) + speed);}
-    if (power     !== null) {console.log("Power: ".padEnd(20) + power);}
-    if (accuracy  !== null) {console.log("Accuracy: ".padEnd(20) + accuracy);}
-    if (effects   !== null) {console.log("Effects: ".padEnd(20) + effects);}
-    if (itemIs    !== null) {console.log("Item is: ".padEnd(20) + itemIs);}
-    if (charges   !== null) {console.log("Charges: ".padEnd(20) + charges);}
-    if (spell     !== null) {console.log("Level: ".padEnd(20) + spell);}
-    if (restricts !== null) {console.log("Restricts: ".padEnd(20) + restricts);}
-    if (immune    !== null) {console.log("Immune: ".padEnd(20) + immune);}
-    if (apply     !== null) {console.log("Apply: ".padEnd(20) + apply);}
-    if (weapClass !== null) {console.log("Weapon class: ".padEnd(20) + weapClass);}
-    if (damage    !== null) {console.log("Damage: ".padEnd(20) + `${damage}`);}
-    */
+
+    //if (objName   !== null) {console.log("Object name: ".padEnd(20) + objName);}
+    //if (itemType  !== null) {console.log("Item type: ".padEnd(20) + itemType);}
+    //if (matClass  !== null) {console.log("Mat class: ".padEnd(20) + matClass);}
+    //if (material  !== null) {console.log("Material: ".padEnd(20) + material);}
+    if (weight    !== null) {
+      weight =  Number.isInteger(weight) ?  Number.parseInt(weight) : null;
+    }
+
+    // ITEM_VALUE db type is varchar(10) but all values are ints
+    if (value     !== null) {
+       //placeholder logic until column type conversion at db level
+      value = Number.isInteger(value) ? Number.parseInt(value) : value;
+    }
+    if (speed     !== null) {
+      speed = Number.isInteger(speed) ? Number.parseInt(speed): null;
+    }
+    if (power     !== null) {
+      power = Number.isInteger(power) ? Number.parseInt(power): null;
+    }
+    if (accuracy  !== null) {
+      accuracy = Number.isInteger(accuracy) ? Number.parseInt(accuracy) : null;
+    }
+    if (charges   !== null) {
+      charges = Number.isInteger(charges) ? Number.parseInt(charges) : null;
+    }
+    if (apply     !== null) {
+      apply = Number.isInteger(apply) ? Number.parseInt(charges) : null;
+    }
+    if (containerSize     !== null) {
+      containerSize = Number.isInteger(containerSize) ? Number.parseInt(containerSize) : null;
+    }
+    if (capacity     !== null) {
+      capacity  = Number.isInteger(capacity) ? Number.parseInt(capacity) : null;
+    }
+
     // Do not comment the below out, the trimming of trailing comma is necessary and not just for debug purposes
     if (affects   !== null) {
         affects = affects.substring(0,affects.length-1); //cull the trailing comma
-        console.log("Affects: ".padEnd(20) + `${affects}`);
+        //console.log("Affects: ".padEnd(20) + `${affects}`);
     }
-  }
+  }  //end test if attributes are all null
 } //end of function parseLore
 //##########################################################################
 //# Converts comma separated
@@ -307,7 +334,10 @@ var  formatLore = (pMsg,pRows) => {
     if (pRows[i].IMMUNE    != null) sb += `Immune   : ${pRows[i].IMMUNE}\n`;
     if (pRows[i].APPLY     != null) sb += `Apply    : ${pRows[i].APPLY}\n`;
     if (pRows[i].CLASS     != null) sb += `Class    : ${pRows[i].CLASS}\n`;
-    if (pRows[i].DAMAGE    != null) sb += `Damage   : ${pRows[i].DAMAGE}\n`;
+    if (pRows[i].DAMAGE    != null) sb +=        `Damage   : ${pRows[i].DAMAGE}\n`;
+    if (pRows[i].CONTAINER_SIZE   != null) sb += `Contains : ${pRows[i].CONTAINER_SIZE}\n`;
+    if (pRows[i].CAPACITY    != null) sb +=      `Capacity : ${pRows[i].CAPACITY}\n`;
+
     if (pRows[i].SUBMITTER != null) sb += `Submitter: ${pRows[i].SUBMITTER} (${pRows[i].CREATE_DATE})\n`;
 
     //console.log("```" + sb + "```")
