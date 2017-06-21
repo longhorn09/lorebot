@@ -43,11 +43,6 @@ var parseLore = (pAuthor , pLore) => {
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
   match = (/^Object\s'(.+)'$/g).exec(pLore.trim().split("\n")[0].trim());
   objName = match[1];
-  console.log(`OBJECT_NAME: ${objName}`);
-
-  //1 check if item exists by OBJECT_NAME
-  //2 if item doesn't exist then insert it
-  //     either way, you get a LORE ID
 
   //we don't need to start loop at item[0] because we already matched the Object name in row[0]
   splitArr = pLore.trim().split("\n");
@@ -87,31 +82,6 @@ var parseLore = (pAuthor , pLore) => {
           attribValue = match[2].trim();
         }
 
-        /*
-        itemType = null;
-        matClass = null;
-        material = null;
-        weight = null;
-        value = null;
-        speed = null;
-        power  = null;
-        accuracy = null;
-        effects = null;
-        itemIs  = null;
-        charges = null;
-        spell = null;
-        restricts = null;
-        immune = null;
-        apply = null;
-        weapClass = null;
-        damage = null;*/
-
-/*
-        let itemType = null,matClass = null,material = null,weight = null,value = null,speed = null, power = null
-                     ,accuracy = null,effects = null,itemIs  = null,charges = null;
-        let spell = null; // level
-        let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
-  */
         switch(attribName.toLowerCase()){
           case "item type":
             itemType = attribValue;
@@ -165,28 +135,121 @@ var parseLore = (pAuthor , pLore) => {
             damage = attribValue;
             break;
           case "affects":
-            affects = attribValue;
+            if (affects === null) {
+              affects = attribValue + ",";
+            }
+            else {
+              affects += attribValue + ",";
+            }
             break;
-        }
+        } //end of 1-parter
 
         if (attribName2 !== null && attribValue2 !== null) { //2-parter
-          //console.log(`${attribName}: ${attribValue}`);
-        }
-        //console.log(`${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
-        console.log(`[${i}]: ${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
+          switch(attribName2.toLowerCase()) {
+            case "item type":
+              itemType = attribValue2;
+              break;
+            case "mat class":
+              matClass = attribValue2;
+              break;
+            case "material":
+              material = attribValue2;
+              break;
+            case "weight":
+              weight = attribValue2;
+              break;
+            case "value":
+              value = attribValue2;
+              break;
+            case "speed":
+              speed = attribValue2;
+              break;
+            case "power":
+              power = attribValue2;
+              break;
+            case "accuracy":
+              accuracy = attribValue2;
+              break;
+            case "effects":
+              effects = attribValue2;
+              break;
+            case "item is":
+              itemIs = attribValue2;
+              break;
+            case "charges":
+              charges = attribValue2;
+              break;
+            case "level":
+              spell = attribValue2;
+              break;
+            case "restricts":
+              restricts = attribValue2;
+              break;
+            case "immune":
+              immune = attribValue2;
+              break;
+            case "apply":
+              apply = attribValue2;
+              break;
+            case "class":      ///// weapon class?
+              weapClass = attribValue2;
+              break;
+            case "damage":
+              damage = attribValue2;
+              break;
+            case "affects":
+              if (affects === null) {
+                  affects = attribValue2 + ",";
+              }
+              else {
+                affects +=  attribValue2 + ",";
+              }
+
+              break;
+          }   //end of 2-parter
+        //console.log(`[${i}]: ${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
+        } //2-parter null test
+      } //end if match[1] !== null
+      else{ //usually empty line, but may be Extra to be captured here
+        console.log(`splitArr[${i}] no match: ${splitArr[i].trim()}`);
       }
+    }   //end if regex.test on first pattern match
+  } //end of for loop
+  //just a check to make sure there's something new to update and not Object '' on a single line
+  if (itemType !== null || matClass !== null || material !== null || weight !== null || value !== null
+        || speed !== null || power !== null || accuracy !== null || effects !== null || itemIs !== null
+        || charges !== null || spell !== null || restricts !== null || immune !== null  || apply !== null
+        || weapClass !== null || damage !== null || affects !== null)
+  {
+    //
+    // do not delete the following commented lines, good for debugging purposes
+    /*
+    if (objName   !== null) {console.log("Object name: ".padEnd(20) + objName);}
+    if (itemType  !== null) {console.log("Item type: ".padEnd(20) + itemType);}
+    if (matClass  !== null) {console.log("Mat class: ".padEnd(20) + matClass);}
+    if (material  !== null) {console.log("Material: ".padEnd(20) + material);}
+    if (weight    !== null) {console.log("Weight: ".padEnd(20) + weight);}
+    if (weight    !== null) {console.log("Value: ".padEnd(20) + value);}
+    if (speed     !== null) {console.log("Speed: ".padEnd(20) + speed);}
+    if (power     !== null) {console.log("Power: ".padEnd(20) + power);}
+    if (accuracy  !== null) {console.log("Accuracy: ".padEnd(20) + accuracy);}
+    if (effects   !== null) {console.log("Effects: ".padEnd(20) + effects);}
+    if (itemIs    !== null) {console.log("Item is: ".padEnd(20) + itemIs);}
+    if (charges   !== null) {console.log("Charges: ".padEnd(20) + charges);}
+    if (spell     !== null) {console.log("Level: ".padEnd(20) + spell);}
+    if (restricts !== null) {console.log("Restricts: ".padEnd(20) + restricts);}
+    if (immune    !== null) {console.log("Immune: ".padEnd(20) + immune);}
+    if (apply     !== null) {console.log("Apply: ".padEnd(20) + apply);}
+    if (weapClass !== null) {console.log("Weapon class: ".padEnd(20) + weapClass);}
+    if (damage    !== null) {console.log("Damage: ".padEnd(20) + `${damage}`);}
+    */
+    // Do not comment the below out, the trimming of trailing comma is necessary and not just for debug purposes
+    if (affects   !== null) {
+        affects = affects.substring(0,affects.length-1); //cull the trailing comma
+        console.log("Affects: ".padEnd(20) + `${affects}`);
     }
-    else{ //usually empty line, but may be Extra to be captured here
-      console.log(`splitArr[${i}] no match: ${splitArr[i].trim()}`);
-    }
-  }   //end of for loop
-
-  if (affects !== null) {
-    affects = affects.substring(0,affects.length-1); //cull the trailing comma
   }
-
-
-}
+} //end of function parseLore
 //##########################################################################
 //# Converts comma separated
 //##########################################################################
@@ -507,6 +570,9 @@ client.on("message", (message) => {
         if (typeof process.env.npm_package_version === "string") {
           versionMsg = "** Version " + process.env.npm_package_version ;
         }
+        else {
+          versionMsg = "** Version " + require('./package.json').version;
+        }
         (isGroupChat) ? message.channel.send(versionMsg) : message.author.send(versionMsg);
         break;
       default:
@@ -514,10 +580,23 @@ client.on("message", (message) => {
     }
     //message.author.sendMessage("Your message here.")
   }
-  else if ((/^Object\s'(.+)'$/g).test(message.content.trim().split("\n")[0].trim()) // fancy regex
+  else if (message.content.trim().indexOf("Object '") > 0   //need to do this way because lore might be pasted in middle of conversation
         && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
   {
-    parseLore(message.author.username,message.content.trim());
+    let loreArr = null, cleanArr = [];
+    //need to scrub the lore message for processing
+    loreArr = message.content.trim().split("Object '");
+    for (let i = 0 ; i < loreArr.length; i++)  {
+      if (loreArr[i].indexOf("'") > 0 && loreArr[i].indexOf(":"))
+      {
+        cleanArr.push(`Object '${loreArr[i].trim()}`);
+      }
+    }
+    for (let i = 0 ;i < cleanArr.length;i++) {
+        parseLore(message.author.username,cleanArr[i]);
+    }
+    loreArr = null;   //freeup for gc()
+    cleanArr = null;  //freeup for gc()
   }
   else if (message.content.trim().indexOf(" is using:") >0)
   {
@@ -534,6 +613,9 @@ function getHelp(pMsg) {
   if (typeof process.env.npm_package_version === "string") {
     version = process.env.npm_package_version ;
   }
+  else {
+    version = require('./package.json').version;
+  }
   //https://stackoverflow.com/questions/21206696/how-to-return-value-from-node-js-function-which-contains-db-query
   GetLoreCount((numRows) => {
     let helpMsg  = "```** IRC Lore Bot v" + version + ` (Items: ${numRows}) **\n` +
@@ -547,6 +629,7 @@ function getHelp(pMsg) {
     //"!gtoff   - turn off output to group chat\n" +
     "!recent  - shows latest markings, optional !recent <num>\n" +
     "!version - shows version history\n```";
+    version = null;
     pMsg.author.send(helpMsg);
   });
   return;
