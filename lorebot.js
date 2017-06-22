@@ -34,6 +34,7 @@ var parseLore = (pAuthor , pLore) => {
                ,accuracy = null,effects = null,itemIs  = null,charges = null, containerSize = null, capacity = null;
   let spell = null; // level
   let restricts = null,immune = null,apply = null,weapClass = null,damage = null;
+  let extra = null;// ##################### NOT YET CODED OUT ##############################
   let isUpdateSuccess = false;
   let hasBlankLine = false;
   let match = null;
@@ -83,7 +84,7 @@ var parseLore = (pAuthor , pLore) => {
           attribValue = match[2].trim();
         }
 
-        switch(attribName.toLowerCase()){
+        switch(attribName.toLowerCase().trim()){
           case "item type":
             itemType = attribValue;
             break;
@@ -100,7 +101,8 @@ var parseLore = (pAuthor , pLore) => {
             material = attribValue;
             break;
           case "weight":
-            weight = attribValue;
+            //weight = attribValue;
+            weight =  Number.isInteger(attribValue.trim()) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "value":
             value = attribValue;
@@ -152,70 +154,71 @@ var parseLore = (pAuthor , pLore) => {
         } //end of 1-parter
 
         if (attribName2 !== null && attribValue2 !== null) { //2-parter
-          switch(attribName2.toLowerCase()) {
+          switch(attribName2.toLowerCase().trim()) {
             case "item type":
-              itemType = attribValue2;
+              itemType = attribValue2.trim();
               break;
             case "contains":
-              containerSize = attribValeu;
+              containerSize = attribValue2.trim();
               break;
             case "capacity":
-              capacity = attribValeu;
+              capacity = attribValue2.trim();
               break;
             case "mat class":
-              matClass = attribValue2;
+              matClass = attribValue2.trim();
               break;
             case "material":
-              material = attribValue2;
+              material = attribValue2.trim();
               break;
             case "weight":
-              weight = attribValue2;
+              //weight = attribValue2.trim();
+              weight =  Number.isInteger(attribValue2.trim()) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "value":
-              value = attribValue2;
+              value = attribValue2.trim();
               break;
             case "speed":
-              speed = attribValue2;
+              speed = attribValue2.trim();
               break;
             case "power":
-              power = attribValue2;
+              power = attribValue2.trim();
               break;
             case "accuracy":
-              accuracy = attribValue2;
+              accuracy = attribValue2.trim();
               break;
             case "effects":
-              effects = attribValue2;
+              effects = attribValue2.trim();
               break;
             case "item is":
-              itemIs = attribValue2;
+              itemIs = attribValue2.trim();
               break;
             case "charges":
-              charges = attribValue2;
+              charges = attribValue2.trim();
               break;
             case "level":
-              spell = attribValue2;
+              spell = attribValue2.trim();
               break;
             case "restricts":
-              restricts = attribValue2;
+              restricts = attribValue2.trim();
               break;
             case "immune":
-              immune = attribValue2;
+              immune = attribValue2.trim();
               break;
             case "apply":
-              apply = attribValue2;
+              apply = attribValue2.trim();
               break;
             case "class":      ///// weapon class?
-              weapClass = attribValue2;
+              weapClass = attribValue2.trim();
               break;
             case "damage":
-              damage = attribValue2;
+              damage = attribValue2.trim();
               break;
             case "affects":
               if (affects === null) {
-                  affects = attribValue2 + ",";
+                  affects = attribValue2.trim() + ",";
               }
               else {
-                affects +=  attribValue2 + ",";
+                affects +=  attribValue2.trim() + ",";
               }
 
               break;
@@ -229,52 +232,61 @@ var parseLore = (pAuthor , pLore) => {
     }   //end if regex.test on first pattern match
   } //end of for loop
   //just a check to make sure there's something new to update and not Object '' on a single line
+
   if (itemType !== null || matClass !== null || material !== null || weight !== null || value !== null
         || speed !== null || power !== null || accuracy !== null || effects !== null || itemIs !== null
         || charges !== null || spell !== null || restricts !== null || immune !== null  || apply !== null
-        || weapClass !== null || damage !== null || affects !== null || containerSize != null || capacity != null)
+        || weapClass !== null || damage !== null || affects !== null || containerSize !== null || capacity !== null)
   {
-
-    //if (objName   !== null) {console.log("Object name: ".padEnd(20) + objName);}
-    //if (itemType  !== null) {console.log("Item type: ".padEnd(20) + itemType);}
-    //if (matClass  !== null) {console.log("Mat class: ".padEnd(20) + matClass);}
-    //if (material  !== null) {console.log("Material: ".padEnd(20) + material);}
-    if (weight    !== null) {
+    if (weight    != null) {
+      console.log(`weight in weight null test: ${weight}`)
       weight =  Number.isInteger(weight) ?  Number.parseInt(weight) : null;
+      console.log(`weight after null test: ${weight}`)
     }
-
     // ITEM_VALUE db type is varchar(10) but all values are ints
-    if (value     !== null) {
+    if (value     != null) {
        //placeholder logic until column type conversion at db level
-      value = Number.isInteger(value) ? Number.parseInt(value) : value;
+      value = Number.isInteger(value) ? Number.parseInt(value) : null;
     }
-    if (speed     !== null) {
+    if (speed     != null) {
       speed = Number.isInteger(speed) ? Number.parseInt(speed): null;
     }
-    if (power     !== null) {
+    if (power     != null) {
       power = Number.isInteger(power) ? Number.parseInt(power): null;
     }
-    if (accuracy  !== null) {
+    if (accuracy  != null) {
       accuracy = Number.isInteger(accuracy) ? Number.parseInt(accuracy) : null;
     }
-    if (charges   !== null) {
+    if (charges   != null) {
       charges = Number.isInteger(charges) ? Number.parseInt(charges) : null;
     }
-    if (apply     !== null) {
+    if (apply     != null) {
       apply = Number.isInteger(apply) ? Number.parseInt(charges) : null;
     }
-    if (containerSize     !== null) {
+    if (containerSize     != null) {
       containerSize = Number.isInteger(containerSize) ? Number.parseInt(containerSize) : null;
     }
-    if (capacity     !== null) {
+    if (capacity     != null) {
       capacity  = Number.isInteger(capacity) ? Number.parseInt(capacity) : null;
     }
 
     // Do not comment the below out, the trimming of trailing comma is necessary and not just for debug purposes
-    if (affects   !== null) {
+    if (affects   != null) {
         affects = affects.substring(0,affects.length-1); //cull the trailing comma
-        //console.log("Affects: ".padEnd(20) + `${affects}`);
     }
+
+  console.log(`before null test, weight: ${weight}, value: ${value}`);
+
+    // lore matched and attributes and key values captured
+    // so initiate db create/update process via sp call of CreateLore
+    let rowsAffected = 0;
+    CreateUpdateLore(objName,itemType,itemIs,pAuthor,affects,apply,restricts,weapClass,matClass,material,
+                    value,extra,immune,effects,weight,capacity,spell,containerSize,charges,speed,accuracy,power,damage, (arg) => {
+                      rowsAffected = arg;
+                      console.log(`** in CreateUpdateLore callback ${rowsAffected}`);
+                    });
+
+
   }  //end test if attributes are all null
 } //end of function parseLore
 //##########################################################################
@@ -356,6 +368,70 @@ var formatBrief = (pMsg,pRows) => {
   pMsg.author.send("```" + sb + "```");
   return sb;
 };
+
+/**
+ * This function is called after a user pastes a lore in chat typically -
+ * then the db update stored procedure call is initiated
+ * CreateUpdateLore typically called from parseLore()
+ * @param {function} callback
+ */
+function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restricts,weapClass,matClass,material,itemValue,extra,
+                          immune,effects,weight,capacity,itemLevel,containerSize,charges,speed,accuracy,power,damage,callback) {
+  let sqlStr = "";
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":"Error in connection database"});
+      }
+    // sqlStr = `call CreateLore('${objName}','${itemType}','${itemIs}','${submitter}','${affects}',${apply},'${restricts}',
+    //                           '${weapClass}','${matClass}','${material}','${itemValue}','${extra}','${immune}','${effects}',${weight},
+    //                           ${capacity},'${itemLevel}',${containerSize},${charges},${speed},${accuracy},
+    //                           ${power},'${damage}')`;
+    console.log(`weight: ${weight}`)
+    sqlStr = "call CreateLore(" + (((objName) ? `'${objName}'` : null) + "," +
+                                  ((itemType) ? `'${itemType}'` : null) + "," +
+                                  ((itemIs) ? `'${itemIs}'` : null) + "," +
+                                  ((submitter) ? `'${submitter}'` : null) + "," +
+                                  ((affects) ? `'${affects}'` : null) + "," +
+                                  ((apply) ? apply : null) + "," +
+                                  ((restricts) ? `'${restricts}'` : null) + "," +
+                                  ((weapClass) ? `'${weapClass}'` : null) + "," +
+                                  ((matClass) ? `'${matClass}'` : null) + "," +
+                                  ((material) ? `'${material}'` : null) + "," +
+                                  ((itemValue) ? `'${itemValue}'` : null) + "," +
+                                  ((extra) ? `'${extra}'` : null) + "," +
+                                  ((immune) ? `'${immune}'` : null) + "," +
+                                  ((effects) ? `'${effects}'` : null) + "," +
+                                  ((weight) ? weight : null) + "," +
+                                  ((capacity) ? capacity : null) + "," +
+                                  ((itemLevel) ? `'${itemLevel}'` : null) + "," +
+                                  ((containerSize) ? containerSize : null) + "," +
+                                  ((charges) ? charges : null) + "," +
+                                  ((speed) ? speed : null) + "," +
+                                  ((accuracy) ? accuracy : null) + "," +
+                                  ((power) ? power : null) + "," +
+                                  ((damage) ? `'${damage}'` : null) + ")" );
+
+
+    console.log(sqlStr);
+    connection.query(sqlStr,(err,rows) => {
+      connection.release();
+      if (!err) {
+        if (rows.length >= 0) {
+          return callback(rows[0][0].LoreCount);
+        }
+      }
+      else {
+        console.log(err);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database"});
+      return;
+    });
+  });   //end of pool.getConnection() callback function
+};  //END of CreateUpdateLore function
 
 //#################################################################################
 //# for !stat bronze.shield
@@ -608,7 +684,7 @@ client.on("message", (message) => {
     }
     //message.author.sendMessage("Your message here.")
   }
-  else if (message.content.trim().indexOf("Object '") > 0   //need to do this way because lore might be pasted in middle of conversation
+  else if (message.content.trim().indexOf("Object '") >= 0   //need to do this way because lore might be pasted in middle of conversation
         && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
   {
     let loreArr = null, cleanArr = [];
@@ -620,6 +696,7 @@ client.on("message", (message) => {
         cleanArr.push(`Object '${loreArr[i].trim()}`);
       }
     }
+    console.log(`cleanArr.length: ${cleanArr}`);
     for (let i = 0 ;i < cleanArr.length;i++) {
         parseLore(message.author.username,cleanArr[i]);
     }
@@ -632,6 +709,7 @@ client.on("message", (message) => {
   }
   else {
     //console.log(`Didn't match message: ${message.content.trim()}`);
+
   }
   //if(message.author.id !== config.ownerID) return;
 });
