@@ -75,10 +75,10 @@ var parseLore = (pAuthor , pLore) => {
             attribValue = match[1].trim();
             attribName2 = match[2].trim();
             attribValue2 = match[3].trim();
-            console.log(`attribName ${attribName}, attribValue: ${attribValue}`);
+            //console.log(`attribName ${attribName}, attribValue: ${attribValue}`);
           }
           else {
-            console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
+            //console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
           }
         }
         else {    // 1-parter
@@ -353,7 +353,7 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
     //                           ${capacity},'${itemLevel}',${containerSize},${charges},${speed},${accuracy},
     //                           ${power},'${damage}')`;
     //console.log(`weight: ${weight}`)
-    sqlStr = "call CreateLore(" + (((objName) ? `'${objName}'` : null) + "," +
+    sqlStr = "call CreateLore(" + (((objName) ? `'${objName.replace("'","\\'")}'` : null) + "," +
                                   ((itemType) ? `'${itemType}'` : null) + "," +
                                   ((itemIs) ? `'${itemIs}'` : null) + "," +
                                   ((submitter) ? `'${submitter}'` : null) + "," +
