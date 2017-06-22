@@ -9,9 +9,12 @@ Credit goes to an Arctic player named Troggs for the original XML-based IRC lore
 ```
 git clone https://github.com/longhorn09/lorebot.git
 cd lorebot
+mv config-sample.json config.json
 npm install
 npm start
 ```
+
+
 
 ## Commands
 * !stat
