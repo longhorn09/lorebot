@@ -75,6 +75,7 @@ var parseLore = (pAuthor , pLore) => {
             attribValue = match[1].trim();
             attribName2 = match[2].trim();
             attribValue2 = match[3].trim();
+            console.log(`attribName ${attribName}, attribValue: ${attribValue}`);
           }
           else {
             console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
@@ -89,10 +90,10 @@ var parseLore = (pAuthor , pLore) => {
             itemType = attribValue;
             break;
           case "contains":
-            containerSize = attribValeu;
+            containerSize = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "capacity":
-            capacity = attribValeu;
+            capacity = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "mat class":
             matClass = attribValue;
@@ -101,20 +102,19 @@ var parseLore = (pAuthor , pLore) => {
             material = attribValue;
             break;
           case "weight":
-            //weight = attribValue;
-            weight =  Number.isInteger(attribValue.trim()) ?  Number.parseInt(attribValue.trim()) : null;
+            weight = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "value":
-            value = attribValue;
+            value  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "speed":
-            speed = attribValue;
+            speed  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "power":
-            power = attribValue;
+            power  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "accuracy":
-            accuracy = attribValue;
+            accuracy  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "effects":
             effects = attribValue;
@@ -123,10 +123,10 @@ var parseLore = (pAuthor , pLore) => {
             itemIs = attribValue;
             break;
           case "charges":
-            charges = attribValue;
+            charges  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "level":
-            spell = attribValue;
+            spell = attribValue;    //varchar(80)
             break;
           case "restricts":
             restricts = attribValue;
@@ -135,7 +135,7 @@ var parseLore = (pAuthor , pLore) => {
             immune = attribValue;
             break;
           case "apply":
-            apply = attribValue;
+            apply  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "class":      ///// weapon class?
             weapClass = attribValue;
@@ -159,10 +159,10 @@ var parseLore = (pAuthor , pLore) => {
               itemType = attribValue2.trim();
               break;
             case "contains":
-              containerSize = attribValue2.trim();
+              containerSize  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "capacity":
-              capacity = attribValue2.trim();
+              capacity  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "mat class":
               matClass = attribValue2.trim();
@@ -171,20 +171,19 @@ var parseLore = (pAuthor , pLore) => {
               material = attribValue2.trim();
               break;
             case "weight":
-              //weight = attribValue2.trim();
-              weight =  Number.isInteger(attribValue2.trim()) ?  Number.parseInt(attribValue2.trim()) : null;
+              weight  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "value":
-              value = attribValue2.trim();
+              value  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;    //varchar(10)
               break;
             case "speed":
-              speed = attribValue2.trim();
+              speed = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "power":
-              power = attribValue2.trim();
+              power = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "accuracy":
-              accuracy = attribValue2.trim();
+              accuracy  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "effects":
               effects = attribValue2.trim();
@@ -193,7 +192,7 @@ var parseLore = (pAuthor , pLore) => {
               itemIs = attribValue2.trim();
               break;
             case "charges":
-              charges = attribValue2.trim();
+              charges  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "level":
               spell = attribValue2.trim();
@@ -205,7 +204,7 @@ var parseLore = (pAuthor , pLore) => {
               immune = attribValue2.trim();
               break;
             case "apply":
-              apply = attribValue2.trim();
+              apply  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "class":      ///// weapon class?
               weapClass = attribValue2.trim();
@@ -238,44 +237,10 @@ var parseLore = (pAuthor , pLore) => {
         || charges !== null || spell !== null || restricts !== null || immune !== null  || apply !== null
         || weapClass !== null || damage !== null || affects !== null || containerSize !== null || capacity !== null)
   {
-    if (weight    != null) {
-      console.log(`weight in weight null test: ${weight}`)
-      weight =  Number.isInteger(weight) ?  Number.parseInt(weight) : null;
-      console.log(`weight after null test: ${weight}`)
-    }
-    // ITEM_VALUE db type is varchar(10) but all values are ints
-    if (value     != null) {
-       //placeholder logic until column type conversion at db level
-      value = Number.isInteger(value) ? Number.parseInt(value) : null;
-    }
-    if (speed     != null) {
-      speed = Number.isInteger(speed) ? Number.parseInt(speed): null;
-    }
-    if (power     != null) {
-      power = Number.isInteger(power) ? Number.parseInt(power): null;
-    }
-    if (accuracy  != null) {
-      accuracy = Number.isInteger(accuracy) ? Number.parseInt(accuracy) : null;
-    }
-    if (charges   != null) {
-      charges = Number.isInteger(charges) ? Number.parseInt(charges) : null;
-    }
-    if (apply     != null) {
-      apply = Number.isInteger(apply) ? Number.parseInt(charges) : null;
-    }
-    if (containerSize     != null) {
-      containerSize = Number.isInteger(containerSize) ? Number.parseInt(containerSize) : null;
-    }
-    if (capacity     != null) {
-      capacity  = Number.isInteger(capacity) ? Number.parseInt(capacity) : null;
-    }
-
     // Do not comment the below out, the trimming of trailing comma is necessary and not just for debug purposes
     if (affects   != null) {
         affects = affects.substring(0,affects.length-1); //cull the trailing comma
     }
-
-  console.log(`before null test, weight: ${weight}, value: ${value}`);
 
     // lore matched and attributes and key values captured
     // so initiate db create/update process via sp call of CreateLore
@@ -387,7 +352,7 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
     //                           '${weapClass}','${matClass}','${material}','${itemValue}','${extra}','${immune}','${effects}',${weight},
     //                           ${capacity},'${itemLevel}',${containerSize},${charges},${speed},${accuracy},
     //                           ${power},'${damage}')`;
-    console.log(`weight: ${weight}`)
+    //console.log(`weight: ${weight}`)
     sqlStr = "call CreateLore(" + (((objName) ? `'${objName}'` : null) + "," +
                                   ((itemType) ? `'${itemType}'` : null) + "," +
                                   ((itemIs) ? `'${itemIs}'` : null) + "," +
@@ -413,7 +378,7 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
                                   ((damage) ? `'${damage}'` : null) + ")" );
 
 
-    console.log(sqlStr);
+    //console.log(sqlStr);
     connection.query(sqlStr,(err,rows) => {
       connection.release();
       if (!err) {
