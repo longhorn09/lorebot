@@ -84,6 +84,7 @@ var parseLore = (pAuthor , pLore) => {
             itemType = attribValue;
             break;
           case "contains":
+            //https://stackoverflow.com/questions/5778020/check-whether-an-input-string-contains-number
             containerSize = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "capacity":
