@@ -57,25 +57,19 @@ var parseLore = (pAuthor , pLore) => {
     is2part = false;
 
     if (attribRegex.test(splitArr[i].toString().trim()) === true) {
-      //console.log(`splitArr[${i}] matched: ${splitArr[i].trim()}`);
       match = attribRegex.exec(splitArr[i].toString().trim());
-      //match = attribRegex.exec(splitArr[i].trim());
       if (match !== null)
       {
-        //console.log(`[${i}] attrib: ${match[1].trim()}, val: ${match[2].trim()}`);
         attribName = match[1].trim();
         if (match[2].trim().indexOf(":")>0)
         {
-          //console.log(`2 parter: ${match[2].trim()}`)  ;
           if (/^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.test(match[2].trim())) //natural    Material:organic
           {
             is2part = true;
             match = /^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.exec(match[2].trim()); //Make sure regex.exec() exactly matches regex.test() stmt 4 lines above
-            //console.log(match.length);
             attribValue = match[1].trim();
             attribName2 = match[2].trim();
             attribValue2 = match[3].trim();
-            //console.log(`attribName ${attribName}, attribValue: ${attribValue}`);
           }
           else {
             //console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
@@ -661,7 +655,7 @@ client.on("message", (message) => {
         cleanArr.push(`Object '${loreArr[i].trim()}`);
       }
     }
-    console.log(`cleanArr.length: ${cleanArr}`);
+    //console.log(`cleanArr.length: ${cleanArr}`);
     for (let i = 0 ;i < cleanArr.length;i++) {
         parseLore(message.author.username,cleanArr[i]);
     }
