@@ -54,4 +54,11 @@ npm install -g forever
 forever start lorebot.js
 ```
 ## Example
+```
+!stat bronze.shield
+```
 ![Discord Lorebot](/lorebot.PNG?raw=true "Example of brief and stat")
+
+```
+!brief bronze.shield
+```
