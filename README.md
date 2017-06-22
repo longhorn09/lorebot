@@ -53,7 +53,7 @@ It's not required to run lorebot, but highly recommended.
 npm install -g forever
 forever start lorebot.js
 ```
-## Example
+## Examples
 ```
 !stat bronze.shield
 ```
