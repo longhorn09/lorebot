@@ -1,7 +1,7 @@
 # lorebot
 Lorebot is a Discord bot written in JS to support a text-based RPG called [Arctic](http://mud.arctic.org).  
 Arctic is like AD&D with only colored text, no graphics.  
-Lorebot will respond to commands prefixed by the exclamation mark.  
+Lorebot will respond to commands prefixed by the prefix specific in config.json. Current prefix default is exclamation mark.
 The work is a continuation and port of prior IRC and Skype lorebots in support of the same text-based game.  
 Credit goes to an Arctic player named Troggs for the original XML-based IRC lorebot circa 2003. This bot is simply an evolution of the work started more than a decade ago by Troggs.
 
