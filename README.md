@@ -1,7 +1,7 @@
 # lorebot
 Lorebot is a Discord bot written in JS to support a text-based RPG called [Arctic](http://mud.arctic.org).  
 The bot will respond to commands prefixed by the prefix '!' specified in config.json.  
-The original Lorebot was written in 2003 for IRC by Troggs and subsequently ported to Skype.
+The original Lorebot was written in 2003 for IRC by Troggs and subsequently ported to Skype.  
 Lorebot will also capture lores pasted in Discord chat, either singly or pasted in bulk.  
 Lorebot was developed on Ubuntu Linux and is intended to run on Linux.
 
