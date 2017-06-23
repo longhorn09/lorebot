@@ -84,11 +84,10 @@ var parseLore = (pAuthor , pLore) => {
             itemType = attribValue;
             break;
           case "contains":
-            //https://stackoverflow.com/questions/5778020/check-whether-an-input-string-contains-number
-            containerSize = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            containerSize = /^(\d+)$/g.test(attribValue)  ? Number.parseInt(attribValue.trim()) : null;
             break;
           case "capacity":
-            capacity = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            capacity = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "mat class":
             matClass = attribValue;
@@ -97,19 +96,19 @@ var parseLore = (pAuthor , pLore) => {
             material = attribValue;
             break;
           case "weight":
-            weight = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            weight = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue) : null;
             break;
           case "value":
-            value  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            value  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "speed":
-            speed  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            speed  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "power":
-            power  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            power  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "accuracy":
-            accuracy  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            accuracy  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "effects":
             effects = attribValue;
@@ -118,7 +117,7 @@ var parseLore = (pAuthor , pLore) => {
             itemIs = attribValue;
             break;
           case "charges":
-            charges  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            charges  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "level":
             spell = attribValue;    //varchar(80)
@@ -130,7 +129,7 @@ var parseLore = (pAuthor , pLore) => {
             immune = attribValue;
             break;
           case "apply":
-            apply  = !isNaN(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+            apply  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
             break;
           case "class":      ///// weapon class?
             weapClass = attribValue;
@@ -154,10 +153,10 @@ var parseLore = (pAuthor , pLore) => {
               itemType = attribValue2.trim();
               break;
             case "contains":
-              containerSize  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              containerSize  = /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "capacity":
-              capacity  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              capacity  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "mat class":
               matClass = attribValue2.trim();
@@ -166,19 +165,19 @@ var parseLore = (pAuthor , pLore) => {
               material = attribValue2.trim();
               break;
             case "weight":
-              weight  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              weight  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "value":
-              value  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;    //varchar(10)
+              value  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;    //varchar(10)
               break;
             case "speed":
-              speed = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              speed =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "power":
-              power = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              power =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "accuracy":
-              accuracy  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              accuracy  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "effects":
               effects = attribValue2.trim();
@@ -187,7 +186,7 @@ var parseLore = (pAuthor , pLore) => {
               itemIs = attribValue2.trim();
               break;
             case "charges":
-              charges  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              charges  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "level":
               spell = attribValue2.trim();
@@ -199,7 +198,7 @@ var parseLore = (pAuthor , pLore) => {
               immune = attribValue2.trim();
               break;
             case "apply":
-              apply  = !isNaN(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              apply  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
               break;
             case "class":      ///// weapon class?
               weapClass = attribValue2.trim();
@@ -341,13 +340,14 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
   pool.getConnection((err,connection)=>{
       if (err) {
         connection.release();
-        res.json({"code":100,"status":"Error in connection database"});
+        res.json({"code":100,"status":"Error in db connecion in CreateUpdateLore in pool.getConnect(callback)"});
       }
     // sqlStr = `call CreateLore('${objName}','${itemType}','${itemIs}','${submitter}','${affects}',${apply},'${restricts}',
     //                           '${weapClass}','${matClass}','${material}','${itemValue}','${extra}','${immune}','${effects}',${weight},
     //                           ${capacity},'${itemLevel}',${containerSize},${charges},${speed},${accuracy},
     //                           ${power},'${damage}')`;
     //console.log(`weight: ${weight}`)
+    console.log (`${submitter} attempt update/insert '${objName}'`);
     sqlStr = "call CreateLore(" + (((objName) ? `'${objName.replace("'","\\'")}'` : null) + "," +
                                   ((itemType) ? `'${itemType}'` : null) + "," +
                                   ((itemIs) ? `'${itemIs}'` : null) + "," +
@@ -378,7 +378,14 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
       connection.release();
       if (!err) {
         if (rows.length >= 0) {
-          return callback(rows[0][0].LoreCount);
+          console.log (`${submitter} SUCCESS update/insert '${objName}'`);
+          //return callback(rows[0][0].LoreCount);
+          return;
+        }
+        else {
+          console.log (`${submitter} SUCCESS update/insert '${objName}'`);
+          //return callback(rows[0][0].LoreCount);
+          return;
         }
       }
       else {
