@@ -767,7 +767,22 @@ function ProcessQuery(message)
                 } //end for loop thru affectsArr
               }
               else {  //affects property value does not contain a comma ','
-                whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
+                half1 = null, half2 = null, match = null;             //initialize variables for regex pattern match results
+                if (args[property].trim().indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
+                  //console.log(`affectsArr[${i}]: ${affectsArr[i].trim()}`);
+                  if (/^([A-Za-z]+)\s+by\s+(\d+)$/.test(args[property].trim())) {
+                    match = /^([A-Za-z]+)\s+by\s+(\d+)$/.exec(args[property].trim());
+                    if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
+                      half1 = match[1];
+                      half2 = match[2];
+                      //console.log(`match[${i}]: ${half1} by ${half2}`);
+                      whereClause += ` AND (Lore.${property.toUpperCase()} REGEXP '.*${half1}[[:space:]]+by[[:space:]]+${half2}.*' ) `
+                    }
+                  }
+                }
+                else {
+                  whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
+                }
               }
 
               break;
