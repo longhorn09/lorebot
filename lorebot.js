@@ -3,6 +3,7 @@ require("babel-polyfill"); //https://babeljs.io/docs/usage/polyfill/
 const Discord = require("discord.js");
 var moment = require('moment');     // npm install moment
 const config = require('./config.json');
+const querystring = require('querystring'); //for parsing commands specified in !query
 const client = new Discord.Client();
 var express = require('express');
 var router = express.Router();
@@ -477,6 +478,64 @@ function handle_database(pMsg,whereClause,pItem){
  * for !query command
  * which has a wide range of flexibility
  * @param {object} pMsg
+ * @param {string} pSQL
+ */
+function DoFlexQueryDetail(pMsg,pSQL) {
+  let sb = "";
+  let totalItems = 0;
+
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":"Error in connection database"});
+      }
+
+    connection.query(pSQL,(err,rows) => {
+
+      connection.release();
+      if (!err) {
+        if (rows.length > 0) {
+          totalItems = rows[0]["LIST_COUNT"];
+          for (let i = 0; i < Math.min(rows.length,BRIEF_LIMIT);i++) {
+              sb += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+          }
+          //console.log(`sb.length: ${sb.length}`); // for debugging: discord has a 2,000 character limit
+          if (totalItems > BRIEF_LIMIT) {
+
+            pMsg.author.send("```" + `${totalItems} items found. Displaying first ${BRIEF_LIMIT} items.\n` +
+                    sb + "```");
+          }
+          else if (totalItems == 1) {
+            pMsg.author.send(`${totalItems} item found.`) ;
+            pMsg.author.send("```" + sb + "```");
+          }
+          else {
+            pMsg.author.send(`${totalItems} items found.`) ;
+            pMsg.author.send("```" + sb + "```");
+          }
+        }
+        else {
+          pMsg.author.send(`${totalItems} items found.`) ; // ie. 0
+        }
+      }
+      else {
+        console.log(err);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database"});
+      return;
+    });
+  });
+};
+
+
+
+/**
+ * for !query command
+ * which has a wide range of flexibility
+ * @param {object} pMsg
  * @param {string} pField
  * @param {string} pSQL
  */
@@ -507,7 +566,7 @@ function DoFlexQuery(pMsg,pField,pSQL) {
       let totalItems = 0;
       connection.release();
       if (!err) {
-        if (rows.length >= 0) {
+        if (rows.length > 0) {
           totalItems = rows[0]["LIST_COUNT"];
           for (let i = 0; i < Math.min(rows.length,FLEX_QUERY_LIMIT);i++) {
               sb += rows[i][pField].trim() + "\n";
@@ -596,7 +655,7 @@ function ProcessBrief(message, isGchat)
   {
     str = message.content.trim();
     searchItem = (str.substring(6,str.length)).trim().toLowerCase();
-    console.log(`${dateTime} : ${message.author.username.toString().padEnd(40)} !brief ${searchItem}`);
+    console.log(`${dateTime} : ${message.author.username.toString().padEnd(30)} !brief ${searchItem}`);
     splitArr = searchItem.split(".");
     if (splitArr.length >= 1)
     {
@@ -630,12 +689,70 @@ function ProcessQuery(message)
   let searchField = null;
   let sqlStr = null;
   let subquery = null;
+  let args = [];
+  let dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
+
   //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
   if (message.content.trim().length >(config.prefix + "query").length ) {
     queryParams = message.content.trim().substring((config.prefix + "query").length,message.content.trim().length);
     queryParams = queryParams.trim();
-    if (queryParams.indexOf("=") > 0) {
+    if (queryParams.indexOf("=") > 0 || queryParams.indexOf(">") > 0 || queryParams.indexOf("<") > 0)  {
+      args = querystring.parse(queryParams.trim());
+      for (let property in args) {
+        if (Object.prototype.hasOwnProperty.call(args,property)) {    // https://github.com/hapijs/hapi/issues/3280
+          //console.log(`${property.padEnd(15)}: ${args[property]}`);
 
+          switch(property.toLowerCase().trim()) {
+            //do all the int based properties first
+            case "speed":
+            case "accuracy":
+            case "power":
+            case "charges":
+            case "weight":
+            case "item_value":
+            case "apply":
+            case "capacity":
+            case "container_size":
+              if (/(\d+)/g.test(args[property])) {    //ensure valid int
+                //item_value is actually stored as varchar(10) as db level, so quote wrap it
+                if (property.toLowerCase().trim() == "item value" || property.toLowerCase().trim() == "item_value" || property.toLowerCase().trim() == "value" ) {
+                  whereClause += ` and Lore.${property.toUpperCase()}='${args[property]}' `;
+                }
+                else {
+                  whereClause += ` and Lore.${property.toUpperCase()}=${args[property]} `;
+                }
+              }
+              else {  //tell user we are expecting an int
+                message.author.send(`${property.toUpperCase()} must be an integer (Example: !query ${property.toUpperCase()}=5)`);
+              }
+              break;
+            case "item_type":
+            case "item_is":
+            case "submitter":
+            case "affects":
+            case "restricts":
+            case "class":
+            case "mat_class":
+            case "material":
+            case "immune":
+            case "effects":
+            case "damage":
+              whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%')`;
+
+              break;
+            default:
+              message.author.send(`Invalid property '${property.toUpperCase()}' specified. Valid properties: \n`);
+              message.author.send("```" + `ITEM_TYPE\nITEM_IS\nSUBMITTER\nAFFECTS\nAPPLY\nRESTRICTS\nCLASS\nMAT_CLASS\n` +
+                                          `MATERIAL\nITEM_VALUE\nIMMUNE\nEFFECTS\nWEIGHT\nCAPACITY\nCONTAINER_SIZE\nSPEED\nACCURACY\nPOWER\nDAMAGE` + "```");
+              break;
+          } //end switch on property
+        }  //end hasOwnProperty() test
+      } //end for loop
+      subquery = "SELECT COUNT(*) from Lore " + whereClause
+      sqlStr = `SELECT (${subquery}) as LIST_COUNT, LORE_ID, OBJECT_NAME from Lore ${whereClause}`;
+      console.log(sqlStr);
+      console.log(`${dateTime} : ${message.author.username.toString().padEnd(30)} ${message.content.trim()}`);
+      DoFlexQueryDetail(message,sqlStr);
     }
     else {
       //searchField = queryParams ;
@@ -684,8 +801,10 @@ function ProcessQuery(message)
   else {
     message.author.send("```Invalid usage. Examples:" +
                         "\n!query affects" +
-                        "\n!query affects=damroll by 2" +
+                        "\n!query material=mithril" +
                         "\n!query affects=damroll by 2&material=cloth" +
+                        "\n!query material=mithril&damage=3d6" +
+                        "\n!query affects=damroll by 2&item_type=worn" +
                         "\n!query object_name=the mighty sword of huma```");
   }
   return; //done with ProcessQuery
@@ -708,7 +827,7 @@ function ProcessStat(message, isGchat)
     str = message.content.trim();
     searchItem = (str.substring(5,str.length)).trim().toLowerCase();
     dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
-    console.log(`${dateTime} : ${message.author.username.toString().padEnd(40)} !stat ${searchItem}`);
+    console.log(`${dateTime} : ${message.author.username.toString().padEnd(30)} !stat ${searchItem}`);
 
     splitArr = searchItem.split(".");
     if (splitArr.length >= 1)
