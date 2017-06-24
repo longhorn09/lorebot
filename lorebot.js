@@ -691,6 +691,9 @@ function ProcessQuery(message)
   let subquery = null;
   let args = [];
   let dateTime = moment().format("YYYY-MM-DD HH:mm:ss");
+  let affectsArr = [];
+  let half1, half2 = null; //for parsing affects in 'damroll by 3'   , half1 = damroll, half2 = 3
+  let match = null; //for regexp string pattern matching
 
   //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
   if (message.content.trim().length >(config.prefix + "query").length ) {
@@ -729,7 +732,6 @@ function ProcessQuery(message)
             case "item_type":
             case "item_is":
             case "submitter":
-            case "affects":
             case "restricts":
             case "class":
             case "mat_class":
@@ -737,7 +739,36 @@ function ProcessQuery(message)
             case "immune":
             case "effects":
             case "damage":
-              whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%')`;
+              whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
+              break;
+            case "affects":
+              if (args[property].indexOf(",") > 0) {
+                affectsArr = args[property].split(",");
+                for (let i = 0; i < affectsArr.length; i++) {
+                  half1 = null, half2 = null, match = null;             //initialize variables for regex pattern match results
+                  if (affectsArr[i].trim().indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
+                    //console.log(`affectsArr[${i}]: ${affectsArr[i].trim()}`);
+                    if (/^([A-Za-z]+)\s+by\s+(\d+)$/.test(affectsArr[i].trim())) {
+                      match = /^([A-Za-z]+)\s+by\s+(\d+)$/.exec(affectsArr[i].trim());
+                      if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
+                        half1 = match[1];
+                        half2 = match[2];
+                        //console.log(`match[${i}]: ${half1} by ${half2}`);
+                        whereClause += ` AND (Lore.${property.toUpperCase()} REGEXP '.*${half1}[[:space:]]+by[[:space:]]+${half2}.*' ) `
+                      }
+                    }
+                    else {    // in a pattern of 'attribute by value', but it didn't match somehow, so just ignore for now, no query impact
+                      console.log(`no match for ${affectsArr[i].trim()}`);
+                    }
+                  }
+                  else {  //doesn't contain the string " by "
+                    whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
+                  }
+                } //end for loop thru affectsArr
+              }
+              else {  //affects property value does not contain a comma ','
+                whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
+              }
 
               break;
             default:
@@ -750,7 +781,7 @@ function ProcessQuery(message)
       } //end for loop
       subquery = "SELECT COUNT(*) from Lore " + whereClause
       sqlStr = `SELECT (${subquery}) as LIST_COUNT, LORE_ID, OBJECT_NAME from Lore ${whereClause}`;
-      console.log(sqlStr);
+      console.log(`${dateTime} : ${"SQL: ".padEnd(30)} ${sqlStr}`);
       console.log(`${dateTime} : ${message.author.username.toString().padEnd(30)} ${message.content.trim()}`);
       DoFlexQueryDetail(message,sqlStr);
     }
