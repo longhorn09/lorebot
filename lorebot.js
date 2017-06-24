@@ -830,13 +830,15 @@ function ProcessQuery(message)
 
   }
   else {
+    let padLen = 60;
     message.author.send("```Invalid usage. Examples:" +
-                        "\n!query affects" +
-                        "\n!query material=mithril" +
-                        "\n!query affects=damroll by 2&material=cloth" +
+                        "\n!query affects".padEnd(padLen) + "(List all AFFECTS values)" +
+                        "\n!query material=mithril".padEnd(padLen)  + "(Mithril items)" +
+                        "\n!query affects=damroll by 2&material=cloth".padEnd(padLen) + "(Cloth 'DAMROLL by 2' items)" +
                         "\n!query material=mithril&damage=3d6" +
                         "\n!query affects=damroll by 2&item_type=worn" +
-                        "\n!query object_name=the mighty sword of huma```");
+                        "\n!query affects=damroll by 2,hitroll by 2&item_type=worn".padEnd(padLen) + "(Worn items that are 'DAMROLL by 2, HITROLL by 2')" +
+                        "\n!query object_name=sword bastard huma mighty```");
   }
   return; //done with ProcessQuery
 }
