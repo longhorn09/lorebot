@@ -27,6 +27,7 @@ npm start
 * !brief
 * !help
 * !roll
+* !query
 * !version
 
 ## Dependencies
