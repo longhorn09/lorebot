@@ -400,9 +400,9 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
   });   //end of pool.getConnection() callback function
 };  //END of CreateUpdateLore function
 
-//#################################################################################
-//# for !stat bronze.shield
-//#################################################################################
+/**
+ * for !stat bronze.shield
+ */
 function GetLoreCount(callback){
   let sqlStr = "";
   pool.getConnection((err,connection)=>{
@@ -430,9 +430,10 @@ function GetLoreCount(callback){
     });
   });
 };
-//#################################################################################
-//# for !stat bronze.shield
-//#################################################################################
+
+/**
+ * for !stat bronze.shield
+ */
 function handle_database(pMsg,whereClause,pItem){
   let sqlStr = "";
   pool.getConnection((err,connection)=>{
@@ -471,9 +472,77 @@ function handle_database(pMsg,whereClause,pItem){
     });
   });
 };
-//#################################################################################
-//# for !brief shield
-//#################################################################################
+
+/**
+ * for !query command
+ * which has a wide range of flexibility
+ * @param {object} pMsg
+ * @param {string} pField
+ * @param {string} pSQL
+ */
+function DoFlexQuery(pMsg,pField,pSQL) {
+  let FLEX_QUERY_LIMIT = 20;
+
+  switch (pField) {
+    case "CLASS":
+    case "ITEM_TYPE":
+    case "MAT_CLASS":
+    case "MATERIAL":
+    case "SUBMITTER":
+      FLEX_QUERY_LIMIT=50;
+      break;
+    default:
+      FLEX_QUERY_LIMIT=20;
+      break;
+
+  }
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":"Error in connection database"});
+      }
+
+    connection.query(pSQL,(err,rows) => {
+      let sb = "";
+      let totalItems = 0;
+      connection.release();
+      if (!err) {
+        if (rows.length >= 0) {
+          totalItems = rows[0]["LIST_COUNT"];
+          for (let i = 0; i < Math.min(rows.length,FLEX_QUERY_LIMIT);i++) {
+              sb += rows[i][pField].trim() + "\n";
+          }
+          //console.log(`sb.length: ${sb.length}`); // for debugging: discord has a 2,000 character limit
+          if (totalItems > FLEX_QUERY_LIMIT) {
+
+            pMsg.author.send("```" + `${totalItems} values found for '${pField}'. Displaying first ${FLEX_QUERY_LIMIT} items.\n` +
+                    sb + "```");
+          }
+          else if (totalItems == 1) {
+            pMsg.author.send(`${totalItems} value found for '${pField}'`) ;
+            pMsg.author.send("```" + sb + "```");
+          }
+          else {
+            pMsg.author.send(`${totalItems} values found for '${pField}'`) ;
+            pMsg.author.send("```" + sb + "```");
+          }
+        }
+      }
+      else {
+        console.log(err);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database"});
+      return;
+    });
+  });
+};
+
+/**
+ * for !brief shield
+ */
 function handle_brief(pMsg,whereClause,pItem){
   let sqlStr = "";
   pool.getConnection((err,connection)=>{
@@ -550,9 +619,81 @@ function ProcessBrief(message, isGchat)
   }
 };
 
-//####################################################
-//# building the WHERE clause for !stat
-//####################################################
+/**
+ * ProcessQuery implements a flexible query method that can search amongst
+ * a number of user specified arguments using key=value format and delimited by &
+ */
+function ProcessQuery(message)
+{
+  let queryParams = null;
+  let whereClause = " WHERE 1=1 ";
+  let searchField = null;
+  let sqlStr = null;
+  let subquery = null;
+  //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
+  if (message.content.trim().length >(config.prefix + "query").length ) {
+    queryParams = message.content.trim().substring((config.prefix + "query").length,message.content.trim().length);
+    queryParams = queryParams.trim();
+    if (queryParams.indexOf("=") > 0) {
+
+    }
+    else {
+      //searchField = queryParams ;
+      switch(queryParams.toLowerCase()) {
+        case "item_is":
+          searchField = queryParams.trim().toUpperCase();
+          subquery = `SELECT COUNT(DISTINCT UPPER(Lore.${queryParams.toUpperCase()})) from Lore`;
+          sqlStr = `SELECT DISTINCT UPPER(${queryParams.toUpperCase()}) as '${queryParams.toUpperCase()}', (${subquery}) as 'LIST_COUNT' ` +
+                   ` FROM Lore WHERE Lore.${queryParams.toUpperCase()} IS NOT NULL ` +
+                   ` ORDER BY UPPER(Lore.${queryParams.toUpperCase()})` +
+                   ` LIMIT ${BRIEF_LIMIT};`;
+          //console.log(`sqlStr: ${sqlStr}`);
+          break;
+        case "item_type":
+        case "submitter":
+        case "affects":
+        case "restricts":
+          // future todo - tokenize string using stored proc
+          // https://stackoverflow.com/questions/1077686/is-there-something-analogous-to-a-split-method-in-mysql
+        case "class":
+        case "mat_class":
+        case "material":
+        case "immune":
+        case "effects":
+        case "damage":
+          searchField = queryParams.trim().toUpperCase();
+          subquery = `SELECT count(distinct UPPER(Lore.${searchField})) from Lore`;
+          sqlStr = `SELECT distinct UPPER(${searchField}) as '${searchField}', (${subquery}) as 'LIST_COUNT' ` +
+                   ` FROM Lore WHERE ${searchField} IS NOT NULL ` +
+                   ` ORDER BY UPPER(${searchField}) ASC ` +
+                   ` LIMIT ${BRIEF_LIMIT};`;
+          //console.log(`sqlStr: ${sqlStr}`);
+          break;
+        default:
+        message.author.send("```Invalid field query. Example fields:\nITEM_TYPE\nITEM_IS\nSUBMITTER\nAFFECTS\nRESTRICTS\nCLASS\nMAT_CLASS\nMATERIAL\nIMMUNE\nEFFECTS\nDAMAGE\nSPEED\nPOWER\nACCURACY" +
+                            "```");
+          break;
+      }
+      if (sqlStr != null) {
+        DoFlexQuery(message,searchField,sqlStr);
+      }
+
+    }
+
+  }
+  else {
+    message.author.send("```Invalid usage. Examples:" +
+                        "\n!query affects" +
+                        "\n!query affects=damroll by 2" +
+                        "\n!query affects=damroll by 2&material=cloth" +
+                        "\n!query object_name=the mighty sword of huma```");
+  }
+  return; //done with ProcessQuery
+}
+
+/**
+ * WHERE clause for !stat, limited to MAX_ITEMS
+ */
 function ProcessStat(message, isGchat)
 {
   let searchItem = "";
@@ -611,6 +752,10 @@ client.on("message", (message) => {
       case "stat":
         ProcessStat(message, isGroupChat);
         break;
+      case "query":
+        //console.log("in query");
+        ProcessQuery(message);
+        break;
       case "brief":
         ProcessBrief(message, isGroupChat);
         break;
@@ -633,8 +778,6 @@ client.on("message", (message) => {
         break;
       case "help":
         let helpStr = getHelp(message);
-        //(isGroupChat) ? message.channel.send(helpStr) : message.author.send(helpStr);
-        //console.log("Sent " + config.prefix + cmd + " to " + message.author.username) ;
         break;
       case "version":
         let versionMsg = "** Version unavailable";
@@ -700,6 +843,7 @@ function getHelp(pMsg) {
     "!who     - shows character info, example: !who Drunoob\n" +
     //"!gton    - turn on output group chat\n" +
     //"!gtoff   - turn off output to group chat\n" +
+    "!query   - flexible query with multiple crieria, example: !query affects=damroll by 2\n" +
     "!recent  - shows latest markings, optional !recent <num>\n" +
     "!version - shows version history\n```";
     version = null;
