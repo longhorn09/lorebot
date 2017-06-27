@@ -41,7 +41,7 @@ sudo apt-get install npm
 sudo apt-get install mysql-server
 sudo mysql_secure_installation
 
-# For timestamp formatting in MySQL format, moment.format("YYYY-MM-DD HH:mm:ss")
+# For timestamp formatting in MySQL format, moment().format("YYYY-MM-DD HH:mm:ss")
 npm install moment
 
 # For ES6+ functionality, primarily used for string.padEnd()
