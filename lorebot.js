@@ -285,6 +285,8 @@ var formatAffects = (pArg) => {
   return retvalue;
 }
 
+
+
 var  formatLore = (pMsg,pRows) => {
   let sb = "";
   for (let i = 0; i < Math.min(pRows.length,MAX_ITEMS);i++){
@@ -348,7 +350,7 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
     //                           ${capacity},'${itemLevel}',${containerSize},${charges},${speed},${accuracy},
     //                           ${power},'${damage}')`;
     //console.log(`weight: ${weight}`)
-    console.log (`${submitter} attempt update/insert '${objName}'`);
+    //console.log (`${submitter} attempt update/insert '${objName}'`);
     sqlStr = "call CreateLore(" + (((objName) ? `'${objName.replace("'","\\'")}'` : null) + "," +
                                   ((itemType) ? `'${itemType}'` : null) + "," +
                                   ((itemIs) ? `'${itemIs}'` : null) + "," +
@@ -379,12 +381,13 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
       connection.release();
       if (!err) {
         if (rows.length >= 0) {
-          console.log (`${submitter} SUCCESS update/insert '${objName}'`);
+          console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${submitter.padEnd(30)} insert/update '${objName}'` );
+          //console.log (`${submitter} SUCCESS update/insert '${objName}'`);
           //return callback(rows[0][0].LoreCount);
           return;
         }
         else {
-          console.log (`${submitter} SUCCESS update/insert '${objName}'`);
+          console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${submitter.padEnd(30)} insert/update '${objName}'` );
           //return callback(rows[0][0].LoreCount);
           return;
         }
@@ -400,6 +403,18 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
     });
   });   //end of pool.getConnection() callback function
 };  //END of CreateUpdateLore function
+
+/**
+ * this captures pastes of EQ looks in support of !who functionality
+ */
+function ParseEqLook(pMsg) {
+  let light = null, ring1 = null, ring2 = null, neck1 = null, neck2 = null, body = null, head = null, legs = null, feet = null,
+              arms = null, slung = null, hands = null, shield = null, about = null, waist = null, pouch = null, rwrist = null,
+              lwrist = null, primary = null, secondary = null, held = null, both = null;
+
+
+  return;
+}
 
 /**
  * for !stat bronze.shield
@@ -853,7 +868,7 @@ function ProcessQuery(message)
                         "\n!query material=mithril&damage=3d6" +
                         "\n!query affects=damroll by 2&item_type=worn" +
                         "\n!query affects=damroll by 2,hitroll by 2&item_type=worn".padEnd(padLen) + "(Worn items that are 'DAMROLL by 2, HITROLL by 2')" +
-                        "\n!query object_name=sword bastard huma mighty```");
+                        "```");
   }
   return; //done with ProcessQuery
 }
@@ -980,9 +995,27 @@ client.on("message", (message) => {
     loreArr = null;   //freeup for gc()
     cleanArr = null;  //freeup for gc()
   }
-  else if (message.content.trim().indexOf(" is using:") >0)
+  else if (message.content.trim().indexOf(" is using:") >0
+        && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
   {
-    console.log("look log:" + message.content.trim());
+    //console.log("look log:" + message.content.trim());
+    let lookArr = null, cleanArr = [];
+    lookArr = message.content.trim().split(" is using:");
+
+    for (let i = 0; i < lookArr.length; i++) {
+      console.log(`lookArr[${i}]: ${lookArr[i]}`)
+      if (/^([A-Z][a-z]+)$/g.test(lookArr[i].trim())) {
+        cleanArr.push(`${lookArr[i].trim()} is using:`);
+        console.log(`cleanArr[${i}]: ${cleanArr[i]}`);
+      }
+    }
+    for (let i = 0; i < cleanArr.length; i++){
+      ParseEqLook(message.author.username,cleanArr[i]);
+    }
+
+
+    cleanArr = null;
+    lookArr = null;
   }
   else {
     //console.log(`Didn't match message: ${message.content.trim()}`);
