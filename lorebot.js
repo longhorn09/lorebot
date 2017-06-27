@@ -450,23 +450,97 @@ function ParseEqLook(pDiscordMsg, pLookLog) {
             neck1 = match[2].trim();
           }
           break;
+        case "worn on body":
+          body = match[2].trim();
+          break;
+        case "worn on head":
+          head = match[2].trim();
+          break;
+        case "worn on legs":
+         legs = match[2].trim();
+          break;
+        case "worn on feet":
+          feet = match[2].trim();
+          break;
+        case "worn on arms":
+          arms = match[2].trim();
+          break;
+        case "slung over shoulder":
+          slung = match[2].trim();
+          break;
+        case "worn on hands":
+          hands = match[2].trim();
+          break;
+        case "worn as shield":
+          shield = match[2].trim();
+          break;
+        case "worn about body":
+          body = match[2].trim();
+          break;
+        case "worn about waist":
+          waist = match[2].trim();
+          break;
+        case "worn as pouch":
+          pouch = match[2].trim();
+          break;
+        case "worn about right wrist":
+          rwrist = match[2].trim();
+          break;
+        case "worn about left wrist":
+          lwrist = match[2].trim();
+          break;
+        case "used in primary hand":
+          primary = match[2].trim();
+          break;
+        case "used in secondary hand":
+          secondary = match[2].trim();
+          break;
+        case "held in secondary hand":
+          held = match[2].trim();
+          break;
+        case "used in both hands":
+          both = match[2].trim();
+          break;
         default:
           break;
       }
     }
     else {
-      //console.log("prematurely exit for loop");
       break;
-
     }
-
   } //end for loop
-  console.log (`${charName} is using:`);
-  console.log(`light: ${light}`);
-  console.log(`ring1: ${ring1}`);
-  console.log(`ring2: ${ring2}`);
-  console.log(`neck1: ${neck1}`);
-  console.log(`neck2: ${neck2}`);
+
+  if (light !== null || ring1 !== null || ring2 !== null || neck1 !== null || neck2 !== null ||
+      body !== null || head !== null || legs !== null || feet !== null || arms !== null || slung !== null ||
+      hands !== null || shield !== null || about !== null || waist !== null || pouch !== null ||
+      rwrist !== null || lwrist !== null || primary !== null || secondary !== null || held !== null ||
+      both !== null) {
+    let padLen = "<worn around right wrist> ".length;
+    console.log (`${charName} is using:`);
+    console.log("<used as light>".padEnd(padLen) + light);
+    console.log("<worn on finger>".padEnd(padLen) + ring1);
+    console.log("<worn on finger>".padEnd(padLen) + ring2);
+    console.log("<worn around neck>".padEnd(padLen) + neck1);
+    console.log("<worn around neck>".padEnd(padLen) + neck2);
+    console.log("<worn on body>".padEnd(padLen) + body);
+    console.log("<worn on head>".padEnd(padLen) + head);
+    console.log("<worn on legs>".padEnd(padLen) + legs);
+    console.log("<worn on feet>".padEnd(padLen) + feet);
+    console.log("<worn on arms>".padEnd(padLen) + arms);
+    console.log("<slung over shoulder>".padEnd(padLen) + slung);
+    console.log("<worn on hands>".padEnd(padLen) + hands);
+    console.log("<worn as shield>".padEnd(padLen) + shield);
+    console.log("<worn about body>".padEnd(padLen) + about);
+    console.log("<worn about waist>".padEnd(padLen) + waist);
+    console.log("<worn as pouch>".padEnd(padLen) + pouch);
+    console.log("<worn around right wrist>".padEnd(padLen) + rwrist);
+    console.log("<worn around left wrist>".padEnd(padLen) + lwrist);
+    console.log("<used in primary hand>".padEnd(padLen) + primary);
+    console.log("<used in secondary hand>".padEnd(padLen) + secondary);
+    console.log("<held in secondary hand>".padEnd(padLen) + held);
+    console.log("<used in both hands>".padEnd(padLen) + both);
+  }
+
   return;
 }
 
