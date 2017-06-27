@@ -407,12 +407,66 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
 /**
  * this captures pastes of EQ looks in support of !who functionality
  */
-function ParseEqLook(pMsg) {
+function ParseEqLook(pDiscordMsg, pLookLog) {
   let light = null, ring1 = null, ring2 = null, neck1 = null, neck2 = null, body = null, head = null, legs = null, feet = null,
               arms = null, slung = null, hands = null, shield = null, about = null, waist = null, pouch = null, rwrist = null,
               lwrist = null, primary = null, secondary = null, held = null, both = null;
+  let charName = null;
+  let line = null;
+  let splitArr = null;
+  let wearWorn = null;
+  let match = null;
 
+  splitArr = pLookLog.split("\n");
 
+  //console.log(`splitArr.length: ${splitArr.length}`);
+  for (let i = 0; i < splitArr.length;i++) {
+    line =  splitArr[i].trim();
+    wearWorn = null;
+    if (/^([A-Z][a-z]+) is using:$/g.test( splitArr[i].trim())) {
+      charName =  /^([A-Z][a-z]+) is using:$/.exec(line)[1];
+      //console.log (`ParseEqLook(charName): ${charName}`);
+    }
+    else if ( /^<([a-z\s]+)>\s+(.+)$/.test(line)  ) {
+      match = /^<([a-z\s]+)>\s+(.+)$/.exec(line);
+      //console.log(`matched <${/^<([a-z\s]+)>\s+(.+)$/.exec(line)[1]}>`);
+      switch(match[1].trim()) {
+        case "used as light":
+          light = match[2].trim();
+          break;
+        case "worn on finger":
+          if (ring1 != null && ring1.length > 0) {
+            ring2 = match[2].trim();
+          }
+          else {
+            ring1 = match[2].trim();
+          }
+          break;
+        case "worn around neck":
+          if (neck1 != null && neck1.length > 0) {
+            neck2 = match[2].trim();
+          }
+          else {
+            neck1 = match[2].trim();
+          }
+          break;
+        default:
+          break;
+      }
+    }
+    else {
+      //console.log("prematurely exit for loop");
+      break;
+
+    }
+
+  } //end for loop
+  console.log (`${charName} is using:`);
+  console.log(`light: ${light}`);
+  console.log(`ring1: ${ring1}`);
+  console.log(`ring2: ${ring2}`);
+  console.log(`neck1: ${neck1}`);
+  console.log(`neck2: ${neck2}`);
   return;
 }
 
@@ -988,7 +1042,6 @@ client.on("message", (message) => {
         cleanArr.push(`Object '${loreArr[i].trim()}`);
       }
     }
-    //console.log(`cleanArr.length: ${cleanArr}`);
     for (let i = 0 ;i < cleanArr.length;i++) {
         parseLore(message.author.username,cleanArr[i]);
     }
@@ -998,18 +1051,23 @@ client.on("message", (message) => {
   else if (message.content.trim().indexOf(" is using:") >0
         && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
   {
-    //console.log("look log:" + message.content.trim());
-    let lookArr = null, cleanArr = [];
-    lookArr = message.content.trim().split(" is using:");
-
+    let lookArr = null, cleanArr = [], charName = null;
+    lookArr = message.content.trim().split(/([A-Z][a-z]+) is using:/);
     for (let i = 0; i < lookArr.length; i++) {
-      console.log(`lookArr[${i}]: ${lookArr[i]}`)
-      if (/^([A-Z][a-z]+)$/g.test(lookArr[i].trim())) {
-        cleanArr.push(`${lookArr[i].trim()} is using:`);
-        console.log(`cleanArr[${i}]: ${cleanArr[i]}`);
+      if  (/^([A-Z][a-z]+)$/.test(lookArr[i].trim())) {
+        charName = lookArr[i].trim();
+      }
+      else if (lookArr[i].trim().indexOf("<") === 0 && charName != null && charName.length > 0)
+      {
+        cleanArr.push(`${charName} is using:\n${lookArr[i].trim()}`);
+        charName = null;
+      }
+      else {
+        charName = null;
       }
     }
     for (let i = 0; i < cleanArr.length; i++){
+      //console.log(`cleanArr[${i}]: ${cleanArr[i]}`);
       ParseEqLook(message.author.username,cleanArr[i]);
     }
 
