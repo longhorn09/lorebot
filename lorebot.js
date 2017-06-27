@@ -12,7 +12,7 @@ var mysql = require('mysql');
 var isGroupChat = false;
 const MAX_ITEMS = 3;
 const BRIEF_LIMIT = 50;
-const MYSQL_DATETIME_FORMAT = "YYYY-MM-DD HH:mm:ss"; // for use with moment.format(MYSQL_DATETIME_FORMAT)
+const MYSQL_DATETIME_FORMAT = "YYYY-MM-DD HH:mm:ss"; // for use with moment().format(MYSQL_DATETIME_FORMAT)
 
 var pool = mysql.createPool({
   connectionLimit: 100,
@@ -331,6 +331,71 @@ var formatBrief = (pMsg,pRows) => {
   return sb;
 };
 
+
+/**
+ * capturing pastes of look from in game, expect behavior is discord user pastes it in chat
+ * either singly or in bulk
+ * @param {function} callback
+ */
+var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs,feet,arms,slung,
+                  hands,shield,about,waist,pouch,rwrist,lwrist,weap1,weap2,held,both_hands,submitter,clan_id,callback) => {
+    let sqlStr = "";
+    pool.getConnection((err,connection)=>{
+        if (err) {
+          connection.release();
+          res.json({"code":100,"status":"Error in db connecion in CreateUpdateLore in pool.getConnect(callback)"});
+        }
+      sqlStr = "call CreatePerson(" + (((charName) ? `'${charName.replace("'","\\'")}'` : null) + "," +
+                                    ((light) ? `'${light.replace("'","\\'")}'` : null) + "," +
+                                    ((ring1) ? `'${ring1.replace("'","\\'")}'` : null) + "," +
+                                    ((ring2) ? `'${ring2.replace("'","\\'")}'` : null) + "," +
+                                    ((neck1) ? `'${neck1.replace("'","\\'")}'` : null) + "," +
+                                    ((neck2) ? `'${neck2.replace("'","\\'")}'` : null) + "," +
+                                    ((body) ? `'${body.replace("'","\\'")}'` : null) + "," +
+                                    ((head) ? `'${head.replace("'","\\'")}'` : null) + "," +
+                                    ((legs) ? `'${legs.replace("'","\\'")}'` : null) + "," +
+                                    ((feet) ? `'${feet.replace("'","\\'")}'` : null) + "," +
+                                    ((arms) ? `'${arms.replace("'","\\'")}'` : null) + "," +
+                                    ((slung) ? `'${slung.replace("'","\\'")}'` : null) + "," +
+                                    ((hands) ? `'${hands.replace("'","\\'")}'` : null) + "," +
+                                    ((shield) ? `'${shield.replace("'","\\'")}'` : null) + "," +
+                                    ((about) ? `'${about.replace("'","\\'")}'` : null) + "," +
+                                    ((waist) ? `'${waist.replace("'","\\'")}'` : null) + "," +
+                                    ((pouch) ? `'${pouch.replace("'","\\'")}'` : null) + "," +
+                                    ((rwrist) ? `'${rwrist.replace("'","\\'")}'` : null) + "," +
+                                    ((lwrist) ? `'${lwrist.replace("'","\\'")}'` : null) + "," +
+                                    ((weap1) ? `'${weap1.replace("'","\\'")}'` : null) + "," +
+                                    ((weap2) ? `'${weap2.replace("'","\\'")}'` : null) + "," +
+                                    ((held) ? `'${held.replace("'","\\'")}'` : null) + "," +
+                                    ((both_hands) ? `'${both_hands.replace("'","\\'")}'` : null) + "," +
+                                    ((submitter) ? `'${submitter.replace("'","\\'")}'` : null) + "," +
+                                    ((clan_id) ? clan_id : null)
+                                      + ")"); //placeholder for clan_id
+
+
+      //console.log(sqlStr);
+      connection.query(sqlStr,(err,rows) => {
+        connection.release();
+        if (!err) {
+          if (rows.length >= 0) {
+            return callback(charName);
+          }
+          else {
+            return callback(charName);
+          }
+        }
+        else {
+          console.log(err);
+        }
+      });
+      connection.on('error',(err) => {
+        //res.json({"code":100,"status":"Error in connection database"});
+        console.log({"code":100,"status":"Error in connection database"});
+        return;
+      });
+    });   //end of pool.getConnection() callback function
+  };  //END of CreateUpdateLore function
+
 /**
  * This function is called after a user pastes a lore in chat typically -
  * then the db update stored procedure call is initiated
@@ -417,7 +482,7 @@ function DoLookLogCapture(light , ring1 , ring2 , neck1 , neck2 , body , head , 
 /**
  * this captures pastes of EQ looks in support of !who functionality
  */
-var ParseEqLook = (pDiscordMsg, pLookLog) => {
+var ParseEqLook = (pSubmitter, pLookLog) => {
   let light = null, ring1 = null, ring2 = null, neck1 = null, neck2 = null, body = null, head = null, legs = null, feet = null,
               arms = null, slung = null, hands = null, shield = null, about = null, waist = null, pouch = null, rwrist = null,
               lwrist = null, primary = null, secondary = null, held = null, both = null;
@@ -527,9 +592,9 @@ var ParseEqLook = (pDiscordMsg, pLookLog) => {
       both !== null)
   {
     let padLen = "<worn around right wrist>  ".length;
-    console.log (`${charName} is using:`);
+    //console.log (`${charName} is using:`);
     // console.log("<used as light>".padEnd(padLen) + light);
-    console.log("<worn on finger>".padEnd(padLen) + ring1);
+    //console.log("<worn on finger>".padEnd(padLen) + ring1);
     // console.log("<worn on finger>".padEnd(padLen) + ring2);
     // console.log("<worn around neck>".padEnd(padLen) + neck1);
     // console.log("<worn around neck>".padEnd(padLen) + neck2);
@@ -542,7 +607,7 @@ var ParseEqLook = (pDiscordMsg, pLookLog) => {
     // console.log("<slung over shoulder>".padEnd(padLen) + slung);
     // console.log("<worn as shield>".padEnd(padLen) + shield);
     // console.log("<worn about body>".padEnd(padLen) + about);
-    console.log("<worn about waist>".padEnd(padLen) + waist);
+    //console.log("<worn about waist>".padEnd(padLen) + waist);
     // console.log("<worn as pouch>".padEnd(padLen) + pouch);
     // console.log("<worn around right wrist>".padEnd(padLen) + rwrist);
     // console.log("<worn around left wrist>".padEnd(padLen) + lwrist);
@@ -551,10 +616,15 @@ var ParseEqLook = (pDiscordMsg, pLookLog) => {
     // console.log("<held in secondary hand>".padEnd(padLen) + held);
     // console.log("<used in both hands>".padEnd(padLen) + both);
     // console.log("a pair of magical boots..it glows blue..it glows dimly".length);
-  }
 
+    // NOTE: clan_id is hardcoded to null after submiter for now as parameter placeholder
+    CreateUpdatePerson(charName,light,ring1,ring2,neck1,neck2,body,head,legs,feet,arms,slung,
+                      hands,shield,about,waist,pouch,rwrist,lwrist,primary,secondary,held,both,pSubmitter,null, (arg) => {
+                      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: ${pSubmitter.padEnd(30)} Logged '${arg}'`);                      
+                    });
+  } //end of not null values test condition - ie. we have something to actually update
   return;
-}
+} //end of function ParseEqLook
 
 /**
  * for !stat bronze.shield
