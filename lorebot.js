@@ -405,9 +405,19 @@ function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restri
 };  //END of CreateUpdateLore function
 
 /**
+ * this function is typically called from ParseEqLook
+ *
+ */
+function DoLookLogCapture(light , ring1 , ring2 , neck1 , neck2 , body , head , legs , feet ,
+      arms , slung , hands , shield , about , waist , pouch , rwrist ,
+      lwrist , primary , secondary , held , both ) {
+
+}
+
+/**
  * this captures pastes of EQ looks in support of !who functionality
  */
-function ParseEqLook(pDiscordMsg, pLookLog) {
+var ParseEqLook = (pDiscordMsg, pLookLog) => {
   let light = null, ring1 = null, ring2 = null, neck1 = null, neck2 = null, body = null, head = null, legs = null, feet = null,
               arms = null, slung = null, hands = null, shield = null, about = null, waist = null, pouch = null, rwrist = null,
               lwrist = null, primary = null, secondary = null, held = null, both = null;

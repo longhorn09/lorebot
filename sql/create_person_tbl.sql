@@ -2,7 +2,7 @@ drop table Person;
 create table Person
 (
   PERSON_ID int not null primary key auto_increment,
-  CHARNAME varchar(100) not null,
+  CHARNAME varchar(30) not null,
   LIGHT varchar(100) default null,
   RING1 varchar(100) default null,
   RING2 varchar(100) default null,
