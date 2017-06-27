@@ -620,7 +620,7 @@ var ParseEqLook = (pSubmitter, pLookLog) => {
     // NOTE: clan_id is hardcoded to null after submiter for now as parameter placeholder
     CreateUpdatePerson(charName,light,ring1,ring2,neck1,neck2,body,head,legs,feet,arms,slung,
                       hands,shield,about,waist,pouch,rwrist,lwrist,primary,secondary,held,both,pSubmitter,null, (arg) => {
-                      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: ${pSubmitter.padEnd(30)} Logged '${arg}'`);                      
+                      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: ${pSubmitter.padEnd(30)} Logged '${arg}'`);
                     });
   } //end of not null values test condition - ie. we have something to actually update
   return;
@@ -1083,6 +1083,12 @@ function ProcessQuery(message)
   return; //done with ProcessQuery
 }
 
+var ProcessWho = (discordMsg) => {
+  //console.log(discordMsg.author);
+  //get an unpromise error?
+  discordMsg.author.send("!who coming soon...");
+  //console.log(discordMsg.author.username);
+}
 /**
  * WHERE clause for !stat, limited to MAX_ITEMS
  */
@@ -1155,7 +1161,8 @@ client.on("message", (message) => {
         message.author.send("!mark in development");
         break;
       case "who":
-        message.author.send("!who in development");
+        //message.author.send("!who in development");
+        ProcessWho(message);
         break;
       case "recent":
           message.author.send("!recent in development");
