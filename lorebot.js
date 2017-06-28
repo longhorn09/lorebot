@@ -315,8 +315,18 @@ var  formatLore = (pMsg,pRows) => {
 
     if (pRows[i].SUBMITTER != null) sb += `Submitter: ${pRows[i].SUBMITTER} (${pRows[i].CREATE_DATE})\n`;
 
-    //console.log("```" + sb + "```")
-    pMsg.author.send("```" + sb + "```");
+    if (pMsg.channel != null && pMsg.channel.name === config.channel)
+    {
+      pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+        console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in formatLore(): ${err}`);
+      });
+    }
+    else {
+      pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+        console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in formatLore(): ${err}`);
+      });
+    }
+    //pMsg.author.send( sb, {code: true});
   }
   return sb;
 };
@@ -650,13 +660,46 @@ function handle_database(pMsg,whereClause,pItem){
       if (!err) {
         if (rows.length >= 0) {
           if (rows.length === 1) {
-            pMsg.author.send(`${rows.length} item found for '${pItem}'`) ;
+            if (pMsg.channel != null && pMsg.channel.name === config.channel)
+            {
+              pMsg.channel.send(`${rows.length} item found for '${pItem}'`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            else {
+              pMsg.author.send(`${rows.length} item found for '${pItem}'`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            //pMsg.author.send(`${rows.length} item found for '${pItem}'`) ;
           }
           else if (rows.length > MAX_ITEMS )          {
-            pMsg.author.send(`${rows.length} items found for '${pItem}'. Displaying first ${MAX_ITEMS} items.`);
+            if (pMsg.channel != null && pMsg.channel.name === config.channel)
+            {
+              pMsg.channel.send(`${rows.length} items found for '${pItem}'. Displaying first ${MAX_ITEMS} items.`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            else {
+              pMsg.author.send(`${rows.length} items found for '${pItem}'. Displaying first ${MAX_ITEMS} items.`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            //pMsg.author.send(`${rows.length} items found for '${pItem}'. Displaying first ${MAX_ITEMS} items.`);
           }
           else {
-            pMsg.author.send(`${rows.length} item found for '${pItem}'`);
+            if (pMsg.channel != null && pMsg.channel.name === config.channel)
+            {
+              pMsg.channel.send(`${rows.length} item found for '${pItem}'`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            else {
+              pMsg.author.send(`${rows.length} item found for '${pItem}'`,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            //pMsg.author.send(`${rows.length} item found for '${pItem}'`);
           }
           if (rows.length > 0) {
             return formatLore(pMsg,rows) ;
@@ -706,13 +749,22 @@ function DoFlexQueryDetail(pMsg,pSQL) {
             pMsg.author.send("```" + `${totalItems} items found. Displaying first ${BRIEF_LIMIT} items.\n` +
                     sb + "```");
           }
-          else if (totalItems == 1) {
-            pMsg.author.send(`${totalItems} item found.`) ;
-            pMsg.author.send("```" + sb + "```");
-          }
           else {
-            pMsg.author.send(`${totalItems} items found.`) ;
-            pMsg.author.send("```" + sb + "```");
+            if (pMsg.channel != null && pMsg.channel.name === config.channel) {
+              if (totalItems == 1) {pMsg.channel.send(`${totalItems} item found.`) ;}
+              else {pMsg.channel.send(`${totalItems} items found.`) ;}
+              pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+            else {
+              if (totalItems == 1) {pMsg.author.send(`${totalItems} item found.`) ;}
+              else {pMsg.author.send(`${totalItems} items found.`) ;}
+              pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+              });
+            }
+
           }
         }
         else {
@@ -1185,11 +1237,24 @@ var ProcessWho = (discordMsg) => {
           returnMsg = `Player '${whoTarget}' not found.`;
         }
 
-        discordMsg.author.send(returnMsg, {code: true})   //https://discord.js.org/#/docs/main/stable/typedef/MessageOptions
-          .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWho(): ${err}`); //https://stackoverflow.com/questions/44284666/discord-js-add-reaction-to-a-bot-message
-          } //end callback passed to .catch()
-        );  //end catch() error handling
+        if (discordMsg.channel != null && discordMsg.channel.name === config.channel)
+        {
+          discordMsg.channel.send(returnMsg,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+          });
+        }
+        else {
+          discordMsg.author.send(returnMsg,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+          });
+        }
+
+
+        // discordMsg.author.send(returnMsg, {code: true})   //https://discord.js.org/#/docs/main/stable/typedef/MessageOptions
+        //   .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+        //     console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWho(): ${err}`); //https://stackoverflow.com/questions/44284666/discord-js-add-reaction-to-a-bot-message
+        //   } //end callback passed to .catch()
+        // );  //end catch() error handling
 
       } //end of !err
       else {
@@ -1385,6 +1450,7 @@ function getHelp(pMsg) {
     "!recent  - shows latest markings, optional !recent <num>\n" +
     "!version - shows version history\n```";
     version = null;
+
     pMsg.author.send(helpMsg);
   });
   return;
