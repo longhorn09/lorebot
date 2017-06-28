@@ -1131,6 +1131,12 @@ var FormatEqLook = (rowData) => {
   if (rowData.BOTH_HANDS != null) {
     retvalue += "\n<used in both hands>".padEnd(padLen) + rowData.BOTH_HANDS;
   }
+  if (rowData.SUBMITTER != null) {
+    "YYYY-MM-DD HH:mm:ss"; // for use with moment().format(MYSQL_DATETIME_FORMAT)
+    //double spacing for formatting separation
+    retvalue += `\n\n${"Submitter :".padEnd(0)} ${rowData.SUBMITTER} (${moment(rowData.CREATE_DATE).format(MYSQL_DATETIME_FORMAT)})`;
+
+  }
 
   return retvalue;
 }
