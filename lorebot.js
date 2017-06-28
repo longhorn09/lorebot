@@ -595,7 +595,7 @@ var ParseEqLook = (pSubmitter, pLookLog) => {
     // NOTE: clan_id is hardcoded to null after submiter for now as parameter placeholder
     CreateUpdatePerson(charName,light,ring1,ring2,neck1,neck2,body,head,legs,feet,arms,slung,
                       hands,shield,about,waist,pouch,rwrist,lwrist,primary,secondary,held,both,pSubmitter,null, (arg) => {
-                      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: ${pSubmitter.padEnd(30)} Logged '${arg}'`);
+                      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${pSubmitter.padEnd(30)} Logged '${arg}'`);
                     });
   } //end of not null values test condition - ie. we have something to actually update
   return;
