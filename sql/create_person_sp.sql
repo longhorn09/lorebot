@@ -67,7 +67,7 @@ BEGIN
         end;
 	else
 		INSERT INTO Person(CHARNAME,LIGHT,RING1,RING2,NECK1,NECK2,BODY,HEAD,LEGS,FEET,ARMS,SLUNG,HANDS,SHIELD,ABOUT,WAIST,POUCH,RWRIST,LWRIST,PRIMARY_WEAP,SECONDARY_WEAP,HELD,BOTH_HANDS,SUBMITTER,CLAN_ID)
-        VALUES(charName, light, ring1, ring2, neck1, neck2, body, head, legs, feet, arms, slung, hands, shield, about, waist, pouch, rwrist, lwrist, primary_weap, secondary_weap, held, both_hands, submitter, clan_id);
+        VALUES(charName, light, ring1, ring2, neck1, neck2, body, head, legs, feet, arms, slung, hands, shield, about, waist, pouch, rwrist, lwrist, weap1, weap2, held, both_hands, submitter, clan_id);
     end if;
 
 END
