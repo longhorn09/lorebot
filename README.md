@@ -69,4 +69,4 @@ forever start lorebot.js
 ![Discord Lorebot](/lorebot.PNG?raw=true "Example of brief and stat")
 
 ## License
-Lorebot is distributed under the MIT license.
+Lorebot is distributed under the ![MIT license](https://github.com/longhorn09/lorebot/blob/master/LICENSE.md).
