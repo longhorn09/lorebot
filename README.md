@@ -67,3 +67,6 @@ forever start lorebot.js
 !stat bronze.shield
 ```
 ![Discord Lorebot](/lorebot.PNG?raw=true "Example of brief and stat")
+
+## License
+Lorebot is distributed under the MIT license.
