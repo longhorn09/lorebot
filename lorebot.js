@@ -256,7 +256,8 @@ var formatAffects = (pArg) => {
   let retvalue = "";
   let affectsArr = [];
   let sb = "";
-  let affectBy = /([A-Za-z_\s]+)\s*by\s*([-+]?\d+)/;
+  //let affectBy = /([A-Za-z_\s]+)\s*by\s*([-+]?\d+)/;
+  let affectBy = /^([A-Za-z_\s]+)\s*by\s*(.+)$/;
   let match = null;
 
   affectsArr = pArg.trim().split(",");
@@ -1134,7 +1135,7 @@ var FormatEqLook = (rowData) => {
   if (rowData.SUBMITTER != null) {
     "YYYY-MM-DD HH:mm:ss"; // for use with moment().format(MYSQL_DATETIME_FORMAT)
     //double spacing for formatting separation
-    retvalue += `\n\n${"Submitter :".padEnd(0)} ${rowData.SUBMITTER} (${moment(rowData.CREATE_DATE).format(MYSQL_DATETIME_FORMAT)})`;
+    retvalue += `\n\n${"Submitter:".padEnd(0)} ${rowData.SUBMITTER} (${moment(rowData.CREATE_DATE).format(MYSQL_DATETIME_FORMAT)})`;
 
   }
 
