@@ -277,7 +277,7 @@ var formatAffects = (pArg) => {
       }
     }
     else {
-      console.log("didn't match: " + affectsArr[i]);
+      //console.log("didn't match: " + affectsArr[i]);       //this is going to be single lines like : regeneration 14%
       sb += "Affects".padEnd(9) + ": " + affectsArr[i].toString().trim() + "\n";
     }
   }
@@ -343,7 +343,7 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
     pool.getConnection((err,connection)=>{
         if (err) {
           connection.release();
-          res.json({"code":100,"status":"Error in db connecion in CreateUpdateLore in pool.getConnect(callback)"});
+          res.json({"code":100,"status":"Error in db connecion in CreateUpdatePerson in pool.getConnect(callback)"});
         }
       sqlStr = "call CreatePerson(" + (((charName) ? `'${charName.replace("'","\\'")}'` : null) + "," +
                                     ((light) ? `'${light.replace("'","\\'")}'` : null) + "," +
@@ -592,31 +592,6 @@ var ParseEqLook = (pSubmitter, pLookLog) => {
       both !== null)
   {
     let padLen = "<worn around right wrist>  ".length;
-    //console.log (`${charName} is using:`);
-    // console.log("<used as light>".padEnd(padLen) + light);
-    //console.log("<worn on finger>".padEnd(padLen) + ring1);
-    // console.log("<worn on finger>".padEnd(padLen) + ring2);
-    // console.log("<worn around neck>".padEnd(padLen) + neck1);
-    // console.log("<worn around neck>".padEnd(padLen) + neck2);
-    // console.log("<worn on body>".padEnd(padLen) + body);
-    // console.log("<worn on head>".padEnd(padLen) + head);
-    // console.log("<worn on legs>".padEnd(padLen) + legs);
-    // console.log("<worn on feet>".padEnd(padLen) + feet);
-    // console.log("<worn on hands>".padEnd(padLen) + hands);
-    // console.log("<worn on arms>".padEnd(padLen) + arms);
-    // console.log("<slung over shoulder>".padEnd(padLen) + slung);
-    // console.log("<worn as shield>".padEnd(padLen) + shield);
-    // console.log("<worn about body>".padEnd(padLen) + about);
-    //console.log("<worn about waist>".padEnd(padLen) + waist);
-    // console.log("<worn as pouch>".padEnd(padLen) + pouch);
-    // console.log("<worn around right wrist>".padEnd(padLen) + rwrist);
-    // console.log("<worn around left wrist>".padEnd(padLen) + lwrist);
-    // console.log("<used in primary hand>".padEnd(padLen) + primary);
-    // console.log("<used in secondary hand>".padEnd(padLen) + secondary);
-    // console.log("<held in secondary hand>".padEnd(padLen) + held);
-    // console.log("<used in both hands>".padEnd(padLen) + both);
-    // console.log("a pair of magical boots..it glows blue..it glows dimly".length);
-
     // NOTE: clan_id is hardcoded to null after submiter for now as parameter placeholder
     CreateUpdatePerson(charName,light,ring1,ring2,neck1,neck2,body,head,legs,feet,arms,slung,
                       hands,shield,about,waist,pouch,rwrist,lwrist,primary,secondary,held,both,pSubmitter,null, (arg) => {
@@ -1083,12 +1058,147 @@ function ProcessQuery(message)
   return; //done with ProcessQuery
 }
 
-var ProcessWho = (discordMsg) => {
-  //console.log(discordMsg.author);
-  //get an unpromise error?
-  discordMsg.author.send("!who coming soon...");
-  //console.log(discordMsg.author.username);
+var FormatEqLook = (rowData) => {
+  let padLen = "<worn around right wrist>  ".length + 1;
+  let retvalue = "";
+
+  if (rowData.CHARNAME != null) {
+    retvalue += `${rowData.CHARNAME} is using:`;
+  }
+  if (rowData.LIGHT != null) {
+    retvalue += "\n<used as light>".padEnd(padLen) + rowData.LIGHT;
+  }
+  if (rowData.RING1 != null) {
+    retvalue += "\n<worn on finger>".padEnd(padLen) + rowData.RING1;
+  }
+  if (rowData.RING2 != null) {
+    retvalue += "\n<worn on finger>".padEnd(padLen) + rowData.RING2;
+  }
+  if (rowData.NECK1 != null) {
+    retvalue += "\n<worn around neck>".padEnd(padLen) + rowData.NECK1;
+  }
+  if (rowData.NECK2 != null) {
+    retvalue += "\n<worn around neck>".padEnd(padLen) + rowData.NECK2;
+  }
+  if (rowData.BODY != null) {
+    retvalue += "\n<worn on body>".padEnd(padLen) + rowData.BODY;
+  }
+  if (rowData.HEAD != null) {
+    retvalue += "\n<worn on head>".padEnd(padLen) + rowData.HEAD;
+  }
+  if (rowData.LEGS != null) {
+    retvalue += "\n<worn on legs>".padEnd(padLen) + rowData.LEGS;
+  }
+  if (rowData.FEET != null) {
+    retvalue += "\n<worn on feet>".padEnd(padLen) + rowData.FEET;
+  }
+  if (rowData.HANDS != null) {
+    retvalue += "\n<worn on hands>".padEnd(padLen) + rowData.HANDS;
+  }
+  if (rowData.ARMS != null) {
+    retvalue += "\n<worn on arms>".padEnd(padLen) + rowData.ARMS;
+  }
+  if (rowData.SLUNG != null) {
+    retvalue += "\n<slung over shoulder>".padEnd(padLen) + rowData.SLUNG;
+  }
+  if (rowData.SHIELD != null) {
+    retvalue += "\n<worn as shield>".padEnd(padLen) + rowData.SHIELD;
+  }
+  if (rowData.ABOUT != null) {
+    retvalue += "\n<worn about body>".padEnd(padLen) + rowData.ABOUT;
+  }
+  if (rowData.WAIST != null) {
+    retvalue += "\n<worn about waist>".padEnd(padLen) + rowData.WAIST;
+  }
+  if (rowData.POUCH != null) {
+    retvalue += "\n<worn as pouch>".padEnd(padLen) + rowData.POUCH;
+  }
+  if (rowData.RWRIST != null) {
+    retvalue += "\n<worn around right wrist>".padEnd(padLen) + rowData.RWRIST;
+  }
+  if (rowData.LWRIST != null) {
+    retvalue += "\n<worn around left wrist>".padEnd(padLen) + rowData.LWRIST;
+  }
+  if (rowData.PRIMARY_WEAP != null) {
+    retvalue += "\n<used in primary hand>".padEnd(padLen) + rowData.PRIMARY_WEAP;
+  }
+  if (rowData.SECONDARY_WEAP != null) {
+    retvalue += "\n<used in secondary hand>".padEnd(padLen) + rowData.SECONDARY_WEAP;
+  }
+  if (rowData.HELD != null) {
+    retvalue += "\n<held in secondary hand>".padEnd(padLen) + rowData.HELD;
+  }
+  if (rowData.BOTH_HANDS != null) {
+    retvalue += "\n<used in both hands>".padEnd(padLen) + rowData.BOTH_HANDS;
+  }
+
+  return retvalue;
 }
+/**
+ * this function does all the processing for !who including processing who target and making db stored proc call
+ */
+var ProcessWho = (discordMsg) => {
+  let sqlStr = null;
+  let returnMsg = null;
+  let whoTarget = null;
+  let match = null;
+
+  //console.log(`message: ${discordMsg.content}`);
+  if (/^\!who\s+([A-Za-z]+)$/g.test(discordMsg.content.trim())) {
+    match = /^\!(?:w|W)(?:h|H)(?:o|O)\s+([A-Za-z]+)$/.exec(discordMsg.content.trim());  //case sensitivity check is overkill, since will always enter as !who lowercase
+    whoTarget = match[1];
+  }
+  else {
+    discordMsg.author.send("Invalid syntax. Example: !who Oligo", {code: true})   //https://discord.js.org/#/docs/main/stable/typedef/MessageOptions
+      .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+      console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWho(): ${err}`); //https://stackoverflow.com/questions/44284666/discord-js-add-reaction-to-a-bot-message
+      //console.log(msg.author.username );
+      }
+    );
+    return; //get out of function, no more processing
+  }
+
+
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":"Error in db connecion in CreateUpdatePerson in pool.getConnect(callback)"});
+      }
+    sqlStr = `call GetPerson('${whoTarget}');`;
+
+    connection.query(sqlStr,(err,rows) => {
+      connection.release();
+      if (!err) {
+        if (rows != null && rows.length === 2 && rows[0].length === 1) {
+          returnMsg = FormatEqLook(rows[0][0]);  // rows[0] = RowDataPacket, rows[1] = OkPacket
+          //console.log(`returnMsg: ${returnMsg}`);
+          console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${discordMsg.author.username.padEnd(30)} !who ${whoTarget}`);
+        }
+        else {
+          returnMsg = `Player '${whoTarget}' not found.`;
+        }
+
+        discordMsg.author.send(returnMsg, {code: true})   //https://discord.js.org/#/docs/main/stable/typedef/MessageOptions
+          .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWho(): ${err}`); //https://stackoverflow.com/questions/44284666/discord-js-add-reaction-to-a-bot-message
+          } //end callback passed to .catch()
+        );  //end catch() error handling
+
+      } //end of !err
+      else {
+        console.log(`Error in ProcessWho(): ${err}`);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database during ProcessWho()"});
+      return;
+    });
+  });   //end of pool.getConnection() callback function
+
+}  //end of ProcessWho()
+
+
 /**
  * WHERE clause for !stat, limited to MAX_ITEMS
  */
