@@ -338,7 +338,7 @@ var formatBrief = (pMsg,pRows) => {
     sb += `\nObject '${pRows[i].OBJECT_NAME}'`;
     //console.log("```" + sb + "```");
   }
-  pMsg.author.send("```" + sb + "```");
+  pMsg.author.send(sb,{code:true});
   return sb;
 };
 
@@ -832,11 +832,11 @@ function DoFlexQuery(pMsg,pField,pSQL) {
           }
           else if (totalItems == 1) {
             pMsg.author.send(`${totalItems} value found for '${pField}'`) ;
-            pMsg.author.send("```" + sb + "```");
+            pMsg.author.send(sb, {code: true});
           }
           else {
             pMsg.author.send(`${totalItems} values found for '${pField}'`) ;
-            pMsg.author.send("```" + sb + "```");
+            pMsg.author.send(sb, {code: true});
           }
         }
       }
@@ -1099,14 +1099,13 @@ function ProcessQuery(message)
   }
   else {
     let padLen = 60;
-    message.author.send("```Invalid usage. Examples:" +
+    message.author.send("Invalid usage. Examples:" +
                         "\n!query affects".padEnd(padLen) + "(List all AFFECTS values)" +
                         "\n!query material=mithril".padEnd(padLen)  + "(Mithril items)" +
                         "\n!query affects=damroll by 2&material=cloth".padEnd(padLen) + "(Cloth 'DAMROLL by 2' items)" +
                         "\n!query material=mithril&damage=3d6" +
                         "\n!query affects=damroll by 2&item_type=worn" +
-                        "\n!query affects=damroll by 2,hitroll by 2&item_type=worn".padEnd(padLen) + "(Worn items that are 'DAMROLL by 2, HITROLL by 2')" +
-                        "```");
+                        "\n!query affects=damroll by 2,hitroll by 2&item_type=worn".padEnd(padLen) + "(Worn items that are 'DAMROLL by 2, HITROLL by 2')", {code:true});
   }
   return; //done with ProcessQuery
 }
@@ -1437,7 +1436,7 @@ function getHelp(pMsg) {
   }
   //https://stackoverflow.com/questions/21206696/how-to-return-value-from-node-js-function-which-contains-db-query
   GetLoreCount((numRows) => {
-    let helpMsg  = "```** IRC Lore Bot v" + version + ` (Items: ${numRows}) **\n` +
+    let helpMsg  = "** IRC Lore Bot v" + version + ` (Items: ${numRows}) **\n` +
     "!help    - Lists the different commands available\n" +
     "!stat    - syntax: !stat <item>, example: !stat huma.shield\n" +
     "!brief   - syntax: !brief <item>, example: !brief huma.shield\n" +
@@ -1448,10 +1447,10 @@ function getHelp(pMsg) {
     //"!gtoff   - turn off output to group chat\n" +
     "!query   - flexible query with multiple crieria, example: !query affects=damroll by 2\n" +
     "!recent  - shows latest markings, optional !recent <num>\n" +
-    "!version - shows version history\n```";
+    "!version - shows version history\n";
     version = null;
 
-    pMsg.author.send(helpMsg);
+    pMsg.author.send(helpMsg,{code:true});
   });
   return;
 }
