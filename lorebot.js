@@ -637,7 +637,7 @@ function GetLoreCount(callback){
     });
     connection.on('error',(err) => {
       //res.json({"code":100,"status":"Error in connection database"});
-      console.log({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database in GetLoreCount()"});
       return;
     });
   });
@@ -654,7 +654,7 @@ function handle_database(pMsg,whereClause,pItem){
         res.json({"code":100,"status":"Error in connection database"});
       }
     sqlStr = `SELECT * FROM Lore ${whereClause}`;
-    //console.log(sqlStr);
+    //console.log(`sqlStr non-escaped: ${sqlStr}\n               sqlStr escaped: ${mysql.escape(sqlStr)}`);
     connection.query(sqlStr,(err,rows) => {
       connection.release();
       if (!err) {
@@ -913,12 +913,11 @@ function ProcessBrief(message, isGchat)
     if (splitArr.length >= 1)
     {
       for (let i = 0; i < splitArr.length; i++)    {
-        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i])}%' `
-        whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
+        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
+        whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i]).substring(1,mysql.escape(splitArr[i]).length-1)}%' `
       }
     }
      handle_brief(message,whereClause,searchItem);
-    //console.log(myrows);
   }
   else {
     if (isGchat){
@@ -1293,8 +1292,8 @@ function ProcessStat(message, isGchat)
     if (splitArr.length >= 1)
     {
       for (let i = 0; i < splitArr.length; i++)    {
-        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i])}%' `
-        whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
+        whereClause += ` and Lore.OBJECT_NAME LIKE '%${mysql.escape(splitArr[i]).substring(1,mysql.escape(splitArr[i]).length-1)}%' `
+        //whereClause += ` and Lore.OBJECT_NAME LIKE '%${splitArr[i]}%' `
       }
       //console.log(whereClause);
     }
@@ -1346,7 +1345,10 @@ client.on("message", (message) => {
         ProcessWho(message);
         break;
       case "recent":
-          message.author.send("!recent in development");
+          message.author.send(`!recent in development`)
+                        .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                              console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in function ${ProcessStat.name}(): ${err}`);
+                            });
           break;
       case "gton":
         isGroupChat = true;
