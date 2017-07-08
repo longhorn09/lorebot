@@ -408,6 +408,68 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
   };  //END of CreateUpdateLore function
 
 /**
+ * This is the handler for !recent command and will return results from GetRecent mysql db stored proc call
+ */
+ function ProcessRecent(pMsg) {
+   let submitter = null;
+   let sqlStr = "call GetRecent()";
+   let sb = "";
+
+   if (pMsg !== null) {
+     submitter = pMsg.author.username.toString();
+   }
+
+   console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${submitter.padEnd(30)} !recent` );
+   pool.getConnection((err,connection)=>{
+       if (err) {
+         connection.release();
+         res.json({"code":100,"status":"Error in db connecion in ProcessRecent in pool.getConnect(callback)"});
+       }  //end if (err)
+
+       connection.query(sqlStr,(err,rows) => {
+         connection.release();
+         if (!err && rows != null && rows.length > 0 && rows[0].length > 0) {
+           for (let i = 0; i < rows[0].length;i++) {
+             if (rows[0][i].TBL_SRC === "Lore"){
+               //console.log(`Object ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})`);
+               //sb += `Object ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `Object ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+             }
+             else {
+               //console.log(`Char   ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})`);
+               //sb += `Char   ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `Char   ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+             }
+
+           } //end for loop
+           if (sb !== null && sb.length > 0) {
+             if (pMsg.channel != null && pMsg.channel.name === config.channel)
+             {
+               pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                 console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ${ProcessRecent.name}}: ${err}`);
+               });
+             }
+             else {
+               pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                 console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ${ProcessRecent.name}}: ${err}`);
+               });
+             }
+           }
+         }
+         else {
+           console.log(`Error in ${ProcessRecent.name}: ${err}`);
+         }
+       });
+       connection.on('error',(err) => {
+         //res.json({"code":100,"status":"Error in connection database"});
+         console.log({"code":100,"status":"Error in connection database"});
+         return;
+       });
+
+   });    //end of pool.GetConnection callback)
+ } //end of ProcessRecent() function
+
+/**
  * This function is called after a user pastes a lore in chat typically -
  * then the db update stored procedure call is initiated
  * CreateUpdateLore typically called from parseLore()
@@ -1345,10 +1407,11 @@ client.on("message", (message) => {
         ProcessWho(message);
         break;
       case "recent":
-          message.author.send(`!recent in development`)
-                        .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-                              console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in function ${ProcessStat.name}(): ${err}`);
-                            });
+          // message.author.send(`!recent in development`)
+          //               .catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+          //                     console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in function ${ProcessStat.name}(): ${err}`);
+          //                   });
+          ProcessRecent(message)
           break;
       case "gton":
         isGroupChat = true;
