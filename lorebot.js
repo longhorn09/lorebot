@@ -430,15 +430,13 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
          connection.release();
          if (!err && rows != null && rows.length > 0 && rows[0].length > 0) {
            for (let i = 0; i < rows[0].length;i++) {
+             //console.log(rows[0][i].CREATE_DATE +` ${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}` );
              if (rows[0][i].TBL_SRC === "Lore"){
-               //console.log(`Object ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})`);
-               //sb += `Object ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
-               sb += `Object ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: Object ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
              }
              else {
-               //console.log(`Char   ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})`);
-               //sb += `Char   ${("'" + rows[0][i].DESCRIPTION + "'").padEnd(80)}, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
-               sb += `Char   ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: Char   ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
              }
 
            } //end for loop
@@ -1511,9 +1509,9 @@ function getHelp(pMsg) {
     //"!gton    - turn on output group chat\n" +
     //"!gtoff   - turn off output to group chat\n" +
     "!query   - flexible query with multiple crieria, example: !query affects=damroll by 2\n" +
-    "!recent  - shows latest markings, optional !recent <num>\n" +
+    "!recent  - shows latest lores and looks\n" +
     "!version - shows version history\n";
-    version = null;
+    version = null; //markings, optional !recent <num>
 
     pMsg.author.send(helpMsg,{code:true});
   });
