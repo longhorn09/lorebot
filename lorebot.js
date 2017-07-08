@@ -436,7 +436,7 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
              }
              else {
 
-               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: Char   ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !who ${rows[0][i].DESCRIPTION}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
              }
 
            } //end for loop
