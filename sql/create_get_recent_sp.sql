@@ -1,6 +1,9 @@
-DELIMITER $$
 CREATE DEFINER=`ntang`@`%` PROCEDURE `GetRecent`()
 BEGIN
+
+#setup the max number of rows to return
+declare maxlim int;
+set maxlim = 12;
 
 SELECT
     *
@@ -13,7 +16,7 @@ FROM
     FROM
         Person
     ORDER BY Person.CREATE_DATE DESC
-    LIMIT 10) AS tblPerson
+    LIMIT maxlim) AS tblPerson
 UNION SELECT
     *
 FROM
@@ -25,8 +28,7 @@ FROM
     FROM
         Lore
     ORDER BY Lore.CREATE_DATE DESC
-    LIMIT 10) AS tblLore
+    LIMIT maxlim) AS tblLore
 ORDER BY CREATE_DATE DESC;
 
-END$$
-DELIMITER ;
+END
