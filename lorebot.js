@@ -44,6 +44,7 @@ var parseLore = (pAuthor , pLore) => {
   let attribRegex = /^([A-Z][A-Za-z\s]+)\:(.+)$/;   //do not use /g here or matching issues
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
+  console.log(`in parseLore(): pLore: ${pLore}, pLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
   match = (/^Object\s'(.+)'$/g).exec(pLore.trim().split("\n")[0].trim());
   objName = match[1];
 
@@ -430,13 +431,12 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
          connection.release();
          if (!err && rows != null && rows.length > 0 && rows[0].length > 0) {
            for (let i = 0; i < rows[0].length;i++) {
-             //console.log(rows[0][i].CREATE_DATE +` ${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}` );
              if (rows[0][i].TBL_SRC === "Lore"){
-               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: Object ${("'" + rows[0][i].DESCRIPTION + "'")}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !query object_name=${rows[0][i].DESCRIPTION}\n`;
              }
              else {
 
-               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !who ${rows[0][i].DESCRIPTION}\n`;//, Submitter: ${rows[0][i].submitter} (${rows[0][i].CREATE_DATE})\n`;
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !who ${rows[0][i].DESCRIPTION}\n`;
              }
 
            } //end for loop
@@ -1007,6 +1007,7 @@ function ProcessQuery(message)
   let half1, half2 = null; //for parsing affects in 'damroll by 3'   , half1 = damroll, half2 = 3
   let match = null; //for regexp string pattern matching
   let isExitLoop = false;
+  let searchItem = "";
 
   //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
   if (message.content.trim().length >(config.prefix + "query").length ) {
@@ -1100,6 +1101,7 @@ function ProcessQuery(message)
               break;
             case "object_name":
               whereClause += ' AND Lore.OBJECT_NAME = ' + mysql.escape(args[property]);
+              searchItem = args[property].trim();
               isExitLoop = true;
               break;
             default:
@@ -1119,7 +1121,15 @@ function ProcessQuery(message)
       sqlStr = `SELECT (${subquery}) as LIST_COUNT, LORE_ID, OBJECT_NAME from Lore ${whereClause}`;
       //console.log(`${dateTime} : ${"SQL: ".padEnd(30)} ${sqlStr}`);
       console.log(`${dateTime} : ${message.author.username.toString().padEnd(30)} ${message.content.trim()}`);
-      DoFlexQueryDetail(message,sqlStr);
+      if (!isExitLoop) {
+        DoFlexQueryDetail(message,sqlStr);
+      }
+      else {
+        handle_database(message,whereClause,searchItem);
+      }
+
+
+
     }
     else {
       //searchField = queryParams ;
