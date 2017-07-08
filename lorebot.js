@@ -1006,6 +1006,7 @@ function ProcessQuery(message)
   let affectsArr = [];
   let half1, half2 = null; //for parsing affects in 'damroll by 3'   , half1 = damroll, half2 = 3
   let match = null; //for regexp string pattern matching
+  let isExitLoop = false;
 
   //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
   if (message.content.trim().length >(config.prefix + "query").length ) {
@@ -1096,7 +1097,10 @@ function ProcessQuery(message)
                   whereClause += ` AND (Lore.${property.toUpperCase()} LIKE '%${args[property]}%') `;
                 }
               }
-
+              break;
+            case "object_name":
+              whereClause += ' AND Lore.OBJECT_NAME = ' + mysql.escape(args[property]);
+              isExitLoop = true;
               break;
             default:
               message.author.send(`Invalid property '${property.toUpperCase()}' specified. Valid properties: \n`);
@@ -1105,7 +1109,12 @@ function ProcessQuery(message)
               break;
           } //end switch on property
         }  //end hasOwnProperty() test
+        if (isExitLoop){
+          //get out of the for loop because we used object_name
+          break;
+        }
       } //end for loop
+      //console.log(whereClause);
       subquery = "SELECT COUNT(*) from Lore " + whereClause
       sqlStr = `SELECT (${subquery}) as LIST_COUNT, LORE_ID, OBJECT_NAME from Lore ${whereClause}`;
       //console.log(`${dateTime} : ${"SQL: ".padEnd(30)} ${sqlStr}`);
