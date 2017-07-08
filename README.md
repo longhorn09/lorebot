@@ -29,7 +29,8 @@ npm start
 * !roll
 * !query
 * !version
-* !who
+* !who  
+* !recent
 
 ## Dependencies
 ```
