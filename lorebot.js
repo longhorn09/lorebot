@@ -42,190 +42,201 @@ var parseLore = (pAuthor , pLore) => {
   let splitArr = [];
   let is2part = false;
   let attribRegex = /^([A-Z][A-Za-z\s]+)\:(.+)$/;   //do not use /g here or matching issues
+  let objRegex = /^Object\s'(.+)'$/;  //removed g flag
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
-  console.log(`in parseLore(): pLore: ${pLore}, pLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
-  match = (/^Object\s'(.+)'$/g).exec(pLore.trim().split("\n")[0].trim());
-  objName = match[1];
+  console.log(`in parseLore(): pLore: ${pLore}\npLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
 
-  //we don't need to start loop at item[0] because we already matched the Object name in row[0]
-  splitArr = pLore.trim().split("\n");
-  for (let i = 1; i < splitArr.length; i++)
-  {
-    //make sure to reset capture variables to null each loop
-    attribName = null, attribValue = null,
-    attribName2 = null, attribValue2 = null;
-    match = null;
-    is2part = false;
+  // need to still do regex text in case of: https://github.com/longhorn09/lorebot/issues/9
 
-    if (attribRegex.test(splitArr[i].toString().trim()) === true) {
-      match = attribRegex.exec(splitArr[i].toString().trim());
-      if (match !== null)
-      {
-        attribName = match[1].trim();
-        if (match[2].trim().indexOf(":")>0)
+  if (objRegex.test(pLore.trim().split("\n")[0].trim())) {
+    //console.log(`matched: ${pLore.trim().split("\n")[0].trim()}`);
+    match = objRegex.exec(pLore.trim().split("\n")[0].trim());
+    objName = match[1];
+
+    //we don't need to start loop at item[0] because we already matched the Object name in row[0]
+    splitArr = pLore.trim().split("\n");
+    for (let i = 1; i < splitArr.length; i++)
+    {
+      //make sure to reset capture variables to null each loop
+      attribName = null, attribValue = null,
+      attribName2 = null, attribValue2 = null;
+      match = null;
+      is2part = false;
+
+      if (attribRegex.test(splitArr[i].toString().trim()) === true) {
+        match = attribRegex.exec(splitArr[i].toString().trim());
+        if (match !== null)
         {
-          if (/^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.test(match[2].trim())) //natural    Material:organic
+          attribName = match[1].trim();
+          if (match[2].trim().indexOf(":")>0)
           {
-            is2part = true;
-            match = /^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.exec(match[2].trim()); //Make sure regex.exec() exactly matches regex.test() stmt 4 lines above
-            attribValue = match[1].trim();
-            attribName2 = match[2].trim();
-            attribValue2 = match[3].trim();
-          }
-          else {
-            //console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
-          }
-        }
-        else {    // 1-parter
-          attribValue = match[2].trim();
-        }
-
-        switch(attribName.toLowerCase().trim()){
-          case "item type":
-            itemType = attribValue;
-            break;
-          case "contains":
-            containerSize = /^(\d+)$/g.test(attribValue)  ? Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "capacity":
-            capacity = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "mat class":
-            matClass = attribValue;
-            break;
-          case "material":
-            material = attribValue;
-            break;
-          case "weight":
-            weight = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue) : null;
-            break;
-          case "value":
-            value  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "speed":
-            speed  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "power":
-            power  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "accuracy":
-            accuracy  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "effects":
-            effects = attribValue;
-            break;
-          case "item is":
-            itemIs = attribValue;
-            break;
-          case "charges":
-            charges  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "level":
-            spell = attribValue;    //varchar(80)
-            break;
-          case "restricts":
-            restricts = attribValue;
-            break;
-          case "immune":
-            immune = attribValue;
-            break;
-          case "apply":
-            apply  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
-            break;
-          case "class":      ///// weapon class?
-            weapClass = attribValue;
-            break;
-          case "damage":
-            damage = attribValue;
-            break;
-          case "affects":
-            if (affects === null) {
-              affects = attribValue + ",";
+            if (/^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.test(match[2].trim())) //natural    Material:organic
+            {
+              is2part = true;
+              match = /^(.+)\s+([A-Z][a-z\s]+)\:(.+)$/.exec(match[2].trim()); //Make sure regex.exec() exactly matches regex.test() stmt 4 lines above
+              attribValue = match[1].trim();
+              attribName2 = match[2].trim();
+              attribValue2 = match[3].trim();
             }
             else {
-              affects += attribValue + ",";
+              //console.log(`No match on 2nd half: ${match[2].trim()}`);  // this shouldn't happen
             }
-            break;
-        } //end of 1-parter
+          }
+          else {    // 1-parter
+            attribValue = match[2].trim();
+          }
 
-        if (attribName2 !== null && attribValue2 !== null) { //2-parter
-          switch(attribName2.toLowerCase().trim()) {
+          switch(attribName.toLowerCase().trim()){
             case "item type":
-              itemType = attribValue2.trim();
+              itemType = attribValue;
               break;
             case "contains":
-              containerSize  = /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              containerSize = /^(\d+)$/g.test(attribValue)  ? Number.parseInt(attribValue.trim()) : null;
               break;
             case "capacity":
-              capacity  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              capacity = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "mat class":
-              matClass = attribValue2.trim();
+              matClass = attribValue;
               break;
             case "material":
-              material = attribValue2.trim();
+              material = attribValue;
               break;
             case "weight":
-              weight  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              weight = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue) : null;
               break;
             case "value":
-              value  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;    //varchar(10)
+              value  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "speed":
-              speed =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              speed  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "power":
-              power =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              power  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "accuracy":
-              accuracy  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              accuracy  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "effects":
-              effects = attribValue2.trim();
+              effects = attribValue;
               break;
             case "item is":
-              itemIs = attribValue2.trim();
+              itemIs = attribValue;
               break;
             case "charges":
-              charges  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              charges  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "level":
-              spell = attribValue2.trim();
+              spell = attribValue;    //varchar(80)
               break;
             case "restricts":
-              restricts = attribValue2.trim();
+              restricts = attribValue;
               break;
             case "immune":
-              immune = attribValue2.trim();
+              immune = attribValue;
               break;
             case "apply":
-              apply  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+              apply  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "class":      ///// weapon class?
-              weapClass = attribValue2.trim();
+              weapClass = attribValue;
               break;
             case "damage":
-              damage = attribValue2.trim();
+              damage = attribValue;
               break;
             case "affects":
               if (affects === null) {
-                  affects = attribValue2.trim() + ",";
+                affects = attribValue + ",";
               }
               else {
-                affects +=  attribValue2.trim() + ",";
+                affects += attribValue + ",";
               }
-
               break;
-          }   //end of 2-parter
-        //console.log(`[${i}]: ${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
-        } //2-parter null test
-      } //end if match[1] !== null
-      else{ //usually empty line, but may be Extra to be captured here
-        console.log(`splitArr[${i}] no match: ${splitArr[i].trim()}`);
-      }
-    }   //end if regex.test on first pattern match
-  } //end of for loop
+          } //end of 1-parter
+
+          if (attribName2 !== null && attribValue2 !== null) { //2-parter
+            switch(attribName2.toLowerCase().trim()) {
+              case "item type":
+                itemType = attribValue2.trim();
+                break;
+              case "contains":
+                containerSize  = /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "capacity":
+                capacity  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "mat class":
+                matClass = attribValue2.trim();
+                break;
+              case "material":
+                material = attribValue2.trim();
+                break;
+              case "weight":
+                weight  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "value":
+                value  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;    //varchar(10)
+                break;
+              case "speed":
+                speed =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "power":
+                power =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "accuracy":
+                accuracy  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "effects":
+                effects = attribValue2.trim();
+                break;
+              case "item is":
+                itemIs = attribValue2.trim();
+                break;
+              case "charges":
+                charges  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "level":
+                spell = attribValue2.trim();
+                break;
+              case "restricts":
+                restricts = attribValue2.trim();
+                break;
+              case "immune":
+                immune = attribValue2.trim();
+                break;
+              case "apply":
+                apply  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                break;
+              case "class":      ///// weapon class?
+                weapClass = attribValue2.trim();
+                break;
+              case "damage":
+                damage = attribValue2.trim();
+                break;
+              case "affects":
+                if (affects === null) {
+                    affects = attribValue2.trim() + ",";
+                }
+                else {
+                  affects +=  attribValue2.trim() + ",";
+                }
+
+                break;
+            }   //end of 2-parter
+          //console.log(`[${i}]: ${attribName}: ${attribValue} , ${attribName2}: ${attribValue2}`);
+          } //2-parter null test
+        } //end if match[1] !== null
+        else{ //usually empty line, but may be Extra to be captured here
+          console.log(`splitArr[${i}] no match: ${splitArr[i].trim()}`);
+        }
+      }   //end if regex.test on first pattern match
+    } //end of for loop
+  } //end of objRegex.test()
+  else {
+    console.log(`no match in parseLore(): ${pLore.trim().split("\n")[0].trim()}`);
+  }
+
   //just a check to make sure there's something new to update and not Object '' on a single line
 
   if (itemType !== null || matClass !== null || material !== null || weight !== null || value !== null
@@ -432,7 +443,8 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
          if (!err && rows != null && rows.length > 0 && rows[0].length > 0) {
            for (let i = 0; i < rows[0].length;i++) {
              if (rows[0][i].TBL_SRC === "Lore"){
-               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !query object_name=${rows[0][i].DESCRIPTION}\n`;
+               //sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: !query object_name=${rows[0][i].DESCRIPTION}\n`;
+               sb += `${moment(rows[0][i].CREATE_DATE).format("YYYY-MM-DD")}: Object '${rows[0][i].DESCRIPTION}'\n`;
              }
              else {
 
@@ -1465,10 +1477,12 @@ client.on("message", (message) => {
     for (let i = 0 ; i < loreArr.length; i++)  {
       if (loreArr[i].indexOf("'") > 0 && loreArr[i].indexOf(":"))
       {
+        //console.log(`loreArr[${i}]: ${loreArr[i]}`);
         cleanArr.push(`Object '${loreArr[i].trim()}`);
       }
     }
     for (let i = 0 ;i < cleanArr.length;i++) {
+        //console.log(`cleanArr[${i}]: ${cleanArr[i]}`);
         parseLore(message.author.username,cleanArr[i]);
     }
     loreArr = null;   //freeup for gc()
