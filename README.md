@@ -74,7 +74,7 @@ The SQL script will populate the `Person` and `Lore` tables.
 You will likely still need to load the stored procedures as well.  
 Relevant scripts for stored procedures can be found in `./lorebot/sql/`
 
-## Bulk loading Lores
+## Bulk loading lores from a text file
 
 For lores accumulated in a plain text file, Lorebot has a utility [load_lores.js](https://github.com/longhorn09/lorebot/blob/master/utility/load_lores.js) to facilitate loading lores into Lorebot.  
 Currently the specified lore text file to load is hard-coded near the bottom in [load_lores.js](https://github.com/longhorn09/lorebot/blob/master/utility/load_lores.js) and can be tweaked to suit your needs.  
