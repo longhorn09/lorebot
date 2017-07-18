@@ -64,9 +64,9 @@ forever start lorebot.js
 ```
 ## Loading the SQL database
 
-Lorebot uses MySQL on the backend. 
-Currently lorebot has over 4,800 lores. 
-The easiest way to populate the Lorebot database with lores is to run the following SQL script:
+Lorebot uses MySQL on the backend.   
+Currently lorebot has over 4,800 lores.   
+The easiest way to populate the Lorebot database with lores is to run the following SQL script:  
 
 ```./lorebot/sql/load_lorebot_db.sql```
 
