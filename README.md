@@ -70,8 +70,8 @@ The easiest way to populate the Lorebot database with lores is to run the follow
 
 ```./lorebot/sql/load_lorebot_db.sql```
 
-The SQL script will populate the `Person` and `Lore` tables.    
-You will likely still need to load the stored procedures as well.
+The SQL script will populate the `Person` and `Lore` tables.      
+You will likely still need to load the stored procedures as well.  
 Relevant scripts for stored procedures can be found in `./lorebot/sql/`
 
 ## Examples
