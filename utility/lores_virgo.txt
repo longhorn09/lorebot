@@ -1,0 +1,5762 @@
+a pair of finely crafted Solamnic gauntlets
+ Object 'gauntlets bronze solamnic'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 10           Value   : 300
+
+ Affects  : ARMOR         by -10
+ Affects  : DEX           by 1
+ Item is  : ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NORANGER NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+an ornate platinum ring
+ Object 'ring ornate platinum'
+ Item Type: TREASURE
+ Mat Class: metal        Material: platinum
+ Weight   : 4            Value   : 200
+
+ Affects  : ARMOR         by -3
+
+
+a pair of Solamnic leg plates
+ Object 'plates leg solamnic bronze'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 10           Value   : 300
+
+ Affects  : ARMOR         by -10
+ Affects  : HIT           by 10
+ Item is  : ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a thin golden wristband
+ Object 'band wristband wrist golden gold thin'
+ Item Type: WAND
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 1000
+
+ Affects  : SAVING_SPELL  by -1
+ Item is  : GLOW MAGIC
+ Charges  : 10
+ Level 25 : shield
+
+
+a small coral ring
+ Object 'ring coral smooth small'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 2            Value   : 200
+
+ Affects  : ARMOR         by -6
+ Item is  : MAGIC
+
+
+Cargath Darnyr
+ Object 'warstar cargath darnyr star mace'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 23           Value   : 1000
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : MAGIC
+ Class    : flail
+ Damage   : 3D5
+
+a shirt of brass dragon scales
+ Object 'shirt brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 22           Value   : 600
+
+ Affects  : ARMOR         by -10
+ Affects  : CON           by 1
+ Item is  : MAGIC ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Apply    : 10
+ This object is part of a larger set.
+
+
+a molded red leather breastplate
+ Object 'breastplate plate molded red leather molded'
+ Item Type: ARMOR
+ Mat Class: leather      Material: hard_leather
+ Weight   : 24           Value   : 240
+
+ Affects  : HP_REGEN      by 15
+ Affects  : MOVE_REGEN    by 15
+ Affects  : RESIST_HEAT   by 15
+ Immune   : IMMUNE_HEAT
+ Apply    : 8
+load on derisa
+
+a robe of dirt and grass
+ Object 'robe dirt grass pile'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 130
+
+ Affects  : INT           by 1
+ Affects  : WIS           by 1
+ Affects  : DEX           by -1
+ Affects  : MOVE          by -20
+ Effects  : NOCHARM
+ Restricts: NOMAGE NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+some fluorescent green dragonscale sleeves
+ Object 'sleeves green fluorescent dragonscale dragonscales dragon scale pile'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 3            Value   : 400
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : SAVING_BREATH by -1
+ Item is  : GLOW
+ Restricts: NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 7
+
+
+a set of face rippers
+ Object 'gauntlets spiked metal face rippers set'
+ Item Type: WORN
+ Mat Class: metal        Material: steel
+ Weight   : 5            Value   : 250
+
+ Affects  : DEX           by -3
+ Affects  : DAMROLL       by 2
+
+
+some brass dragonscale sleeves
+ Object 'sleeves brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 6            Value   : 310
+
+ Affects  : ARMOR         by -7
+ Affects  : STR           by 1
+ Affects  : skill shield block  by +5
+ Item is  : MAGIC BLESS ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+ Apply    : 6
+ This object is part of a larger set.
+
+
+a pair of emerald green leather gloves (kagwan, the kagonesti pathfinder) (talokgrouping)
+ Object 'gloves leather green emerald pair'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 2            Value   : 30
+
+ Affects  : CHA           by 1
+ Affects  : DAMROLL       by 1
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+433H 108V 8993247X 90.17% 156C Exits:W>
+
+Infidel wears some chainmail armor on her body.
+
+
+ Object 'monocle thin small glass eyepiece'
+ Item Type: WORN
+ Mat Class: crystal      Material: glass
+ Weight   : 1            Value   : 200
+
+ Affects  : LEARN         by 3
+ Affects  : casting level by 1
+ Item is  : MAGIC BLESS
+ Immune   : IMMUNE_ACID IMMUNE_HEAT
+
+
+a cloak of sea dragon scales
+ Object 'cloak sea dragon scales'
+ Item Type: WORN
+ Mat Class: scale        Material: dragonscale
+ Weight   : 5            Value   : 400
+
+ Affects  : HEALTH        by 5
+ Affects  : HITROLL       by 1
+ Effects  : DETECT_EVIL DETECT_INVISIBLE DETECT_MAGIC WATERBREATH
+ Item is  : MAGIC
+You freeze with dragonfear as an image of a sea dragon fills your mind.
+
+
+a pair of battle-scarred adamantite gauntlets
+ Object 'gauntlets adamantite battle-scarred battle scarred'
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 8            Value   : 600
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+load on derisa
+
+
+a pair of birch bark gloves
+ Object 'gloves birch bark'
+ Item Type: ARMOR
+ Mat Class: wood         Material: elm
+ Weight   : 6            Value   : 600
+
+ Affects  : healing done by  10%
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 3
+ This object is part of a larger set.
+
+
+a blue ring
+ Object 'ring blue'
+ Item Type: WORN
+ Mat Class: crystal      Material: crystal
+ Weight   : 1            Value   : 100
+
+ Affects  : LEARN         by 2
+ Effects  : SENSE_LIFE
+ Item is  : GLOW MAGIC
+
+
+the pendant of a giant sea turtle
+ Object 'pendant turtle sea'
+ Item Type: KEY
+ Mat Class: natural      Material: bone
+ Weight   : 5            Value   : 20
+
+ Item is  : EVIL MAGIC NORENT
+
+
+runed elven armbands
+ Object 'armband armbands elven runed'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 10           Value   : 350
+
+ Affects  : STR           by 1
+
+
+a long flowing robe crafted of oak leaves
+ Object 'robe oak leaves'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 2            Value   : 1000
+
+ Affects  : spell slots   by +1 at level 8
+ Affects  : spell slots   by +1 at level 4
+ Item is  : MAGIC BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 6
+
+
+a scratched dolphin bone breastplate
+ Object 'breastplate plate dolphin bone scratched ribcage white large'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 16           Value   : 240
+
+ Affects  : CONCENTRATION by 5
+ Affects  : healing recieved by  5%
+ Affects  : SAVING_SPELL  by -1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 6
+
+
+the eyes of a baby basilisk
+ Object 'eyes eye basilisk baby green pale tiny'
+ Item Type: WAND
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 1            Value   : 100
+
+ Affects  : casting level by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+ Charges  : 2
+ Level  8 : paralysis
+
+
+a crown of elfish bones
+
+a medallion of Paladine
+
+
+a gold and black laced sickle 3d5 +2dam +1hr
+
+a band of granite (cabinet, druid's nook)
+ Object 'band stone granite'
+ Item Type: ARMOR
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 75
+
+ Affects  : HITROLL       by 1
+ Affects  : INT           by -1
+ Effects  : DETECT_INVISIBLE
+ Item is  : GLOW MAGIC
+ Apply    : 4
+
+
+a pair of golden whale bone vambraces
+ Object 'vambraces golden whale bone'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 12           Value   : 2000
+
+ Affects  : STR           by 2
+ Affects  : SAVING_BREATH by -2
+ Affects  : skill strike        by +5
+ Affects  : skill thrust        by +5
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+ LOAD     : Golden Whale
+
+
+a pair of battle-scarred adamantite boots
+ Object 'boots adamantite battle-scarred battle scarred'
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 6            Value   : 600
+
+ Affects  : MOVE          by 20
+ Item is  : MAGIC
+ Apply    : 8
+ This object is part of a larger set.
+
+
+some brushed steel gauntlets
+ Object 'gauntlets steel brushed'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 1200
+
+ Affects  : DAMROLL       by 2
+ Affects  : skill lay           by +5
+ Item is  : BLESS ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NORANGER NOWARRIOR NOBARBARIAN NOSHAMAN
+ Apply    : 8
+
+
+a pair of treated steel legplates inlaid with ebony
+ Object 'armor armour plate legplates leg steel inlaid ebony'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 20           Value   : 500
+
+ Affects  : ARMOR         by -5
+ Affects  : DEX           by 1
+ Item is  : GLOW MAGIC
+ Apply    : 9
+
+
+a pair of treated steel armplates inlaid with ebony
+ Object 'armor armour plate armplates arm steel inlaid ebony'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 15           Value   : 500
+
+ Affects  : ARMOR         by -5
+ Affects  : STR           by 1
+ Item is  : GLOW MAGIC
+ Apply    : 7
+
+
+a sphere of plant matter
+ Object 'sphere green plant matter vegetation ball'
+ Item Type: TREASURE
+ Mat Class: natural      Material: organic
+ Weight   : 6            Value   : 300
+
+ Affects  : WIS           by 2
+ Affects  : INT           by -2
+ Item is  : MAGIC
+ Restricts: NODARK_KNIGHT
+
+
+a translucent shroud
+ Object 'shroud mist white translucent'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+
+ Weight   : 0            Value   : 400
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : skill sneak         by +15
+ Effects  : INVISIBLE
+ Item is  : INVISIBLE
+ Immune   : IMMUNE_COLD IMMUNE_ELECTRICITY
+
+
+a girdle of storm giant strength
+ Object 'girdle giant strength storm'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 18           Value   : 200
+
+ Affects  : STR           by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+an elongated squid head quiver (Dargonesti shop)
+ Object 'quiver squid head elongated'
+ Item Type: CONTAINER
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 650
+
+ Effects  : WATERBREATH
+ Item is  : MAGIC QUIVER
+
+
+a tattered purple cloak
+ Object 'cloak purple tattered heap velvet voluminous'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 4            Value   : 450
+
+ Affects  : ARMOR         by -10
+ Affects  : RESIST_COLD   by 36
+ Effects  : IMMUNE_NEGATIVE_ENERGY
+ Item is  : GLOW MAGIC
+ Immune   : IMMUNE_COLD IMMUNE_NEGATIVE_ENERGY
+
+ LOAD     : Lord Soth, Dargaard Keep
+
+
+a platinum gilt helm
+ Object 'helm platinum gilt'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 11           Value   : 1500
+
+ Affects  : AGE           by 10
+ Affects  : SAVING_BREATH by -2
+ Effects  : DETECT_INVISIBLE IMMUNE_FEAR
+ Item is  : MAGIC BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a brass dragonscale battle orb (Cupelix Trisfendamir, Lunitari)
+invis +1 9th slot and some detects.
+
+
+an iron eyepatch inlaid with emeralds..it glows dimply
+ Object 'eyepatch iron emeralds'
+ Item Type: OTHER
+ Mat Class: metal        Material: iron
+ Weight   : 4            Value   : 120
+
+ Affects  : CON           by 1
+ Item is  : GLOW MAGIC
+
+
+a black scabbard adorned with roses
+ Object 'scabbard black roses belt heavy'
+ Item Type: CONTAINER
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 210
+
+ Affects  : DEX           by 1
+ Item is  : MAGIC
+
+ LOAD     : Lord Soth, Dargaard Keep
+
+a gold dragonscale bracer (Castle uth Wistan)
+Object 'bracer gold golden dragonscale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 3            Value   : 1500
+
+ Affects  : spell slots   by +1 at level 8
+ Affects  : HIT           by 7
+ Affects  : casting level by 1
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Apply    : 1
+
+
+A platinum pike (Castle uth Wistan)
+Object 'pike platinum'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 22           Value   : 800
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : GLOW
+ Class    : pike
+ Damage   : 3D6
+
+
+some greaves of the Rose (Castle uth Wistan)
+ Object 'greaves rose galvanized steel'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 28           Value   : 70
+
+ Affects  : STR           by 1
+ Effects  : DETECT_POISON
+ Item is  : ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+A small, gold dagger (Castle uth Wistan)
+ Object 'dagger small golden gold'
+ Item Type: WEAPON
+ Mat Class: metal        Material: gold
+ Weight   : 8            Value   : 800
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : MAGIC
+ Restricts: NOCLERIC
+ Class    : dagger
+ Damage   : 4D3
+
+
+some galvanized vambraces of the Rose (castle uth wistan)
+Item Type: ARMOR
+Mat Class: metal        Material: steel
+Weight   : 8            Value   : 60
+
+
+some gypsy beads (Gypsy camp fortune teller's drawer)
+ Object 'beads gypsy'
+ Item Type: WORN
+ Mat Class: natural      Material: ceramic
+ Weight   : 5            Value   : 100
+
+ Affects  : INT           by 1
+ Affects  : casting level by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : GLOW HUM
+ Restricts: NOTHIEF
+
+ LOAD     : Gypsy Camp, Fortune Teller
+
+
+a pair of golden arm braces
+ Object 'braces arm golden'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 500
+
+ Affects  : WIS           by 1
+ Affects  : SAVING_SPELL  by -1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID
+
+
+a green runed bracer
+ Object 'bracer runed green'
+ Item Type: ARMOR
+ Mat Class: metal        Material: tin
+ Weight   : 4            Value   : 120
+
+ Affects  : INT           by 1
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 2
+
+ LOAD     : Renegade druid by Kal harbor
+
+
+a pair of banded teak sleeves
+ Object 'sleeves banded teak wooden'
+ Item Type: ARMOR
+ Mat Class: wood         Material: vallenwood
+ Weight   : 8            Value   : 600
+
+ Affects  : INT           by 1
+ Item is  : MAGIC
+ Apply    : 3
+ This object is part of a larger set.
+
+
+the robe of Galan Dracos
+ Object 'robe galan dracos'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 1000
+
+ Affects  : HIT           by 20
+ Affects  : SAVING_SPELL  by -3
+ Affects  : casting level by 4
+ Effects  : INVISIBLE
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+ LOAD     : Galan Dracos
+
+
+a symbol of an open book (Haven cemetery)
+ Object 'necklace symbol book open'
+ Item Type: TREASURE
+ Mat Class: metal        Material: adamantite
+ Weight   : 1            Value   : 25
+
+ Affects  : LEARN         by 3
+
+
+a crimson cape
+ Object 'cape cloth red crimson'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 1            Value   : 400
+
+ Affects  : HITROLL       by 1
+ Affects  : ARMOR         by -4
+ Item is  : MAGIC
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NORANGER NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_COLD
+
+
+
+a purple wormskin band
+ Object 'wristband purple wormskin worm'
+ Item Type: ARMOR
+ Mat Class: hide         Material: rawhide
+ Weight   : 12           Value   : 1200
+
+ Affects  : HIT           by 10
+ Affects  : RESIST_GAS    by 5
+ Immune   : IMMUNE_GAS
+ Apply    : 10
+
+ LOAD     : The father worm
+
+
+a charred black ring
+ Object 'ring black charred tungsten'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 3            Value   : 250
+
+ Affects  : regeneration by  5%
+ Affects  : healing recieved by  8%
+ Effects  : DETECT_INVISIBLE SENSE_LIFE
+ Item is  : MAGIC BLESS
+ Immune   : IMMUNE_HEAT IMMUNE_MAGIC
+ Apply    : 5
+
+ LOAD     : Lord Soth, Dargaard Keep
+
+
+a misty, translucent shroud
+ Object 'shroud misty translucent'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+ Weight   : 1            Value   : 400
+
+ Effects  : IMMUNE_ACID IMMUNE_NEGATIVE_ENERGY
+ Item is  : NORENT
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Immune   : IMMUNE_ACID IMMUNE_HEAT
+
+
+a white dragonarmy bracer
+ Object 'bracer white dragonarmy steel'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 5            Value   : 80
+
+ Affects  : STR           by 1
+ Effects  : DETECT_GOOD
+ Apply    : 6
+
+
+a spiked golden bracelet
+Object 'bracelet golden spiked'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 4            Value   : 1200
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a lapis lazuli encrusted silver bracelet
+ Object 'bracelet lapis lazuli silver dirty'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 6            Value   : 160
+
+ Affects  : DEX           by 1
+ Affects  : HIT           by 5
+ Effects  : DETECT_GOOD
+ Item is  : MAGIC
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a pair of red oakleaf crested boots
+ Object 'boots red oakleaf'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 300
+
+ Affects  : skill kick          by +7
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a black, chain mesh hauberk
+ Object 'chain mesh hauberk black'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 22           Value   : 680
+
+ Affects  : HIT           by 9
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a rune etched mithril ring
+ Object 'ring mithril etched'
+ Item Type: WORN
+ Mat Class: metal        Material: mithril
+ Weight   : 1            Value   : 300
+
+ Affects  : casting level by 1
+ Effects  : IMMUNE_POISON
+ Item is  : MAGIC BLESS
+
+
+a book of battle magic
+ Object 'book battle magic'
+ Item Type: OTHER
+ Mat Class: cloth        Material: parchment
+ Weight   : 4            Value   : 2000
+
+ Affects  : LEARN         by 7
+ Affects  : RESIST_GAS    by 12
+ Affects  : HIT           by 5
+ Affects  : casting level by 2
+ Item is  : GLOW HUM MAGIC BLESS
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_MAGIC
+
+
+a long sword (Ariakas, the Dragon Highlord)
+ Object 'sword long'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 8            Value   : 6
+
+ Class    : long_sword
+ Damage   : 1D8
+
+
+a giant silver scimitar
+ Object 'scimitar silver giant'
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 22           Value   : 200
+
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Class    : scimitar
+ Damage   : 3D5
+
+
+a small circlet of bronze
+ Object 'circlet small bronze'
+ Item Type: WORN
+ Mat Class: metal        Material: bronze
+ Weight   : 1            Value   : 120
+
+ Effects  : DETECT_EVIL DETECT_INVISIBLE DETECT_GOOD
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+ LOAD     : Quintara Obre
+
+
+a ring of lightning
+ Object 'ring lightning'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 2            Value   : 300
+
+ Affects  : WIS           by 1
+ Item is  : MAGIC ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+
+
+a pair of white striped blue sleeves
+ Object 'sleeves blue white striped'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 4            Value   : 270
+
+ Affects  : RESIST_COLD   by 8
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+
+
+an amber necklace
+ Object 'necklace amber'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 1            Value   : 600
+
+ Effects  : INVISIBLE DETECT_INVISIBLE
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+the Iceblade
+ Object 'iceblade sword'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 22           Value   : 330
+
+ Affects  : HITROLL       by 2
+ Class    : long_sword
+ Damage   : 2D7
+
+
+a bronze sahuagin sword etched with runes
+ Object 'sword bronze sahuagin etched runes'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 18           Value   : 120
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS
+ Class    : sabre
+ Damage   : 3D5
+
+
+a glass sabre
+ Object 'sword glass sabre'
+ Item Type: WEAPON
+ Mat Class: crystal      Material: glass
+ Weight   : 7            Value   : 280
+
+ Affects  : DEX           by 1
+ Affects  : HITROLL       by 2
+ Affects  : WIS           by 1
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : sabre
+ Damage   : 1D20
+
+
+a ceremonial aurinite slingstaff
+ Object 'slingstaff sling staff aurinite ceremonial'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 10           Value   : 1000
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : whip
+ Damage   : 4D4
+
+
+a scarlet corsair's badge
+ Object 'scarlet badge corsair corsair's'
+ Item Type: OTHER
+ Mat Class: crystal      Material: diamond
+ Weight   : 7            Value   : 700
+
+ Affects  : STR           by 1
+ Item is  : MAGIC
+
+
+a splendidly sharp red longsword
+ Object 'sword long longsword sharp red'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 18           Value   : 200
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : BLESS
+ Class    : long_sword
+ Damage   : 4D4
+
+
+a diamond-studded jaguar collar
+ Object 'collar jaguar diamond'
+ Item Type: WORN
+ Mat Class: cloth        Material: silk
+ Weight   : 4            Value   : 650
+
+ Affects  : CON           by 1
+ Affects  : healing recieved by  5%
+ Item is  : MAGIC
+
+
+some singed gossamer gloves
+ Object 'gloves gossamer singed'
+ Item Type: WORN
+ Mat Class: cloth        Material: gossamer
+ Weight   : 0            Value   : 240
+
+The frail gloves seem to be imbued with protective powers which your loring
+magic seems unable to decipher.
+
+
+a white globe and chain
+ Object 'necklace white chain globe'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 1            Value   : 210
+
+ Affects  : WIS           by 1
+ Effects  : NOCHARM
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a pair of platinum gilt boots
+ Object 'boots gilt elven platinum pair'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 11           Value   : 400
+
+ Affects  : STR           by 1
+ Affects  : MOVE          by 20
+ Item is  : ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+ LOAD     : Enormous platinum dragon
+
+
+a green dragonscale wrist band
+ Object 'wristband green band wrist dragonscale dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 6            Value   : 600
+
+ Affects  : ARMOR         by -4
+ Affects  : RANGED_HITROL by 5
+ Item is  : MAGIC
+ Apply    : 4
+
+
+a pair of wicked black boots
+ Object 'boots black wicked pair'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 7            Value   : 500
+
+ Affects  : HITROLL       by 2
+ Item is  : MAGIC
+ Apply    : 4
+
+
+a pair of blue dragon scale gauntlets
+ Object 'gauntlets blue dragon scale dragonscale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 8            Value   : 640
+
+ Affects  : RESIST_ELECTR by 9
+ Affects  : STR           by 1
+ Item is  : MAGIC
+ Immune   : IMMUNE_ELECTRICITY
+ Apply    : 10
+
+
+a white cloak trimmed with silver
+ Object 'cloak white silver cloth'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 4            Value   : 160
+
+ Affects  : INT           by 1
+ Affects  : HIT           by -5
+ Affects  : casting level by 1
+ Effects  : NOCHARM
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+
+a scratched silver ring
+ Object 'ring silver scratched simple'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 1            Value   : 48
+
+ Affects  : ARMOR         by -6
+
+
+a carved stone seal
+ Object 'ring seal carved stone'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 100
+
+ Effects  : DETECT_INVISIBLE SENSE_LIFE
+ Item is  : GLOW MAGIC
+
+
+a white gold ring
+ Object 'ring white gold shadow'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 1            Value   : 100
+
+ Affects  : RESIST_COLD   by 3
+ Effects  : DETECT_MAGIC
+ Item is  : MAGIC
+
+
+a gazer's eye
+ Effects: NIGHTVISION TRUE_SEEING
+
+a vine belt
+ Object 'belt vine'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 5            Value   : 150
+
+ Affects  : WIS           by 1
+ Item is  : BLESS
+ Restricts: NOTHIEF
+
+
+a pair of golden arm braces
+ Object 'braces arm golden'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 500
+
+ Affects  : WIS           by 1
+ Affects  : SAVING_SPELL  by -1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID
+
+
+a golden shield with a green crest
+ Object 'shield gold green crest'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 200
+
+ Affects  : skill shield block  by +5
+ Affects  : HIT           by 10
+ Item is  : MAGIC ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 4
+
+ LOAD     : Lord Lytburg, Lytburg Mansion
+
+
+a black stone
+ Object 'stone black'
+ Item Type: OTHER
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 200
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS
+
+
+a crown of woven grape leaves
+ Object 'crown leaves grape woven'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 5            Value   : 200
+
+Despite looking like normal grape leaves, your loring magic bounces harmlessly
+off the crown.
+You cannot discern anything else.
+
+
+a suit of red dragonscale plate
+ Object 'plate red dragon scale dragonscale suit'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 30           Value   : 1000
+
+ Affects  : CON           by 1
+ Affects  : HEALTH        by 35
+ Affects  : RESIST_HEAT   by 10
+ Restricts: NOMAGE NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Apply    : 9
+The red scales shimmer under your divination.
+
+
+a smokey glass charm
+ Object 'ball glass smokey charm'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 0            Value   : 90
+
+ Affects  : SAVING_SPELL  by -1
+ Effects  : NOCHARM
+
+ LOAD     : Cabre Tohz's apprentice
+
+
+an elk skin leather armor
+ Object 'armor armour leather elk skin'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 10           Value   : 1000
+
+ Affects  : HIT           by 12
+ Effects  : SNEAK HIDE
+ Item is  : ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE N
+OWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+
+a shield of holy light
+ Object 'shield light holy'
+ Item Type: ARMOR
+ Mat Class: crystal      Material: crystal
+ Weight   : 35           Value   : 250
+
+ Affects  : skill bash          by +10
+ Item is  : GLOW MAGIC BLESS
+ Apply    : 6
+
+
+a black ice shield
+ Object 'shield black ice'
+ Item Type: ARMOR
+ Mat Class: natural      Material: ice
+ Weight   : 16           Value   : 200
+
+ Affects  : RESIST_COLD   by 16
+ Item is  : GLOW
+ Restricts: NOMAGE NOTHIEF NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_COLD
+ Apply    : 8
+
+
+the amulet of Kul
+ Object 'amulet kul'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 4            Value   : 250
+
+ Affects  : HIT           by 5
+ Affects  : CHA           by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : GLOW INVISIBLE MAGIC
+
+
+a soft red leather headband
+ Object 'soft red leather headband'
+ Item Type: ARMOR
+ Mat Class: leather      Material: fine_leather
+ Weight   : 1            Value   : 60
+
+ Effects  : INFRAVISION
+ Apply    : 1
+
+
+a petrified cannabis clavariaceae
+ Object 'clavariaceae cannabis petrified club'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 22           Value   : 500
+
+ Affects  : HITROLL       by -1
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC BLESS
+ Immune   : IMMUNE_DISINTEGRATION IMMUNE_HEAT
+ Class    : club
+ Damage   : 3D6
+
+
+an evil teddy bear (under relm)
+
+a pointy straw hat (pigmy forest flesh golem)
+
+a shield of bone (pigmy forest flesh golem)
+
+a bone sword (pigmy forst pigmy chief)
+
+
+
+a pair of green swordsman gloves
+ Object 'gloves green swordsman'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 6            Value   : 50
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+
+
+a spiral horn
+ Object 'horn spiral'
+ Item Type: WEAPON
+ Mat Class: natural      Material: organic
+ Weight   : 20           Value   : 500
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 3
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Class    : main_gauche
+ Damage   : 3D5
+This weapon gains its powers from the magical nature of the ki-rin.
+
+
+a silver hatchet with a chain-wrapped handle
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 4            Value   : 1400
+
+ Affects  : HITROLL       by 3
+ Affects  : skill fence         by +5
+ Affects  : skill riposte       by +5
+ Affects  : skill parry         by +5
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NODRUID NOCLERIC NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+ Class    : hatchet
+ Damage   : 4D2
+
+
+a silver etched solamnic shield
+ Object 'shield silver etched'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 18           Value   : 80
+
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+
+a suit of white rawhide
+ Object 'armor armour suit white rawhide'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 15           Value   : 80
+
+ Affects  : spell slots   by +1 at level 1
+ Affects  : spell slots   by +1 at level 2
+ Affects  : casting level by 2
+ Item is  : MAGIC
+
+
+a set of macabre human bone armlets
+ Object 'armlets bone human macabre'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 6            Value   : 600
+
+ Affects  : INT           by 1
+ Item is  : MAGIC
+ Apply    : 4
+ This object is part of a larger set.
+
+
+a suit of silver etched solamnic plate
+ Object 'suit platemail plate silver etched'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 20           Value   : 120
+
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 6
+
+an orange leather tricorne
+ Object 'tricorne leather orange hat triangular'
+ Item Type: WORN
+ Mat Class: leather      Material: rigid_leather
+ Weight   : 2            Value   : 260
+
+ Affects  : CON           by 1
+ Affects  : RESIST_COLD   by 10
+ Item is  : MAGIC
+
+
+a pair of yellow and blue kelp pants
+ Object 'pants blue yellow kelp jumble'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 4            Value   : 320
+
+ Affects  : MOVE_REGEN    by 10
+ Affects  : SAVING_BREATH by -1
+ Item is  : MAGIC
+
+
+
+
+
+the starjewel
+ Object 'starjewel jewel star'
+ Item Type: LIGHT
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 3            Value   : 800
+
+ Affects  : RESIST_HEAT   by 50
+ Affects  : casting level by 2
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+
+
+a puma skull
+ Affects  : skill charge        by +5
+ Affects  : ARMOR         by -4
+ Effects  : INFRAVISION
+ Item is  : BLESS
+ Immune   : IMMUNE_DISINTEGRATION IMMUNE_HEAT
+ Apply    : 5
+
+
+an orb of justice
+ Object 'orb justice'
+ Item Type: OTHER
+ Mat Class: crystal      Material: crystal
+ Weight   : 3            Value   : 500
+
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a spear of the hunter
+ Object 'spear hunter'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 40           Value   : 700
+
+ Affects  : skill piercers      by +5
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 2
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Class    : spear
+ Damage   : 5D5
+
+
+a burned black cloak
+ Object 'cloak black burned wool'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 7            Value   : 200
+
+ Affects  : ARMOR         by -5
+ Affects  : RESIST_HEAT   by 18
+ Item is  : MAGIC
+ Immune   : IMMUNE_COLD IMMUNE_HEAT
+
+
+an essence of wind
+ Object 'wind essence cloud funnel tiny'
+ Item Type: OTHER
+ Mat Class: other        Material: gas_vapour
+ Weight   : 10           Value   : 0
+
+ Item is  : NODROP
+ Immune   : IMMUNE_COLD IMMUNE_GAS
+
+
+a necklace of snake rattles
+ Object 'necklace rattles snake'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 10           Value   : 500
+
+ Affects  : spell slots   by +2 at level 1
+ Affects  : skill sneak         by -25
+ Effects  : IMMUNE_POISON
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_GAS IMMUNE_HEAT IMMUNE_POISON
+ Apply    : 4
+
+
+a heavy black cloak with silvery runes
+ Object 'cloak black cloth heavy silvery runes'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 7            Value   : 300
+
+ Affects  : RESIST_HEAT   by 25
+ Affects  : RESIST_ELECTR by 25
+ Affects  : casting level by 3
+ Effects  : INVISIBLE SENSE_LIFE NOCHARM
+ Item is  : INVISIBLE
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_HEAT
+
+
+a green dragonscale tunic
+ Object 'tunic green shirt dragonscale dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 18           Value   : 600
+
+ Affects  : ARMOR         by -6
+ Affects  : DEX           by 1
+ Item is  : MAGIC
+ Apply    : 6
+
+
+a navel ring
+ Object 'ring post platinum navel diamond'
+ Item Type: WORN
+ Mat Class: metal        Material: platinum
+ Weight   : 1            Value   : 130
+
+ Affects  : RESIST_COLD   by 10
+ Affects  : casting level by 1
+ Effects  : NOCHARM
+ Item is  : GLOW MAGIC
+
+
+a fine mahogany ring
+ Object 'ring mahogany fine'
+ Item Type: OTHER
+ Mat Class: wood         Material: oak
+ Weight   : 2            Value   : 250
+
+ Affects  : DAMROLL       by 1
+ Item is  : GLOW MAGIC
+
+ LOAD     : Terrapin, Haven Temple
+
+
+a gleaming mithril necklace inlaid with diamonds
+ Object 'necklace mithril gleaming diamonds'
+ Item Type: WORN
+ Mat Class: crystal      Material: diamond
+ Weight   : 3            Value   : 110
+
+ Affects  : ARMOR         by -3
+ Effects  : DETECT_INVISIBLE SENSE_LIFE
+
+
+a suit of marble plate
+ Object 'suit plate marble'
+ Item Type: ARMOR
+ Mat Class: natural      Material: stone
+ Weight   : 20           Value   : 500
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : SAVING_PARA   by -1
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 10
+
+
+a regal suit of platemail
+ Object 'plate regal suit platemail armour armor'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 35           Value   : 500
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a pair of solamnic leg plates
+ Object 'plates leg solamnic bronze'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 10           Value   : 300
+
+ Affects  : ARMOR         by -10
+ Affects  : HIT           by 10
+ Item is  : ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+some silver-fused steel legplates
+ Object 'legplates plated leg steel plates fused silver'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 17           Value   : 500
+
+ Affects  : DAMROLL       by 1
+ Restricts: NOBARBARIAN NOSHAMAN
+ Apply    : 10
+
+
+an alb
+ Object 'alb cloth'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 4            Value   : 320
+
+ Affects  : WIS           by 1
+ Affects  : HIT           by 8
+ Item is  : MAGIC
+
+
+a heavy steel battleaxe
+ Object 'battleaxe axe battle steel large'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 26           Value   : 600
+
+ Affects  : DAMROLL       by 3
+ Affects  : DEX           by -2
+ Item is  : MAGIC
+ Class    : battle_axe
+ Damage   : 2D10
+
+
+a shield of woven mistletoe (Boku)
+ Object 'shield mistletoe woven'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 6            Value   : 505
+
+ Affects  : spell slots   by +1 at level 4
+ Affects  : skill commune with  by +5
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+
+a black wrist band
+ Object 'wrist band black'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 50
+
+ Affects  : HITROLL       by 1
+ Effects  : DETECT_GOOD
+ Item is  : MAGIC
+ Apply    : 5
+
+
+a black glass bracelet
+ Object 'bracelet black glass'
+ Item Type: WORN
+ Mat Class: crystal      Material: glass
+ Weight   : 5            Value   : 250
+
+ Affects  : ARMOR         by -4
+ Affects  : INT           by 1
+ Affects  : casting level by 1
+ Item is  : MAGIC
+ Restricts: NOPALADIN NORANGER NOWARRIOR NOBARBARIAN
+
+
+a wispy bracelet of spiritual horse hairs
+ Object 'bracelet wispy spiritual ethereal horse hairs'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+ Weight   : 2            Value   : 130
+
+ Affects  : STR           by 1
+ Item is  : MAGIC BLESS
+
+ LOAD     : The ghastly spirit of a horse, Blighted Farm (nighttime only)
+
+
+a three-strap leather bracer
+ Object 'bracer three-strap leather'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 2            Value   : 500
+
+ Affects  : STR           by 1
+ Item is  : MAGIC BLESS
+
+
+a pair of bone boots
+ Object 'boots bone pair'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 10           Value   : 50
+
+ Affects  : RESIST_ELECTR by 5
+ Apply    : 5
+
+
+a frosted tin ring
+ Object 'ring tin frosted'
+ Item Type: WORN
+ Mat Class: metal        Material: tin
+ Weight   : 2            Value   : 250
+
+ Affects  : DAMROLL       by 1
+ Affects  : RESIST_HEAT   by 12
+ Item is  : MAGIC
+
+ LOAD     : Frostbyte
+
+
+a crimson cloak inlaid with threads of marble (avatar of lunitari)
+ Object 'cloak crimson marble'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 7            Value   : 600
+
+ Affects  : spell slots   by +1 at level 5
+ Affects  : RESIST_MAGIC  by 10
+ Affects  : casting level by 1
+ Effects  : SNEAK
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+The magic inherent in the cloak repels your attempts to probe it further.
+
+
+a robe embroidered with stars
+ Object 'robe cloth stars star'
+ Item Type: OTHER
+ Mat Class: cloth        Material: cotton
+ Weight   : 4            Value   : 350
+
+ Affects  : INT           by 2
+ Affects  : SAVING_SPELL  by -1
+ Affects  : casting level by 3
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+Those who are truly brightest, always are looking up towards the stars.
+
+
+a papal cross
+ Object 'cross papal'
+ Item Type: LIGHT
+ Mat Class: crystal      Material: glass
+ Weight   : 5            Value   : 150
+
+ Effects  : IS_FLYING
+ Item is  : GLOW
+
+
+a burned black cloak
+ Object 'cloak black burned wool'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 7            Value   : 200
+
+ Affects  : ARMOR         by -5
+ Affects  : RESIST_HEAT   by 18
+ Item is  : MAGIC
+ Immune   : IMMUNE_COLD IMMUNE_HEAT
+
+ LOAD     : Lord Soth, Dargaard Keep
+
+
+a solid silver girdle
+ Object 'girdle silver solid'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 20           Value   : 500
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : SAVING_BREATH by -1
+ Item is  : MAGIC
+
+
+a brass dragonscale shield
+ Object 'shield bright brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 30           Value   : 600
+
+ Affects  : ARMOR         by -10
+ Affects  : CON           by 1
+ Affects  : skill shield block  by +5
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Apply    : 10
+
+
+a crimson shield of the wyrmgaard
+ Object 'shield crimson wyrmgaard'
+ Item Type: ARMOR
+ Mat Class: metal        Material: iron
+ Weight   : 30           Value   : 160
+
+ Affects  : skill bash          by +7
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+ Apply    : 7
+
+
+a sky blue robe etched with golden runes
+ Object 'robe blue sky golden'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: wool
+ Weight   : 8            Value   : 300
+
+ Affects  : WIS           by 1
+ Affects  : ARMOR         by -3
+ Item is  : MAGIC BLESS
+ Immune   : IMMUNE_ACID IMMUNE_COLD
+ Apply    : 10
+
+
+a suit of segmented coral armor
+ Object 'armor armour suit coral segmented narrow plates'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 18           Value   : 660
+
+ Affects  : CON           by 1
+ Affects  : RESIST_COLD   by 8
+ Affects  : score criticals by 1%
+ Effects  : WATERBREATH
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 10
+
+
+ancient armor of wizardry
+ Object 'armor armour ancient wizardry'
+ Item Type: WORN
+ Mat Class: leather      Material: fine_leather
+ Weight   : 14           Value   : 900
+
+ Affects  : HIT           by 10
+ Affects  : spell slots   by +2 at level 5
+ Effects  : HIDE
+ Item is  : MAGIC
+
+
+a beautiful branch of violet coral
+ Object 'branch beautiful violet coral'
+ Item Type: LIGHT
+ Mat Class: natural      Material: bone
+ Weight   : 3            Value   : 1000
+
+ Affects  : INT           by 1
+ Affects  : WIS           by 1
+ Affects  : MEM_FACTOR    by 5
+ Item is  : GLOW MAGIC NORENT
+
+
+the royal shield
+ Object 'shield royal'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 10           Value   : 2000
+
+ Affects  : ARMOR         by -10
+ Affects  : HIT           by 25
+ Effects  : NOSUMMON
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 12
+
+
+a platinum shield of Paladine
+ Object 'shield platinum paladine'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 10           Value   : 1200
+
+ Affects  : skill guard         by +5
+ Affects  : HIT           by 20
+ Effects  : NOCHARM
+ Item is  : MAGIC BLESS ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 9
+
+
+a pair of shadow sleeves
+ Object 'sleeves shadow'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: wool
+ Weight   : 6            Value   : 300
+
+ Affects  : ARMOR         by -3
+ Affects  : score criticals by 0.5%
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 3
+
+
+a pair of purple silk pants (hoot owl bandits leader)
+ Object 'pants silk purple pair'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 2            Value   : 30
+
+ Affects  : MOVE          by 4
+ Item is  : MAGIC
+
+
+a pair of soft black boots (hoot owl bandits leader)
+ Object 'boots pair soft black'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 8            Value   : 60
+
+ Affects  : MOVE          by 10
+ Affects  : casting level by 1
+ Item is  : MAGIC
+
+
+a diamond inlaid choker
+ Object 'choker inlaid diamond'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 2            Value   : 2000
+
+ Affects  : HITROLL       by 2
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NORANGER NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT IMMUNE_MAGIC
+
+
+a slim rapier (hoot owl bandits leader)
+ Object 'rapier slim thin sword'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 8            Value   : 60
+
+ Item is  : HUM MAGIC
+ Class    : rapier
+ Damage   : 2D7
+
+
+a brass dragonscale helm
+ Object 'helm helmet brass dragonscale dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 12           Value   : 600
+
+ Affects  : ARMOR         by -10
+ Affects  : WIS           by 1
+ Effects  : DETECT_EVIL DETECT_INVISIBLE INFRAVISION
+ Item is  : ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Apply    : 10
+
+
+a cloak of a chimera
+ Object 'cloak chimera lion goat serpent fur scales'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 11           Value   : 150
+
+ Affects  : STR           by 1
+ Affects  : SAVING_PARA   by -3
+ Effects  : DETECT_GOOD
+ Immune   : IMMUNE_HEAT
+
+
+a red oakleaf crested bracer
+ Object 'bracer red oakleaf'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 6            Value   : 224
+
+ Affects  : RANGED_DAMROL by 1
+ Affects  : HEALTH        by -10
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a shirt of brass dragon scales
+ Object 'shirt brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 22           Value   : 600
+
+ Affects  : ARMOR         by -10
+ Affects  : CON           by 1
+ Item is  : MAGIC ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Apply    : 10
+
+
+some brass dragon scale sleeves
+ Object 'sleeves brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 6            Value   : 310
+
+ Affects  : ARMOR         by -7
+ Affects  : STR           by 1
+ Affects  : skill shield block  by +5
+ Item is  : MAGIC BLESS ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+ Apply    : 6
+
+
+a ruby inlaid stone band
+ Object 'band ruby inlaid stone ring'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 100
+
+ Affects  : INT           by 1
+
+
+a dragonshelm
+ Object 'dragonshelm helm dragon silver'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 10           Value   : 500
+
+ Affects  : CON           by 2
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a pair of barbed wire boots
+ Object 'boots barbed wire'
+ Item Type: ARMOR
+ Mat Class: leather      Material: fine_leather
+ Weight   : 6            Value   : 240
+
+ Affects  : STR           by 1
+ Affects  : DEX           by 1
+ Item is  : MAGIC
+ Apply    : 6
+
+
+a ruby and diamond necklace
+ Object 'necklace ruby diamond'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 3            Value   : 500
+
+ Affects  : INT           by 1
+ Item is  : ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a pair of spiked sterling gauntlets
+ Object 'gauntlets spiked sterling pair'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 5            Value   : 125
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Apply    : 5
+
+
+a set of flowing satin robes
+ Object 'robes robe flowing satin'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: wool
+ Weight   : 3            Value   : 500
+
+ Affects  : INT           by 2
+ Affects  : SAVING_SPELL  by -1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 4
+
+
+a polished stone necklace
+ Object 'necklace polished stone rocks mound'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 260
+
+ Affects  : spell slots   by +1 at level 6
+ Affects  : WIS           by 1
+ Affects  : INT           by -1
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a balanced driftwood staff
+ Object 'staff driftwood wood balanced elven'
+ Item Type: WEAPON
+ Mat Class: wood         Material: vallenwood
+ Weight   : 34           Value   : 250
+
+ Affects  : HITROLL       by 2
+ Restricts: NOTHIEF
+ Class    : staff
+ Damage   : 6D4
+
+
+a shimmering green robe
+ Object 'robe green shimmering'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 155
+
+ Affects  : ARMOR         by -4
+ Affects  : SAVING_SPELL  by -1
+ Affects  : casting level by 2
+ Effects  : INFRAVISION
+ Item is  : MAGIC ANTI_GOOD
+
+
+a crimson steel lance
+ Object 'lance steel crimson'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 22           Value   : 250
+
+ Class    : lance
+ Damage   : 3D5
+
+
+a thick dwarven bracelet
+ Object 'bracelet dwarven thick'
+ Item Type: ARMOR
+ Mat Class: metal        Material: gold
+ Weight   : 3            Value   : 98
+
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Apply    : 5
+
+
+a grey leather cape
+ Object 'cape regal grey'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 200
+
+ Affects  : WIS           by 1
+ Affects  : CON           by -2
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a set of battle-scarred adamantite shin plates
+ Object 'plates shin adamantite battle-scarred battle scarred'
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 7            Value   : 600
+
+ Affects  : STR           by 1
+ Item is  : MAGIC
+ Apply    : 8
+ This object is part of a larger set.
+
+
+ Object 'sword cold steel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 20           Value   : 450
+
+ Affects  : HITROLL       by -2
+ Immune   : IMMUNE_HEAT
+ Class    : long_sword
+ Damage   : 4D3
+
+
+A kagonesti war shield
+ Object 'shield war kagonesti rawhide'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 30           Value   : 200
+
+ Affects  : skill bash          by +5
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a metallic dragon helm
+ Object 'helmet helm dragon metallic metal'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 8            Value   : 300
+
+ Affects  : RESIST_GAS    by 20
+ Affects  : RESIST_ACID   by 20
+ Item is  : MAGIC
+ Apply    : 7
+
+
+a pair of creased velvet gloves
+ Object 'gloves creased velvet dark pair'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 160
+
+ Affects  : regeneration by  5%
+ Affects  : skill disable       by +4
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Apply    : 5
+
+
+A magic pouch...it glows dimly
+ Object 'beltpouch belt pouch magic'
+ Item Type: CONTAINER
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 350
+
+ Affects  : casting level by 1
+ Item is  : GLOW MAGIC
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT IMMUNE_MAGIC
+
+
+A pair of supple leather gloves
+ Object 'gloves brown leather supple'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 150
+
+ Affects  : DAMROLL       by 1
+ Item is  : BLESS
+ Apply    : 3
+
+
+A pair of sterling gauntlets
+ Object 'gauntlets sterling'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 10           Value   : 550
+
+ Affects  : DAMROLL       by 1
+ Affects  : HIT           by 7
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 10
+
+
+A hardened granite shard...it hums softly
+ Object 'shard hardened granite rock grey'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 230
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : GLOW HUM MAGIC
+ Class    : dagger
+ Damage   : 2D7
+
+
+A black runed ring
+ Object 'ring black runed'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 300
+
+ Affects  : WIS           by 1
+ Affects  : HIT           by -3
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY
+
+
+a green leather jerkin
+ Object 'jerkin leather green'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 25
+
+ Apply    : 5
+
+
+a silver dragonlance
+Object 'dragonlance lance silver'
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 28           Value   : 1240
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 2
+ Affects  : CHA           by 1
+ Effects  : DETECT_EVIL
+ Item is  : GLOW MAGIC BLESS ANTI_EVIL ANTI_NEUTRAL HOT
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : lance
+ Damage   : 2D12
+
+ LOAD     : A Hidden Cache, Castle uth Wistan
+
+
+a slender dragonlance
+ Object 'lance dragon dragonlance silver slender fine'
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 20           Value   : 600
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 3
+ Affects  : CHA           by 2
+ Effects  : NOCHARM IMMUNE_FEAR
+ Item is  : GLOW HUM ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : lance
+ Damage   : 5D7
+
+
+Some ceremonial blue phoenix armplates
+ Object 'armplates arm plates phoenix ceremonial blue'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 8            Value   : 600
+
+ Affects  : DEX           by 1
+ Item is  : MAGIC
+ Restricts: NOBARBARIAN
+ Apply    : 8
+
+ This object is part of a larger set.
+
+
+a blue and green nephaline scepter
+ Object 'sceptre blue green nephaline'
+ Item Type: LIGHT
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 300
+
+ Effects  : IS_FLYING
+ Item is  : GLOW
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+A kagonesti dance shield
+ Object 'shield dance kagonesti'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 9            Value   : 200
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : INT           by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 5
+
+
+helm of the white ram
+ Object 'helm white ram'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 8            Value   : 250
+
+ Affects  : ARMOR         by -5
+ Effects  : DETECT_INVISIBLE INFRAVISION
+ Item is  : MAGIC ANTI_EVIL
+ Apply    : 3
+
+
+a grandiose plate of black steel
+ Object 'plate steel black grandiose decorated'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 45           Value   : 400
+
+ Affects  : RESIST_HEAT   by 16
+ Affects  : CON           by 1
+ Effects  : NOCHARM
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Apply    : 9
+
+
+a vest of silver dragonscale
+ Object 'vest dragonscale silver shimmering'
+ Item Type: WORN
+ Mat Class: scale        Material: dragonscale
+ Weight   : 4            Value   : 450
+
+ Affects  : STR           by 1
+ Affects  : WIS           by 1
+ Affects  : HIT           by 5
+ Affects  : ARMOR         by -4
+ Restricts: NOMAGE NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_COLD IMMUNE_HEAT
+
+
+a breastplate of elfish bones
+ Object 'breastplate plate bones elfish elven'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 35           Value   : 75
+
+ Affects  : STR           by 1
+ Affects  : INT           by -1
+ Effects  : DETECT_MAGIC
+ Item is  : EVIL ANTI_GOOD ANTI_NEUTRAL
+
+
+a dragontamer's leather helm
+ Object 'helm leather tamer dragontamer's dragon'
+ Item Type: OTHER
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 0
+
+ Effects  : DETECT_INVISIBLE INFRAVISION NOCHARM
+ Item is  : NORENT
+
+
+a gold oakleaf embroidered cerise cloak
+ Object 'cloak cerise embroidered oakleaf cloth red gold'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 3            Value   : 388
+
+ Affects  : HEALTH        by 7
+ Affects  : RESIST_ACID   by 10
+ Item is  : MAGIC
+
+
+
+a purple silk dress mageonly resmag by 14 2int 3cl
+
+
+an oakleaf etched cerise plate
+ Object 'breastplate plate cerise red oakleaf etched'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 38           Value   : 490
+
+ Affects  : STR           by 1
+ Affects  : DEX           by 2
+ Item is  : MAGIC ANTI_EVIL
+ Restricts: NOTHIEF NOBARBARIAN NOSHAMAN
+ Apply    : 10
+
+ LOAD     : Lord Rayne, Rayne's Mansion
+
+
+a signet ring of the White Dragonarmy (Captain Vakarr, Neraka)
+ Object 'ring signet white dragonarmy stark'
+ Item Type: WORN
+ Mat Class: metal        Material: iron
+ Weight   : 2            Value   : 30
+
+ Effects  : DETECT_INVISIBLE
+
+a metallic dragon helm
+ Object 'helmet helm dragon metallic metal'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 8            Value   : 300
+
+ Affects  : RESIST_GAS    by 20
+ Affects  : RESIST_ACID   by 20
+ Item is  : MAGIC
+ Apply    : 7
+
+
+an ergothian battle helmet
+ Object 'helmet ergothian battle'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 120
+
+ Affects  : CON           by 1
+ Effects  : DETECT_INVISIBLE INFRAVISION
+ Item is  : MAGIC
+ Apply    : 6
+
+
+a black and grey marbled shield
+ Object 'shield black grey marbled'
+ Item Type: ARMOR
+ Mat Class: natural      Material: stone
+ Weight   : 10           Value   : 150
+
+ Affects  : STR           by 2
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Apply    : 6
+
+
+a black onyx ring
+ Object 'ring onyx black'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 2            Value   : 200
+
+ Affects  : SAVING_PARA   by -1
+ Affects  : casting level by 1
+ Effects  : DETECT_MAGIC
+ Item is  : MAGIC
+
+
+a fishbone necklace
+ Object 'necklace fishbone skeleton fish'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 3            Value   : 50
+
+ Affects  : ARMOR         by -3
+ Effects  : NOSUMMON
+ Item is  : BLESS
+
+
+a lucky bone charm (Harbor of Palanthas)
+ Object 'charm bone lucky'
+ Item Type: OTHER
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 30
+
+ Effects  : NOSUMMON
+ Item is  : GLOW MAGIC
+
+
+a tarnished iron ring of the watch..it glows blue
+You feel informed:
+ Object 'ring tarnished iron watch'
+ Item Type: WORN
+ Mat Class: metal        Material: iron
+ Weight   : 1            Value   : 250
+
+ Effects  : DETECT_INVISIBLE SENSE_LIFE
+ Item is  : MAGIC BLESS
+
+
+a gold and diamond wedding band
+ Object 'ring diamond gold wedding band'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 4            Value   : 100
+
+ Affects  : ARMOR         by -2
+ Affects  : regeneration by  1%
+ Item is  : MAGIC BLESS
+
+
+a slender spiked war axe
+ Object 'axe spiked'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 15           Value   : 170
+
+ Affects  : HITROLL       by 2
+ Class    : hatchet
+ Damage   : 2D9
+
+
+ Object 'crossbow bow light hand'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 5            Value   : 20
+
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Class    : hand_crossbow
+ Damage   : 2D5
+
+
+some ceremonial blue phoenix greaves
+ Object 'greaves phoenix blue ceremonial'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 9            Value   : 600
+
+ Affects  : CON           by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOBARBARIAN
+ Apply    : 8
+ This object is part of a larger set.
+
+
+a steel finger ring sword
+ Object 'sword steel finger ring'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 18           Value   : 300
+
+ Affects  : HITROLL       by 2
+ Class    : long_sword
+ Damage   : 5D3
+
+
+a dark red leather byrnie
+ Object 'byrnie dark red leather'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 11           Value   : 300
+
+ Affects  : HIT           by 5
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_ACID IMMUNE_HEAT
+ Apply    : 6
+
+
+a heavy flintlock blunderbuss
+ Object 'blunderbuss flintlock heavy apparatus wood brass complicated'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 21           Value   : 630
+
+Your loring magic attempts to unravel the mysteries of this strange weapon,
+but the mechanism is too complex to understand, even for most gnomes.
+
+
+a cube of hardened granite..it glows dimly..it hums softly
+ Object 'cube grey granite rock hardened'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 230
+
+ Affects  : DAMROLL       by 2
+ Affects  : HITROLL       by 2
+ Item is  : GLOW HUM MAGIC
+ Class    : rod
+ Damage   : 4D4
+
+
+a blood red adamantite shield
+ Object 'shield red blood adamantite'
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 25           Value   : 250
+
+ Affects  : AGE           by 4
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a malevolent hooked beast goad
+ Object 'goad beast hooked malevolent'
+ Item Type: WEAPON
+ Mat Class: metal        Material: iron
+ Weight   : 18           Value   : 200
+
+ Affects  : skill disarm        by +20
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC
+ Class    : voulge
+ Damage   : 4D4
+
+
+an earthen brown robe (Elven father, Haven Temple)
+ Object 'robe earthen brown'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 6            Value   : 200
+
+ Affects  : spell slots   by +1 at level 3
+ Affects  : STR           by -1
+ Affects  : casting level by 1
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOWARRIOR
+
+
+a red snakeskin cape
+ Object 'cape snakeskin red thin sheet'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 110
+
+ Affects  : RESIST_HEAT   by 5
+ Affects  : ARMOR         by -6
+ Restricts: NOMAGE NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+
+
+a crimson sphere medallion of lunitari
+ Object 'medallion sphere crimson lunitari'
+ Item Type: LIGHT
+ Mat Class: crystal      Material: crystal
+ Weight   : 2            Value   : 4000
+
+You receive an intense migraine for attempting to delve into the
+past of this divine artifact.
+You cannot discern anything else.
+
+some spiked minotaur gauntlets
+ Object 'gauntlets spiked minotaur'
+ Item Type: WORN
+ Mat Class: metal        Material: bronze
+ Weight   : 8            Value   : 200
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Affects  : skill punch         by +5
+
+
+a black adamantite shortsword
+ Object 'sword short shortsword adamantite black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 5            Value   : 200
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : short_sword
+ Damage   : 3D4
+
+
+a pair of crystal crimson armbands
+ Object 'armbands crystal crimson'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 5            Value   : 500
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : STR           by 1
+ Effects  : IMMUNE_POISON
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_ELECTRICITY IMMUNE_POISON
+
+
+a pair of oak-bark boots
+ Object 'boots oak'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 5            Value   : 400
+
+ Affects  : HIT           by 5
+ Affects  : spell slots   by +1 at level 3
+ Affects  : spell slots   by +1 at level 4
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 0
+
+
+a pair of stitched dueling gloves
+ Object 'gloves dueling stitched pair'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 3            Value   : 250
+
+ Affects  : HITROLL       by 2
+ Affects  : skill parry         by +5
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a cloak of fog and shadows
+You feel informed:
+ Object 'cloak fog shadows'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+ Weight   : 1            Value   : 400
+
+ Effects  : INVISIBLE HIDE DELUDED
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+Disintegrates if you drop it.
+
+
+a dolphin bone ring
+ Object 'ring dolphin bone white'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 2            Value   : 200
+
+ Affects  : ARMOR         by -4
+ Item is  : MAGIC
+
+
+a robe of pure darkness
+ Object 'robe pure darkness'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 7            Value   : 200
+
+ Affects  : INT           by 1
+ Affects  : RESIST_MAGIC  by 9
+ Affects  : casting level by 2
+ Item is  : EVIL ANTI_GOOD
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+
+a pair of spun mithril sleeves
+ Object 'sleeves spun mithril pair'
+ Item Type: ARMOR
+ Mat Class: metal        Material: mithril
+ Weight   : 5            Value   : 600
+
+ Affects  : HITROLL       by 2
+ Affects  : DEX           by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a ceremonial scabbard
+ Object 'scabbard ceremonial'
+ Item Type: CONTAINER
+ Mat Class: metal        Material: platinum
+ Weight   : 5            Value   : 150
+
+ Affects  : HITROLL       by 1
+ Affects  : skill piercers      by +5
+ Item is  : MAGIC
+
+
+an erudite's sword
+ Object 'sword erudite's erudite'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 8            Value   : 480
+
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Class    : short_sword
+ Damage   : 3D4
+
+
+some kender skin boots
+ Object 'boots kender skin strange leathery'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 4            Value   : 400
+
+ Affects  : STR           by 1
+ Effects  : SNEAK
+ Item is  : ANTI_GOOD
+ Restricts: NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+
+some gray and blue checkered pants.. it glows dimly
+ Object 'pants pair checkered gray blue pile cloth'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 350
+
+ Affects  : STR           by 1
+ Affects  : DEX           by 1
+ Effects  : DETECT_MAGIC
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a thin golden dragonscale belt
+ Object 'belt thin golden dragonscale'
+ Item Type: OTHER
+ Mat Class: scale        Material: dragonscale
+ Weight   : 10           Value   : 350
+
+ Affects  : DEX           by 1
+
+
+a purple chiffon cloak..it glows dimly
+ Object 'cloak chiffon purple'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: silk
+ Weight   : 1            Value   : 70
+
+ Affects  : spell slots   by +1 at level 1
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 0
+
+
+a jewel encrusted light crossbow
+ Object 'crossbow bow jewel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 8            Value   : 1200
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : MAGIC ANTI_EVIL
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : hand_crossbow
+ Damage   : 3D3
+
+
+a fragile fulgurite helm..it glows dimly
+ Object 'helm fulgurite fragile'
+ Item Type: ARMOR
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 3            Value   : 400
+
+You sense this item has been enchanted by a powerful force.
+You cannot discern anything else.
+
+
+a braided black waistband
+ Object 'waistband braided black belt'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 1            Value   : 550
+
+ Affects  : spell slots   by +1 at level 4
+ Affects  : skill turn          by +5
+ Effects  : INVISIBLE
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a ruby-encrusted battle flail
+ Object 'flail ruby-encrusted battle'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 15           Value   : 500
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Class    : flail
+ Damage   : 3D6
+
+
+a gem of true seeing
+ Object 'gem seeing true'
+ Item Type: LIGHT
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 4            Value   : 400
+
+ Affects  : HEALTH        by -50
+ Affects  : casting level by 2
+ Effects  : NIGHTVISION TRUE_SEEING
+ Item is  : GLOW MAGIC
+
+
+the golden axe
+ Object 'axe golden gold'
+ Item Type: WEAPON
+ Mat Class: metal        Material: gold
+ Weight   : 18           Value   : 300
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : GLOW BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_ACID
+ Class    : battle_axe
+ Damage   : 4D4
+
+
+a small flintlock pistol
+ Object 'pistol flintlock small device wood brass complicated'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 6            Value   : 360
+
+Your loring magic attempts to unravel the mysteries of this strange weapon,
+but the mechanism is too complex to understand, even for most gnomes.
+
+
+a set of light blue prayer beads
+ Object 'beads prayer light blue'
+ Item Type: WORN
+ Mat Class: natural      Material: ceramic
+ Weight   : 1            Value   : 200
+
+ Affects  : WIS           by 1
+ Affects  : skill meditate      by +5
+ Item is  : BLESS
+
+
+a suit of adamantite mesh
+ Object 'suit adamantite mesh'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 14           Value   : 250
+
+ Effects  : HIDE
+ Item is  : INVISIBLE MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a light bronze lance
+ Object 'lance bronze light'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 20           Value   : 200
+
+ Affects  : HITROLL       by 2
+ Item is  : MAGIC ANTI_EVIL
+ Restricts: NOTHIEF NODARK_KNIGHT NOBARBARIAN
+ Class    : lance
+ Damage   : 2D7
+
+
+a pure white bracer
+ Object 'bracer white'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 6            Value   : 185
+
+ Affects  : WIS           by 1
+ Item is  : GLOW
+ Restricts: NOBARBARIAN
+ Apply    : 8
+
+
+a grandiose shield of black steel
+ Object 'grandiose shield black steel'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 25           Value   : 400
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : SAVING_PARA   by -1
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a pair of flexible red dragon scale gloves
+ Object 'gloves flexible red dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 8            Value   : 800
+
+ Affects  : ARMOR         by -6
+ Affects  : DEX           by 1
+ Affects  : RESIST_HEAT   by 8
+ Item is  : MAGIC
+ Immune   : IMMUNE_HEAT
+ Apply    : 6
+
+
+a heavy bandolier of studded leather
+ Object 'bandolier leather studded heavy harness'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rigid_leather
+ Weight   : 20           Value   : 55
+
+ Affects  : STR           by 1
+ Affects  : score criticals by 1%
+ Item is  : MAGIC
+ Apply    : 2
+
+
+a medallion of paladine..it glows dimly..it hums softly
+ Object 'medallion paladine platinum'
+ Item Type: WORN
+ Mat Class: metal        Material: platinum
+ Weight   : 2            Value   : 300
+
+ Effects  : DETECT_INVISIBLE
+ Item is  : GLOW HUM MAGIC ANTI_EVIL
+
+The medallion seems to help those requiring the guidance of Paladine.
+
+
+a silver shod oaken club
+ Object 'club silver shod oak oaken'
+ Item Type: WEAPON
+ Mat Class: wood         Material: rosewood
+ Weight   : 6            Value   : 1000
+
+ Item is  : MAGIC ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : club
+ Damage   : 3D5
+
+
+a sparkling two-handed sword of black crystal
+ Object 'sword two-handed sparkling black crystal'
+ Item Type: WEAPON
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 42           Value   : 250
+
+ Affects  : HITROLL       by 3
+ Class    : two_handed_sword
+ Damage   : 4D7
+
+
+a dark symbol of Zeboim
+ Object 'symbol dark zeboim black'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 2            Value   : 650
+
+ Affects  : WIS           by 1
+ Effects  : SENSE_LIFE
+ Item is  : EVIL MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+some smokey spirit armor
+ Object 'armour armor smoke magical spirit'
+ Item Type: ARMOR
+ Mat Class: other        Material: gas_vapour
+ Weight   : 2            Value   : 500
+
+ Effects  : INVISIBLE DETECT_INVISIBLE
+ Item is  : INVISIBLE MAGIC
+ Restricts: NOBARBARIAN
+ Apply    : 10
+
+
+a giant's hammer
+ Object 'hammer giant's giant'
+ Item Type: WEAPON
+ Mat Class: wood         Material: ironwood
+ Weight   : 28           Value   : 330
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC
+ Class    : hammer
+ Damage   : 2D10
+
+
+an acid-etched steel sword
+ Object 'sword dragonarmy steel long acid-etched'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 180
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Class    : long_sword
+ Damage   : 3D5
+
+
+a ring of black dragon scales
+ Object 'ring loop black scale scales dragon'
+ Item Type: WORN
+ Mat Class: scale        Material: dragonscale
+ Weight   : 1            Value   : 150
+
+ Affects  : HITROLL       by 1
+ Affects  : INT           by -1
+ Effects  : SENSE_LIFE
+ Item is  : ANTI_GOOD
+ Restricts: NOPALADIN NORANGER
+
+
+a tamarack staff
+ Object 'staff tamarack wooden soft'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 4            Value   : 75
+
+ Affects  : spell slots   by +1 at level 2
+ Affects  : HITROLL       by 1
+ Affects  : casting level by 1
+ Item is  : MAGIC BLESS ANTI_GOOD
+ Restricts: NODARK_KNIGHT
+ Class    : staff
+ Damage   : 3D4
+
+
+an ancient porcupine breastplate
+ Object 'breastplate breast plate porcupine ancient'
+ Item Type: ARMOR
+ Mat Class: metal        Material: iron
+ Weight   : 40           Value   : 200
+
+ Restricts: NOBARBARIAN NOSHAMAN
+ Apply    : 7
+
+
+a comfortable black silk shirt
+ Object 'shirt black silk'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: silk
+ Weight   : 3            Value   : 120
+
+ Affects  : DEX           by 2
+ Item is  : MAGIC
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 3
+
+ LOAD     : Murgen, the Thug Kingpin, Solace
+
+some dragon scale armor
+ Object 'armor armour blue glittering suit dragon scale dragonscale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 19           Value   : 500
+
+ Affects  : RESIST_ELECTR by 25
+ Item is  : MAGIC
+ Apply    : 10
+
+
+a luck blade
+ Object 'blade sword luck lucky green long jade'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 8            Value   : 523
+
+  You sense that wielding this sword might make you very lucky.
+
+
+a marble ring
+ Object 'ring marble'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 1            Value   : 300
+
+ Affects  : CON           by 1
+ Item is  : INVISIBLE
+
+
+a pewter ringlet
+ Object 'ringlet chain pewter rings'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 2            Value   : 50
+
+ Affects  : ARMOR         by -3
+ Affects  : HIT           by 3
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 3
+
+
+a frozen crown of iron
+ Object 'crown frozen iron small'
+ Item Type: WORN
+ Mat Class: metal        Material: iron
+ Weight   : 8            Value   : 450
+
+ Affects  : INT           by 2
+ Affects  : RESIST_HEAT   by -15
+ Affects  : LEARN         by -3
+ Affects  : casting level by 1
+ Item is  : MAGIC
+ Immune   : IMMUNE_COLD
+
+
+a pair of black-rimmed glasses
+ Object 'glasses black-rimmed black rimmed'
+ Item Type: WORN
+ Mat Class: crystal      Material: glass
+ Weight   : 1            Value   : 500
+
+ Affects  : INT           by 1
+ Affects  : casting level by 3
+ Effects  : DETECT_INVISIBLE AWARENESS
+ Item is  : MAGIC
+The glass lens flash as you view it, blinding you briefly.
+
+
+an elaborate dragon sash
+ Object 'sash dragon elaborate'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 1000
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : ARMOR         by -6
+ Item is  : MAGIC
+
+
+a crown of twigs
+ Object 'crown twigs leaves dried dead'
+ Item Type: WORN
+ Mat Class: wood         Material: pine
+ Weight   : 3            Value   : 500
+
+ Affects  : INT           by 1
+ Effects  : DETECT_INVISIBLE IMMUNE_POISON
+ Item is  : MAGIC
+ Restricts: NOMAGE NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_HEAT
+
+
+a steel voulge
+ Object 'voulge steel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 20           Value   : 270
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 3
+ Restricts: NOBARBARIAN NOSHAMAN
+ Class    : voulge
+ Damage   : 4D4
+
+
+a wreath crown
+ Object 'crown wreath'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 50
+
+ Affects  : ARMOR         by -4
+ Affects  : casting level by 1
+ Effects  : INFRAVISION
+ Item is  : GLOW MAGIC
+
+
+a star sapphire
+ Object 'sapphire star'
+ Item Type: LIGHT
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 5            Value   : 600
+
+ Affects  : WIS           by 2
+
+
+an elemental ring
+Object 'ring elemental'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 1            Value   : 1000
+
+ Item is  : MAGIC
+
+
+a white solamnic vest
+ Object 'vest chain white'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 10           Value   : 150
+
+ Affects  : ARMOR         by -4
+ Item is  : ANTI_EVIL ANTI_NEUTRAL
+ Restricts: NOMAGE NOTHIEF NODRUID NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+bands of sapling leaves
+ Object 'bands sapling leaves'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 500
+
+ Effects  : INVISIBLE DETECT_INVISIBLE
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a tattered old robe
+ Object 'robe robes tattered old'
+ Item Type: CONTAINER
+ Mat Class: cloth        Material: wool
+ Weight   : 8            Value   : 40
+
+ Affects  : ARMOR         by -2
+ Affects  : casting level by 1
+ Effects  : INVISIBLE
+ Item is  : MAGIC BLESS
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+
+
+a twin bladed red scimitar
+Object 'scimitar sword red twin-bladed twin'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 16           Value   : 1200
+
+ Affects  : DAMROLL       by 2
+ Affects  : skill disarm        by +5
+ Item is  : MAGIC NORENT
+ Restricts: NOMAGE NOTHIEF NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : scimitar
+ Damage   : 2D10
+
+
+a flaming white whip
+ Object 'whip white flaming'
+ Item Type: WEAPON
+ Mat Class: other        Material: gas_vapour
+ Weight   : 4            Value   : 400
+
+ Affects  : target resist by  8%
+ Affects  : spell slots   by +2 at level 3
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_COLD IMMUNE_ELECTRICITY IMMUNE_HEAT
+ Class    : whip
+ Damage   : 3D4
+
+
+a lightweight sahuagin javelin
+ Object 'javelin sahuagin bronze lightweight short'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 6            Value   : 240
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC NORENT
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : javelin
+ Damage   : 3D4
+
+
+a shining blue lance
+ Object 'lance blue shining'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 24           Value   : 1800
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 3
+ Item is  : GLOW MAGIC
+ Class    : lance
+ Damage   : 3D6
+
+ LOAD     : Flight Marshal Kotsam, Storms Keep
+
+
+a simple platinum ring
+ Object 'ring platinum simple'
+ Item Type: WORN
+ Mat Class: metal        Material: platinum
+ Weight   : 1            Value   : 400
+
+ Affects  : HEALTH        by 12
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+
+
+a fur-trimmed girdle
+ Object 'girdle fur-trimmed belt'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 9            Value   : 100
+
+ Affects  : STR           by 1
+ Affects  : ARMOR         by -4
+ Item is  : MAGIC
+ Restricts: NOMAGE NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a robe of eyes
+ Object 'robe eye eyes cloth'
+ Item Type: OTHER
+ Mat Class: cloth        Material: cotton
+ Weight   : 5            Value   : 800
+
+ Affects  : LEARN         by 10
+ Affects  : casting level by 2
+ Effects  : DETECT_EVIL DETECT_INVISIBLE DETECT_MAGIC SENSE_LIFE INFRAVISION DETECT_GOOD
+ Item is  : HUM MAGIC
+
+
+a sharp longsword of tempered steel
+ Object 'longsword long sword tempered steel sharp'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 8            Value   : 100
+
+ Immune   : IMMUNE_HEAT
+ Class    : long_sword
+ Damage   : 2D6
+
+
+a pitch black obsidian sword
+ Object 'sword black obsidian pitch stone'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 100
+
+ Item is  : NORENT
+ Class    : long_sword
+ Damage   : 2D6
+
+
+a massive black stone sledgehammer
+ Object 'sledgehammer hammer black massive stone'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 30           Value   : 200
+
+ Class    : hammer
+ Damage   : 5D5
+
+
+an emerald shafted javelin
+ Object 'javelin emerald shafted'
+ Item Type: WEAPON
+ Mat Class: crystal      Material: crystal
+ Weight   : 15           Value   : 250
+
+ Affects  : DAMROLL       by 2
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : javelin
+ Damage   : 2D8
+
+
+a medallion of the keeper
+ Object 'medallion brass keeper'
+ Item Type: WORN
+ Mat Class: metal        Material: bronze
+ Weight   : 1            Value   : 350
+
+ Affects  : CON           by 2
+ Item is  : HUM MAGIC NORENT
+
+
+a giant mithril two-handed sword
+ Object 'sword mithril giant two-handed avernus'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 50           Value   : 600
+
+ Affects  : skill two-handed    by +5
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOCLERIC NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : two_handed_sword
+ Damage   : 5D6
+The legendary sword of Shandakar Obre.
+
+
+a brass dwarven wristplate
+ Object 'wristplate wrist plate brass dwarven'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 4            Value   : 80
+
+ Item is  : BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a thin rod of stone
+ Object 'rod thin stone'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 100
+
+ Item is  : BLESS NORENT
+ Class    : hands
+ Damage   : 3D2
+
+
+an iron draconian blade
+ Object 'blade iron draconian'
+ Item Type: WEAPON
+ Mat Class: metal        Material: iron
+ Weight   : 14           Value   : 150
+
+ Class    : sabre
+ Damage   : 2D7
+
+
+a scorched black scaled band (invisible)
+ Object 'band black scaled scorched'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 6            Value   : 100
+
+ Affects  : RESIST_ACID   by 4
+ Affects  : RESIST_GAS    by 4
+ Item is  : INVISIBLE
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID
+ Apply    : 3
+
+
+a ring of accuracy
+ Object 'ring accuracy'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 80
+
+ Affects  : HITROLL       by 1
+ Item is  : HUM MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a small black rose
+ Object 'rose black small'
+ Item Type: OTHER
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 200
+
+ Affects  : DAMROLL       by 1
+ Item is  : EVIL MAGIC
+
+
+a crooked crown of the gully dwarves
+ Object 'crown gully crooked'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 4            Value   : 75
+
+ Affects  : HIT           by 5
+ Affects  : WIS           by -1
+ Immune   : IMMUNE_ACID
+ Apply    : 5
+
+
+a sword of carved emerald
+ Object 'sword emerald'
+ Item Type: WEAPON
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 50           Value   : 500
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : GLOW
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : bastard_sword
+ Damage   : 4D6
+
+
+ Object 'shield bright brass dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 30           Value   : 600
+
+ Affects  : ARMOR         by -10
+ Affects  : CON           by 1
+ Affects  : skill shield block  by +5
+ Item is  : GLOW MAGIC ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Apply    : 10
+
+a Solamnic tunic
+ Object 'tunic white solamnic'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 4            Value   : 13
+
+ Affects  : ARMOR         by -5
+
+
+a suit of gold dragonscale battle armor
+ Object 'armor armour suit gold dragonscale battle'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 18           Value   : 640
+
+ Affects  : DAMROLL       by 1
+ Effects  : IMMUNE_NEGATIVE_ENERGY
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_NEGATIVE_ENERGY
+ Apply    : 10
+
+
+a suit of black leather armour
+ Object 'leather armor black suit armour'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 4            Value   : 300
+
+ Affects  : RESIST_COLD   by 10
+ Affects  : SAVING_BREATH by -1
+ Effects  : INFRAVISION
+ Apply    : 6
+
+
+a pair of magi pants
+ Object 'pants magi'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 6            Value   : 300
+
+ Affects  : HIT           by 6
+ Item is  : MAGIC
+
+
+a holy symbol of Mishakal
+ Object 'symbol holy mishakal chain'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 3            Value   : 40
+
+ Affects  : spell slots   by +1 at level 1
+ Item is  : GLOW MAGIC BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NORANGER NOWARRIOR NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a lightweight battle sword
+ Object 'sword battle lightweight light weight'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 60
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Class    : long_sword
+ Damage   : 2D6
+
+
+a flat black velvet cap
+ Object 'cap velvet flat black'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 120
+
+ Affects  : skill sneak         by +3
+ Affects  : skill hide          by +5
+ Effects  : INFRAVISION
+
+
+a pair of baggy bronze dragonscale pants
+ Object 'pants bronze scale'
+ Item Type: WORN
+ Mat Class: scale        Material: dragonscale
+ Weight   : 0            Value   : 300
+
+ Affects  : ARMOR         by -7
+ Affects  : casting level by 1
+ Effects  : IMMUNE_POISON
+ Item is  : MAGIC BLESS
+ Immune   : IMMUNE_ACID IMMUNE_COLD IMMUNE_ELECTRICITY IMMUNE_HEAT
+
+
+a signet ring of blackened gold (Lord Soth)
+ Object 'ring signet gold blackened heavy'
+ Item Type: KEY
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 250
+
+ Affects  : HIT           by 15
+ Effects  : DETECT_INVISIBLE SENSE_LIFE IMMUNE_POISON
+ Item is  : MAGIC BLESS NORENT
+ Immune   : IMMUNE_MAGIC IMMUNE_POISON
+
+
+a flexible red dragon scale bracer
+ Object 'bracer flexible red dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 6            Value   : 400
+
+ Affects  : ARMOR         by -6
+ Affects  : SAVING_PARA   by -1
+ Item is  : MAGIC
+ Immune   : IMMUNE_HEAT
+ Apply    : 6
+
+
+a malachite ring
+ Object 'ring malachite'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 1            Value   : 250
+
+ Affects  : ARMOR         by -5
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+
+
+a pair of flexible red dragon scale leggings
+ Object 'leggings flexible red dragon scale pair'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 14           Value   : 400
+
+ Affects  : ARMOR         by -6
+ Affects  : DEX           by 1
+ Affects  : RESIST_HEAT   by 8
+ Item is  : MAGIC
+ Immune   : IMMUNE_HEAT
+ Apply    : 6
+
+
+a suit of flexible red dragon scale armor
+ Object 'armor armour suit flexible red dragon scale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 22           Value   : 400
+
+ Affects  : ARMOR         by -6
+ Affects  : CON           by 1
+ Affects  : RESIST_HEAT   by 8
+ Item is  : MAGIC
+ Immune   : IMMUNE_HEAT
+ Apply    : 6
+
+
+a curled bronze horn
+ Object 'horn bronze curled battle huge'
+ Item Type: OTHER
+ Mat Class: metal        Material: bronze
+ Weight   : 5            Value   : 400
+
+ Affects  : DAMROLL       by 1
+ Affects  : CHA           by 2
+ Affects  : skill rally         by +10
+ Affects  : skill inspire       by +10
+ Item is  : GLOW MAGIC NORENT
+
+
+a twisted black mithril staff (DT ITEM)
+ Object 'staff mithril black twisted crooked'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 2            Value   : 250
+
+ Affects  : spell damage done by  50%
+ Affects  : target saving throw by  2
+ Affects  : casting level by 3
+ Effects  : DETECT_INVISIBLE DETECT_MAGIC TRUE_SEEING
+ Item is  : HUM MAGIC BLESS NORENT
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Immune   : IMMUNE_ELECTRICITY IMMUNE_MAGIC
+ Class    : staff
+ Damage   : 2D9
+
+
+a scorched black banner (dargaard keep)
+ Object 'banner black scorched silk'
+ Item Type: OTHER
+ Mat Class: cloth        Material: silk
+ Weight   : 13           Value   : 400
+
+ Affects  : WIS           by 2
+ Affects  : healing done by  10%
+ Effects  : NOCHARM
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NORANGER NOWARRIOR NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+
+
+a thin steel rapier
+ Object 'rapier sword steel thin shiny'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 7            Value   : 100
+
+ Affects  : HITROLL       by 2
+ Item is  : BLESS
+ Class    : rapier
+ Damage   : 2D8
+
+
+a green hilted machete
+ Object 'machete green'
+ Item Type: WEAPON
+ Mat Class: metal        Material: iron
+ Weight   : 8            Value   : 150
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : long_sword
+ Damage   : 3D5
+
+
+a black metal pike
+ Object 'pike black metal'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 24           Value   : 750
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : pike
+ Damage   : 5D4
+
+
+a suit of darkened tusk scalemail
+ Object 'suit scale scalemail tusk darkened armour armor'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 20           Value   : 300
+
+ Affects  : STR           by 1
+ Affects  : CHA           by 2
+ Apply    : 8
+
+
+a jeweled sceptre
+ Object 'sceptre jeweled'
+ Item Type: OTHER
+ Mat Class: metal        Material: gold
+ Weight   : 7            Value   : 1200
+
+ Affects  : casting level by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+
+
+some runed elven armbands
+ Object 'armband armbands elven runed'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 10           Value   : 350
+
+ Affects  : STR           by 1
+
+
+a thin bronze bracelet
+ Object 'bracelet thin bronze'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 1            Value   : 120
+
+ Affects  : HIT           by 5
+ Item is  : MAGIC
+
+
+a red and gold hilted longsword
+ Object 'longsword sword red gold'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 9            Value   : 110
+
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : long_sword
+ Damage   : 3D5
+
+
+a dragonscale helm
+ Object 'helm scale dragonscale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 8            Value   : 50
+
+ Effects  : INFRAVISION
+ Item is  : MAGIC
+ Apply    : 4
+
+
+a preserved eye of a revenant
+ Object 'eye revenant preserved eyeball'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 1            Value   : 95
+
+ Effects  : DETECT_MAGIC DETECT_UNDEAD
+ Item is  : MAGIC
+
+
+an ancient sword of carved ivory
+ Object 'sword rose ancient steel ivory'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 17           Value   : 700
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 2
+ Affects  : skill strike        by +5
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NODRUID NOCLERIC NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : long_sword
+ Damage   : 3D6
+bless special
+You raise your sword to the sky and call to the gods for protection.
+You feel blessed.
+
+
+a crystalline sword
+ Object 'sword crystalline crystal'
+ Item Type: WEAPON
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 12           Value   : 350
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS ANTI_EVIL
+ Immune   : IMMUNE_HEAT
+ Class    : long_sword
+ Damage   : 3D6
+
+
+a stark white wrist guard
+ Object 'guard wrist stark white leather'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 2            Value   : 150
+
+ Affects  : CON           by 1
+ Affects  : HITROLL       by -2
+ Item is  : HUM INVISIBLE MAGIC
+ Apply    : 6
+
+
+a simple iridium ring
+ Object 'ring simple iridium silver'
+ Item Type: WORN
+ Mat Class: metal        Material: platinum
+ Weight   : 1            Value   : 640
+
+ Affects  : spell slots   by +1 at level 5
+ Affects  : HIT           by -3
+ Affects  : casting level by 1
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+
+
+a grandiose plate of black steel
+ Object 'plate steel black grandiose decorated'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 45           Value   : 400
+
+ Affects  : RESIST_HEAT   by 16
+ Affects  : CON           by 1
+ Effects  : NOCHARM
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Apply    : 9
+
+
+a runed hammer
+ Object 'hammer metal runed'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 350
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : HITROLL       by 2
+ Item is  : HUM MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : hammer
+ Damage   : 2D8
+
+
+the sword of dancing
+ Object 'sword dancing steel scimitar'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 17           Value   : 692
+
+ Item is  : HUM MAGIC
+ Class    : scimitar
+ Damage   : 4D4
+
+
+a long, silver-streaked black robe
+ Object 'robe long black silver-streaked silvery'
+ Item Type: CONTAINER
+ Mat Class: cloth        Material: silk
+ Weight   : 5            Value   : 750
+
+ Affects  : INT           by 1
+ Affects  : casting level by 2
+ Effects  : CAN_FLY
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_ELECTRICITY IMMUNE_HEAT
+
+
+a robe of the Aurinite order
+ Object 'robe aurinite order'
+ Item Type: WORN
+ Mat Class: crystal      Material: crystal
+ Weight   : 5            Value   : 275
+
+ Affects  : INT           by 1
+ Item is  : BLESS ANTI_EVIL
+
+
+a red snakeskin cape
+ Object 'cape snakeskin red thin sheet'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 110
+
+ Affects  : RESIST_HEAT   by 5
+ Affects  : ARMOR         by -6
+ Restricts: NOMAGE NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+
+
+an alb
+ Object 'alb cloth'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 4            Value   : 320
+
+ Affects  : WIS           by 1
+ Affects  : HIT           by 8
+ Item is  : MAGIC
+
+
+a bloodstained steel battle axe
+ Object 'axe battleaxe steel bloodstained battle blood stained'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 400
+
+ Affects  : HITROLL       by 2
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : hand_axe
+ Damage   : 2D7
+
+
+a pair of black segmented adamantite shin guards
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 9            Value   : 450
+
+ Affects  : MOVE          by 15
+ Effects  : CAN_FLY
+ Item is  : MAGIC
+ Restricts: NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_ACID
+ Apply    : 10
+
+
+a towering shield
+ Object 'shield towering tower'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 25           Value   : 140
+
+ Affects  : regeneration by  20%
+ Item is  : GLOW MAGIC
+ Apply    : 9
+
+
+a savage red war maul
+ Object 'maul war red savage steel gigantic'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 30           Value   : 60
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC
+ Class    : warhammer
+ Damage   : 3D9
+
+
+a long, black ranseur
+ Object 'ranseur black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 21           Value   : 250
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : ranseur
+ Damage   : 3D5
+
+
+the sword of slumber
+ Object 'sword slumber helical'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 4            Value   : 400
+
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC
+ Class    : long_sword
+ Damage   : 3D6
+
+
+an ivory sword
+ Object 'sword ivory bastard'
+ Item Type: WEAPON
+ Mat Class: natural      Material: bone
+ Weight   : 24           Value   : 180
+
+ Affects  : WIS           by 1
+ Item is  : BLESS
+ Restricts: NOTHIEF
+ Class    : bastard_sword
+ Damage   : 2D9
+
+
+a three headed silk braided whip
+ Object 'whip silk braided three'
+ Item Type: WEAPON
+ Mat Class: natural      Material: organic
+ Weight   : 9            Value   : 125
+
+ Class    : whip
+ Damage   : 2D5
+
+
+a dark red dagger
+ Object 'dagger dark red'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 8            Value   : 800
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Restricts: NOCLERIC
+ Class    : dagger
+ Damage   : 3D4
+
+
+a giant silver scimitar
+ Object 'scimitar silver giant'
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 22           Value   : 200
+
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Class    : scimitar
+ Damage   : 3D5
+
+
+a giant club
+ Object 'club giant'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 35           Value   : 101
+
+ Item is  : MAGIC
+ Class    : club
+ Damage   : 4D6
+
+
+a massive glowing broadsword
+ Object 'sword broadsword massive glowing'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 15           Value   : 300
+
+ Affects  : DAMROLL       by 2
+ Item is  : GLOW
+ Class    : two_handed_sword
+ Damage   : 3D7
+
+
+a skull capped mace
+ Object 'mace skull capped'
+ Item Type: WEAPON
+ Mat Class: natural      Material: bone
+ Weight   : 13           Value   : 350
+
+ Item is  : BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : mace
+ Damage   : 3D5
+The bright red opals glow brilliantly and demons dance in your head.
+
+
+a runed brass wristguard
+ Object 'wristguard brass runed wrist guard thick'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 6            Value   : 300
+
+ Affects  : STR           by 1
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 2
+
+
+a pair of smoke tarnished gauntlets
+ Object 'gauntlets tarnished smoke'
+ Item Type: ARMOR
+ Mat Class: metal        Material: silver
+ Weight   : 8            Value   : 200
+
+ Affects  : STR           by 1
+ Restricts: NOCLERIC NOSHAMAN
+ Apply    : 4
+
+
+some river runner's boots
+ Object 'boots river runner molded'
+ Item Type: ARMOR
+ Mat Class: natural      Material: organic
+ Weight   : 8            Value   : 150
+
+ Affects  : MOVE          by 15
+ Effects  : WATERBREATH
+ Item is  : MAGIC
+ Immune   : IMMUNE_ACID IMMUNE_HEAT
+ Apply    : 6
+
+
+a silver and platinum etched bracer
+ Object 'bracer loop'
+ Item Type: ARMOR
+ Mat Class: metal        Material: platinum
+ Weight   : 7            Value   : 80
+
+ Affects  : HITROLL       by 1
+ Affects  : DEX           by -1
+ Item is  : MAGIC BLESS
+ Apply    : 4
+
+
+
+an obsidian hilted longsword
+ Object 'sword longsword obsidian-hilted'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 19           Value   : 238
+
+ Affects  : HITROLL       by -1
+ Affects  : DAMROLL       by 1
+ Class    : long_sword
+ Damage   : 3D5
+
+
+a brightly hafted axe
+ Object 'axe brightly bright hafted haft'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 3            Value   : 500
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : BLESS
+ Class    : hatchet
+ Damage   : 3D4
+
+
+a woodsman's bracer
+ Object 'bracer woodsman's woodsmans woodsman'
+ Item Type: ARMOR
+ Mat Class: leather      Material: hard_leather
+ Weight   : 2            Value   : 300
+
+ Affects  : ARMOR         by -8
+ Item is  : MAGIC
+ Apply    : 4
+
+
+a grandiose shield of black steel
+ Object 'grandiose shield black steel'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 25           Value   : 400
+
+ Affects  : SAVING_SPELL  by -2
+ Affects  : SAVING_PARA   by -1
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+
+
+a black shield of dragon bone
+ Object 'shield black bone dragon plate breast'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 6            Value   : 200
+
+ Affects  : HIT           by 4
+ Affects  : STR           by 1
+ Effects  : NOCHARM
+ Restricts: NOMAGE NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_ACID IMMUNE_DISINTEGRATION
+ Apply    : 5
+
+
+an iron longsword (Theros)
+ Object 'sword iron longsword'
+ Item Type: WEAPON
+ Mat Class: metal        Material: iron
+ Weight   : 11           Value   : 265
+
+ Class    : long_sword
+ Damage   : 2D6
+
+
+a symbol engraved sword
+ Object 'sword engraved symbol demonslayer'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 34           Value   : 1500
+
+ Affects  : HITROLL       by 1
+ Item is  : GLOW
+ Class    : two_handed_sword
+ Damage   : 5D5
+
+
+a diamond tipped spear
+ Object 'spear diamond tipped'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 18           Value   : 100
+
+ Item is  : GLOW INVISIBLE MAGIC
+ Class    : spear
+ Damage   : 3D6
+
+
+a bronze sahuagin sword etched with runes
+ Object 'sword bronze sahuagin etched runes'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 18           Value   : 120
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS
+ Class    : sabre
+ Damage   : 3D5
+
+
+a rodent skull ring
+ Object 'ring rodent skull'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 120
+
+ Affects  : regeneration by  2%
+ Item is  : MAGIC
+
+The image of a gully dwarf gnawing on this skull fills your mind!  His
+teeth seem to have left some sort of mark on it.
+
+
+a pair of ceremonial armplates
+ Object 'armplates arm plates ceremonial'
+ Item Type: ARMOR
+ Mat Class: metal        Material: gold
+ Weight   : 16           Value   : 150
+
+ Affects  : HITROLL       by 1
+ Restricts: NOMAGE NODRUID NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 2
+
+
+ Object 'bracer tin frosted'
+ Item Type: WORN
+ Mat Class: metal        Material: tin
+ Weight   : 2            Value   : 1600
+
+ Affects  : spell slots   by +1 for all spell levels
+ Affects  : RESIST_HEAT   by 8
+ Affects  : casting level by 2
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+
+
+a horned helmet
+ Object 'helmet horned'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 500
+
+ Affects  : HIT           by 2
+ Effects  : NIGHTVISION
+ Item is  : MAGIC
+ Apply    : 5
+
+
+a necklace with a dragon's eye
+ Object 'necklace dragon eye'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 5            Value   : 400
+
+ Affects  : MEM_FACTOR    by 8
+ Affects  : WIS           by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+ Immune   : IMMUNE_ACID IMMUNE_COLD IMMUNE_DISINTEGRATION IMMUNE_ELECTRICITY IMMUNE_HEAT
+
+
+a silver plated scroll (cabre's apprentice, backpack)
+ Object 'scroll silver plated'
+ Item Type: SCROLL
+ Mat Class: cloth        Material: parchment
+ Weight   : 45           Value   : 500
+
+ Item is  : MAGIC
+ Level 30 : mirror image
+
+
+an oaken leaf helm
+ Object 'helm oak oaken oaken-leaf leaf'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 1            Value   : 150
+
+ Affects  : LEARN         by 5
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+vambraces of the night
+ Object 'vambraces night'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 210
+
+ Affects  : skill parry         by +5
+ Affects  : STR           by 1
+ Item is  : MAGIC
+ Restricts: NOBARBARIAN NOSHAMAN
+ Apply    : 5
+
+
+a pair of eel-skin gloves
+ Object 'gloves eel eel-skin'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 1            Value   : 40
+
+ Affects  : ARMOR         by -4
+ Affects  : STR           by 1
+ Effects  : INFRAVISION
+
+
+a pair of blue leather gauntlets
+ Object 'gauntlets blue leather'
+ Item Type: WORN
+ Mat Class: leather      Material: hard_leather
+ Weight   : 4            Value   : 220
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+
+
+some sleek black leather sleeves
+ Object 'sleeves black sleek leather pile'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 200
+
+ Effects  : SNEAK
+ Item is  : INVISIBLE MAGIC
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+
+the ancient sabre of solamnic steel
+Object 'sabre ancient solamnic steel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 10           Value   : 400
+
+ Class    : sabre!
+ Damage   : 3D4
+
+
+a blue phoenix feather
+ Object 'feather blue phoenix'
+ Item Type: LIGHT
+ Mat Class: cloth        Material: gossamer
+ Weight   : 1            Value   : 200
+
+ Affects  : WIS           by 1
+ Affects  : DEX           by -1
+ Effects  : IS_FLYING
+ Item is  : GLOW MAGIC ANTI_EVIL HOT
+ Restricts: NOMAGE NOTHIEF NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a blue and white leather helmet
+ Object 'helmet strange dyed leather blue white'
+ Item Type: WORN
+ Mat Class: leather      Material: hard_leather
+ Weight   : 2            Value   : 40
+
+ Affects  : ARMOR         by -5
+ Effects  : DETECT_EVIL
+ Item is  : MAGIC ANTI_EVIL
+
+
+a small black orb
+ Object 'orb small black'
+ Item Type: WORN
+ Mat Class: crystal      Material: crystal
+ Weight   : 5            Value   : 250
+
+ Affects  : DEX           by 1
+ Affects  : CON           by -1
+ Effects  : CAN_FLY
+ Item is  : MAGIC
+
+
+a blood red javelin
+ Object 'javelin blood red'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 6            Value   : 150
+
+ Restricts: NOCLERIC
+ Class    : javelin
+ Damage   : 2D6
+
+
+thin golden dragonscale boots
+ Object 'boots thin golden dragonscale'
+ Item Type: ARMOR
+ Mat Class: scale        Material: dragonscale
+ Weight   : 10           Value   : 200
+
+ Affects  : ARMOR         by -5
+ Affects  : MOVE          by 10
+ Effects  : INFRAVISION
+ Apply    : 5
+
+
+a silver and red necklace
+ Object 'necklace silver red'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 3            Value   : 150
+
+ Affects  : regeneration by  1%
+
+
+some spiked black gauntlets of the lily
+
+
+a large forpann
+ Object 'forpann large extraordinarily net trident'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 13           Value   : 75
+
+ Affects  : HITROLL       by 1
+ Item is  : MAGIC
+ Class    : trident
+ Damage   : 2D6
+
+
+a barbed shatang
+ Object 'shatang barbed throwing spear'
+ Item Type: WEAPON
+ Mat Class: wood         Material: ironwood
+ Weight   : 15           Value   : 160
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC
+ Class    : javelin
+ Damage   : 5D2
+
+
+a black adamantite shortsword
+ Object 'sword short shortsword adamantite black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 5            Value   : 200
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : short_sword
+ Damage   : 3D4
+
+
+a black robe of shadows
+ Object 'robe black shadows'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 1            Value   : 500
+
+ Affects  : casting level by 3
+ Affects  : INT           by 2
+ Affects  : ARMOR         by -9
+ Item is  : MAGIC ANTI_GOOD
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Immune   : IMMUNE_MAGIC
+
+
+a brightly colored, beaded necklace
+Object 'necklace beaded bright colored'
+ Item Type: WORN
+ Mat Class: natural      Material: ceramic
+ Weight   : 4            Value   : 800
+
+ Affects  : INT           by 1
+ Item is  : BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a wreath of silver leaves
+ Object 'wreath silver leaves'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 3            Value   : 70
+
+ Affects  : ARMOR         by -5
+ Effects  : DETECT_EVIL
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a prayer necklace
+ Object 'necklace prayer'
+ Item Type: WORN
+ Mat Class: metal        Material: silver
+ Weight   : 4            Value   : 500
+
+ Affects  : WIS           by 1
+ Affects  : INT           by 1
+ Item is  : BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_MAGIC
+
+
+tree bark armor
+ Object 'armor armour bark tree'
+ Item Type: ARMOR
+ Mat Class: wood         Material: oak
+ Weight   : 40           Value   : 1000
+
+ Affects  : RESIST_COLD   by 35
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_COLD
+ Apply    : 7
+
+
+a heavy black robe with silver embroidery
+ Object 'robe skull black cloth silver'
+ Item Type: WORN
+ Mat Class: cloth        Material: silk
+ Weight   : 12           Value   : 400
+
+ Affects  : INT           by 1
+ Affects  : STR           by -1
+ Affects  : casting level by 2
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC ANTI_GOOD
+
+
+a brightly colored robe
+ Object 'robe'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 1            Value   : 200
+
+ Affects  : ARMOR         by -5
+ Affects  : WIS           by 1
+ Affects  : casting level by 2
+ Effects  : DETECT_MAGIC
+ Item is  : GLOW MAGIC
+ Immune   : IMMUNE_ACID
+
+
+some yellow and black robes
+ Object 'robes yellow black'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 50
+
+ Affects  : HIT           by -5
+ Affects  : INT           by 1
+ Affects  : casting level by 1
+ Item is  : EVIL MAGIC ANTI_GOOD
+ Restricts: NOPALADIN NORANGER NOWARRIOR
+
+ LOAD     : Ridel, Palanthas Cemetery
+
+a heavy steel broadsword
+ Object 'sword steel broadsword heavy'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 22           Value   : 275
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Restricts: NOTHIEF NODRUID NOSHAMAN
+ Class    : broad_sword
+ Damage   : 4D4
+
+
+a dark red dagger
+ Object 'dagger dark red'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 8            Value   : 800
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC
+ Restricts: NOCLERIC
+ Class    : dagger
+ Damage   : 3D4
+
+
+a coral dagger etched with runes
+ Object 'dagger coral shard polished etched runes'
+ Item Type: WEAPON
+ Mat Class: natural      Material: bone
+ Weight   : 8            Value   : 120
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 3
+ Affects  : casting level by 1
+ Item is  : HUM MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN
+ Class    : dagger
+ Damage   : 3D3
+
+
+a long swordmaster's rapier
+ Object 'rapier swordmaster long'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 16           Value   : 150
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 2
+ Item is  : HUM MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : rapier
+ Damage   : 3D5
+
+
+a blue kelp bandana
+ Object 'bandana kelp blue strip thick'
+ Item Type: OTHER
+ Mat Class: natural      Material: organic
+ Weight   : 3            Value   : 90
+
+ Affects  : LEARN         by 10
+ Item is  : MAGIC NORENT
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a suit of solamnic padded mail
+ Object 'suit padded mail solamnic'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 20           Value   : 50
+
+ Affects  : ARMOR         by -3
+ Item is  : ANTI_EVIL
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 5
+
+
+a flaming dagger
+ Object 'dagger flaming burn burns'
+ Item Type: WEAPON
+ Mat Class: metal        Material: iron
+ Weight   : 1            Value   : 100
+
+ Item is  : GLOW MAGIC BLESS HOT
+ Class    : dagger
+ Damage   : 2D4
+
+
+a pair of black, steel-plated boots
+ Object 'boots black steel plated'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 300
+
+ Affects  : MOVE          by 15
+ Affects  : skill kick          by +7
+ Item is  : MAGIC
+ Apply    : 8
+
+
+a staff inscribed with runes (invisible)
+ Object 'staff inscribed'
+ Item Type: WEAPON
+ Mat Class: wood         Material: pine
+ Weight   : 7            Value   : 150
+
+ Affects  : HITROLL       by 2
+ Effects  : IS_FLYING
+ Item is  : GLOW INVISIBLE MAGIC NORENT
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Class    : staff
+ Damage   : 4D4
+
+
+a shirt of autumn leaves
+ Object 'shirt autumn leaves'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 250
+
+ Affects  : WIS           by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+
+
+a plate of vallenwood
+ Object 'plate vallenwood wood'
+ Item Type: ARMOR
+ Mat Class: wood         Material: rosewood
+ Weight   : 6            Value   : 90
+
+ Apply    : 6
+
+
+a pair of enchanted gossamer leggings
+ Object 'leggings gossamer enchanted'
+ Item Type: WORN
+ Mat Class: cloth        Material: gossamer
+ Weight   : 3            Value   : 600
+
+ Affects  : DEX           by 1
+ Affects  : casting level by 1
+ Item is  : MAGIC
+
+
+an ancient ivory ring
+ Object 'ring ancient ivory'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 200
+
+ Affects  : CHA           by 1
+ Item is  : MAGIC
+
+ LOAD     : Undead Librarian, Library of Palanthas
+
+
+a pair of shell leg greaves
+ Object 'greaves shell greave'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 10           Value   : 50
+
+ Apply    : 4
+
+
+a lizard hide armor
+ Object 'armor armour lizard hide'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 20           Value   : 98
+
+ Affects  : RESIST_ACID   by 7
+ Immune   : IMMUNE_ACID
+ Apply    : 6
+
+
+an earthen plate
+ Object 'plate earthen'
+ Item Type: ARMOR
+ Mat Class: natural      Material: earth
+ Weight   : 12           Value   : 350
+
+ Affects  : WIS           by 1
+ Affects  : SAVING_PARA   by -1
+ Item is  : MAGIC
+ Apply    : 7
+
+
+a pair of rugged coral boots
+ Object 'boots rugged coral rough cylinders'
+ Item Type: ARMOR
+ Mat Class: natural      Material: bone
+ Weight   : 8            Value   : 240
+
+ Affects  : MOVE          by 10
+ Affects  : MOVE_REGEN    by 5
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Apply    : 6
+
+
+a black longsword
+ Object 'longsword sword black long'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 12           Value   : 125
+
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC
+ Class    : long_sword
+ Damage   : 3D5
+
+
+
+a pair of steel plated boots
+ Object 'boots steel pair'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 16           Value   : 123
+
+ Affects  : skill kick          by +2
+ Restricts: NOBARBARIAN NOSHAMAN
+ Apply    : 6
+
+
+an earthen brown robe
+ Object 'robe earthen brown'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 6            Value   : 200
+
+ Affects  : spell slots   by +1 at level 3
+ Affects  : STR           by -1
+ Affects  : casting level by 1
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOWARRIOR
+
+
+a hermit's cane
+ Object 'cane hermit's oak'
+ Item Type: WEAPON
+ Mat Class: wood         Material: rosewood
+ Weight   : 3            Value   : 300
+
+ Affects  : AGE           by 6
+ Affects  : spell slots   by +1 at level 4
+ Affects  : HITROLL       by 2
+ Affects  : casting level by 1
+ Item is  : GLOW MAGIC
+ Restricts: NOTHIEF
+ Class    : staff
+ Damage   : 3D4
+
+
+a massive blue coral crossbow
+ Object 'crossbow bow massive blue coral weapon'
+ Item Type: WEAPON
+ Mat Class: natural      Material: bone
+ Weight   : 32           Value   : 900
+
+ Affects  : HITROLL       by 3
+ Affects  : DAMROLL       by 2
+ Restricts: NOMAGE NOPALADIN NOCLERIC NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : crossbow
+ Damage   : 4D7
+
+
+a shining white coral sword
+ Object 'sword coral white shining beautiful'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 22           Value   : 2000
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Effects  : DETECT_EVIL WATERBREATH
+ Item is  : GLOW MAGIC BLESS ANTI_EVIL NORENT
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : long_sword
+ Damage   : 3D7
+
+
+a silver swept-hilt rapier
+ Object 'rapier silver swept-hilt'
+ Item Type: WEAPON
+ Mat Class: metal        Material: silver
+ Weight   : 16           Value   : 500
+
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC BLESS
+ Class    : rapier
+ Damage   : 3D6
+
+
+greaves of stone giant strength
+ Object 'greaves giant stone strength'
+ Item Type: ARMOR
+ Mat Class: metal        Material: adamantite
+ Weight   : 9            Value   : 1000
+
+ Affects  : STR           by 2
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 6
+
+
+a spectre's cloak
+ Object 'cloak spectre'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+ Weight   : 4            Value   : 60
+
+ Affects  : ARMOR         by 5
+ Effects  : IMMUNE_NEGATIVE_ENERGY
+ Item is  : GLOW CURSED
+ Immune   : IMMUNE_DISINTEGRATION
+
+
+a winged solamnic helm
+ Object 'helm winged solamnic'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 10           Value   : 600
+
+ Effects  : CAN_FLY
+ Restricts: NOMAGE NODRUID NOCLERIC NODARK_KNIGHT
+ Apply    : 10
+
+
+a pair of midnight blue bracers
+ Object 'bracers midnight blue'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 15           Value   : 500
+
+ Affects  : STR           by 1
+ Affects  : skill parry         by +8
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a mithril battleaxe with an ironwood handle
+ Object 'battleaxe axe heavy mithril ironwood'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 30           Value   : 200
+
+ Affects  : HITROLL       by -2
+ Affects  : DAMROLL       by 3
+ Class    : battle_axe
+ Damage   : 2D11
+
+
+a carved rosewood ring
+ Object 'ring carved rosewood'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 211
+
+ Affects  : CHA           by 1
+ Affects  : SAVING_SPELL  by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a brass voulge
+ Object 'voulge brass'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 30           Value   : 60
+
+ Affects  : DAMROLL       by 3
+ Affects  : ARMOR         by -5
+ Restricts: NOBARBARIAN NOSHAMAN
+ Class    : voulge
+ Damage   : 2D12
+
+
+some oakenwood gloves
+ Object 'gloves oakenwood gloves wooden strange'
+ Item Type: WORN
+ Mat Class: wood         Material: rosewood
+ Weight   : 6            Value   : 600
+
+ Affects  : DEX           by 1
+ Affects  : WIS           by 1
+ Affects  : RANGED_HITROL by 1
+ Item is  : BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NOPALADIN NOCLERIC NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a thin gold necklace..it glows dimly
+ Object 'necklace thin gold'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 1            Value   : 100
+
+ Effects  : DETECT_EVIL INFRAVISION DETECT_GOOD
+ Item is  : GLOW MAGIC
+
+
+a pair of armaboro hide gauntlets
+ Object 'gauntlets armaboro hide'
+ Item Type: ARMOR
+ Mat Class: scale        Material: lizard_scale
+ Weight   : 15           Value   : 120
+
+ Apply    : 5
+ This object is part of a larger set.
+
+
+a crystal bracelet
+ Object 'bracelet crystal'
+ Item Type: ARMOR
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 2            Value   : 120
+
+ Affects  : HIT           by 5
+ Affects  : HITROLL       by 1
+ Item is  : GLOW MAGIC
+ Apply    : 1
+
+
+a pair of golden dwarven gauntlets
+ Object 'gauntlets golden dwarven'
+ Item Type: ARMOR
+ Mat Class: metal        Material: gold
+ Weight   : 8            Value   : 150
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a necklace of carved ivory
+ Object 'necklace ivory carved'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 150
+
+ Affects  : HIT           by 4
+ Item is  : BLESS
+ Restricts: NOMAGE NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a dusty granite stone
+ Object 'stone granite dusty'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 4            Value   : 100
+
+
+a keen-edged mithril halberd
+ Object 'halberd mithril keen edged keen-edged'
+ Item Type: WEAPON
+ Mat Class: metal        Material: mithril
+ Weight   : 24           Value   : 400
+
+ Affects  : HITROLL       by 1
+ Affects  : DAMROLL       by 1
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Class    : halberd
+ Damage   : 4D5
+
+
+a clear crystal ring
+ Object 'ring crystal clear'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 1            Value   : 300
+
+ Affects  : WIS           by 1
+ Item is  : MAGIC ANTI_EVIL
+
+
+gloves of righteousness
+ Object 'gloves righteousness'
+ Item Type: ARMOR
+ Mat Class: crystal      Material: crystal
+ Weight   : 2            Value   : 100
+
+ Affects  : HIT           by 2
+ Item is  : BLESS ANTI_EVIL
+ Apply    : 4
+
+
+a black battle armour with red trim
+ Object 'armour armor black battle red trimmed'
+ Item Type: ARMOR
+ Mat Class: metal        Material: steel
+ Weight   : 17           Value   : 170
+
+ Affects  : STR           by 1
+ Item is  : EVIL MAGIC ANTI_GOOD HOT
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Immune   : IMMUNE_HEAT
+ Apply    : 8
+
+
+an emerald green hunter's cloak
+ Object 'cloak hunter's green emerald'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 4            Value   : 150
+
+ Affects  : HIT           by 7
+ Affects  : ARMOR         by -5
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a gold trimmed burgundy cape
+ Object 'cape gold trimmed burgundy'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 1            Value   : 500
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : SAVING_PETRI  by -1
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+
+
+a pair of rough, fingerless gloves
+ Object 'gloves fingerless rough pair'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 100
+
+ Affects  : HITROLL       by 1
+ Affects  : skill pick          by -7
+ Item is  : MAGIC
+ Restricts: NOMAGE NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+the sword of sacred fires
+ Object 'sword caliburn sacred fires'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 28           Value   : 300
+
+ Affects  : HITROLL       by 3
+ Item is  : MAGIC BLESS NORENT
+ Restricts: NOMAGE NOTHIEF NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : long_sword
+ Damage   : 3D13
+
+
+a charred adamantite spetum
+ Object 'spetum adamantite charred'
+ Item Type: WEAPON
+ Mat Class: metal        Material: adamantite
+ Weight   : 18           Value   : 400
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 3
+ Restricts: NOBARBARIAN NOSHAMAN
+ Class    : pike
+ Damage   : 3D6
+
+
+a thin blue ring
+ Object 'ring blue thin'
+ Item Type: WORN
+ Mat Class: metal        Material: mithril
+ Weight   : 2            Value   : 100
+
+ Effects  : IMMUNE_ELECTRICITY
+ Item is  : NORENT
+ Immune   : IMMUNE_ELECTRICITY
+
+
+an alchemist's cloak
+ Object 'cloak alchemist'
+ Item Type: WORN
+ Mat Class: crystal      Material: crystal
+ Weight   : 5            Value   : 320
+
+ Affects  : ARMOR         by -3
+ Affects  : RESIST_ACID   by 12
+ Item is  : BLESS ANTI_EVIL
+
+
+a ring of molten steel
+ Object 'ring steel molten'
+ Item Type: WORN
+ Mat Class: metal        Material: steel
+ Weight   : 2            Value   : 375
+
+ Affects  : RESIST_HEAT   by 65
+ Item is  : NORENT
+ Restricts: NODRUID NOCLERIC
+ Immune   : IMMUNE_ACID IMMUNE_COLD IMMUNE_ELECTRICITY IMMUNE_GAS IMMUNE_HEAT IMMUNE_MAGIC
+
+
+a mossy green wrist guard
+ Object 'guard wrist mossy moss green leather'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 2            Value   : 150
+
+ Affects  : DEX           by 1
+ Affects  : WIS           by -1
+ Effects  : SENSE_LIFE
+ Apply    : 6
+
+ LOAD     : Drake, the Dark Druid
+
+an elven vest of beads and bone
+ Object 'vest beads bone elven'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 9            Value   : 200
+
+ Affects  : SAVING_SPELL  by -1
+ Affects  : WIS           by 1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NOPALADIN NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+
+
+a pair of hardened leather boots
+ Object 'boots leather hardened'
+ Item Type: WORN
+ Mat Class: leather      Material: rough_leather
+ Weight   : 4            Value   : 100
+
+ Affects  : DEX           by 1
+ Affects  : MOVE          by 5
+
+
+Sekolah's Bite
+ Object 'sword bronze serrated jagged bite sekolah sekolah's'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 26           Value   : 1200
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Item is  : MAGIC NORENT
+ Class    : broad_sword
+ Damage   : 4D5
+
+
+a staff of Vari
+ Object 'staff vari wooden'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 8            Value   : 300
+
+ Affects  : INT           by 1
+ Affects  : casting level by 2
+ Effects  : NOSUMMON NOCHARM
+ Item is  : GLOW MAGIC BLESS
+ Restricts: NOTHIEF NODRUID NOCLERIC NORANGER NOWARRIOR NOBARBARIAN NOSHAMAN
+ Class    : rod
+ Damage   : 1D10
+
+
+the stole of the Kingpriest
+ Object 'stole kingpriest'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 1            Value   : 450
+
+ Effects  : MINOR_LIMIT_DAMAGE
+ Item is  : NORENT
+
+
+a brimstone ring
+ Object 'ring brimstone sulfur crystals yellow'
+ Item Type: WORN
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 1            Value   : 200
+
+ Affects  : CON           by 1
+ Item is  : MAGIC
+
+
+a ring of carved nephrite
+ Object 'ring carved nephrite'
+ Item Type: WORN
+ Mat Class: natural      Material: stone
+ Weight   : 5            Value   : 150
+
+ Affects  : HIT           by 3
+ Item is  : GLOW MAGIC
+ Restricts: NOMAGE NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a heavy steel mallet
+ Object 'mallet heavy steel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 26           Value   : 800
+
+ Affects  : DAMROLL       by 2
+ Affects  : HITROLL       by 2
+ Item is  : GLOW MAGIC HOT
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NORANGER NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE
+ Immune   : IMMUNE_ACID IMMUNE_HEAT
+ Class    : hammer
+ Damage   : 5D3
+
+
+a ring of lore
+ Object 'ring lore'
+ Item Type: WORN
+ Mat Class: natural      Material: bone
+ Weight   : 1            Value   : 750
+
+You sense that this ring has the potential for more power, if only
+one could find the right spell to imbue the ring with the power of
+faith, those powers would be unleashed.
+You cannot discern anything else.
+
+
+a pair of fine metal boots
+ Object 'boots fine metal black'
+ Item Type: ARMOR
+ Mat Class: metal        Material: iron
+ Weight   : 10           Value   : 250
+
+ Affects  : skill kick          by +5
+ Affects  : skill track         by +5
+ Affects  : MOVE          by 10
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 7
+
+
+a lightweight glasssteel saber
+ Object 'saber light glassteel'
+ Item Type: WEAPON
+ Mat Class: crystal      Material: glass
+ Weight   : 7            Value   : 200
+
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : sabre
+ Damage   : 2D8
+An elegant weapon from a more civilized age.
+
+
+a belt of cumulus clouds
+ Object 'belt clouds cumulus cluster'
+ Item Type: WORN
+ Mat Class: other        Material: gas_vapour
+ Weight   : 0            Value   : 150
+
+ Affects  : WIS           by 1
+ Affects  : CONCENTRATION by 5
+ Affects  : MOVE          by 15
+ Effects  : CAN_FLY
+ Item is  : MAGIC
+ Restricts: NOMAGE NOPALADIN NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+
+
+a pitch black obsidian sword
+ Object 'sword black obsidian pitch stone'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 6            Value   : 100
+
+ Item is  : NORENT
+ Class    : long_sword
+ Damage   : 2D6
+
+
+a bronze bracelet set with clear stones (haven temple)
+ Object 'bracelet bronze stone'
+ Item Type: WAND
+ Mat Class: metal        Material: bronze
+ Weight   : 3            Value   : 45
+
+ Effects  : DETECT_EVIL
+ Item is  : MAGIC
+ Charges  : 10
+ Level 15 : bless
+
+
+a necklace of lizard tails
+ Object 'necklace lizard tails'
+ Item Type: WORN
+ Mat Class: natural      Material: organic
+ Weight   : 2            Value   : 200
+
+ Affects  : CHA           by 1
+ Affects  : spell slots   by +1 at level 3
+ Affects  : healing done by  2%
+
+
+a seeker's robe (haven temple)
+ Object 'robe seeker seeker's'
+ Item Type: WORN
+ Mat Class: cloth        Material: wool
+ Weight   : 5            Value   : 200
+
+ Affects  : ARMOR         by -5
+ Effects  : DETECT_MAGIC
+
+
+a dark purple burial shroud (haven temple)
+ Object 'shroud burial purple dark'
+ Item Type: ARMOR
+ Mat Class: cloth        Material: wool
+ Weight   : 2            Value   : 75
+
+ Effects  : HIDE
+ Item is  : GLOW BLESS
+ Restricts: NOMAGE NOTHIEF NOPALADIN NODRUID NORANGER NODARK_KNIGHT NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 3
+
+
+an ivory-colored leather backpack..it glows blue..it glows dimly (haven temple)
+ Object 'backpack back pack ivory leather'
+ Item Type: CONTAINER
+ Mat Class: leather      Material: rough_leather
+ Weight   : 15           Value   : 100
+
+ Item is  : GLOW INVISIBLE MAGIC
+
+
+a jagged black dagger
+ Object 'dagger jagged black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: bronze
+ Weight   : 9            Value   : 1200
+
+ Affects  : HITROLL       by 2
+ Affects  : DAMROLL       by 2
+ Restricts: NOMAGE NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : dagger
+ Damage   : 2D8
+
+
+a thin golden dragonscale cloak
+ Object 'cloak thin golden dragonscale'
+ Item Type: WORN
+ Mat Class: scale        Material: dragonscale
+ Weight   : 5            Value   : 150
+
+ Affects  : HITROLL       by 1
+
+
+a lustrous steel battle axe
+ Object 'axe battle battle-axe lustrous steel'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 12           Value   : 850
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : battle_axe
+ Damage   : 2D7
+
+
+a bright blue robe (Terzak)
+ Object 'robe blue'
+ Item Type: CONTAINER
+ Mat Class: cloth        Material: silk
+ Weight   : 5            Value   : 500
+
+ Item is  : MAGIC NORENT
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+A silver thread runs through the hem of the robe, spelling a single word:
+                                Terzak
+
+
+a bright blue hood
+ Object 'hood blue'
+ Item Type: WORN
+ Mat Class: cloth        Material: silk
+ Weight   : 5            Value   : 500
+
+ Affects  : INT           by 1
+ Affects  : casting level by 1
+ Effects  : DETECT_INVISIBLE
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+ LOAD     : Terzak, Terzak's Tower
+
+
+a black twisted staff (Terzak)
+ Object 'staff wood twisted gnarled black'
+ Item Type: WEAPON
+ Mat Class: wood         Material: oak
+ Weight   : 8            Value   : 310
+
+ Affects  : HITROLL       by 2
+ Affects  : casting level by 1
+ Effects  : NOCHARM
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+ Class    : staff
+ Damage   : 3D5
+
+
+a black short sword
+ Object 'sword short lily black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 20           Value   : 200
+
+ Affects  : DAMROLL       by 2
+ Affects  : HITROLL       by 2
+ Item is  : MAGIC
+ Restricts: NOTHIEF
+ Class    : short_sword
+ Damage   : 5D3
+
+a ceremonial crystal mace
+ Object 'mace crystal ceremonial'
+ Item Type: WEAPON
+ Mat Class: natural      Material: natural_crystal
+ Weight   : 10           Value   : 280
+
+ Affects  : DAMROLL       by 3
+ Affects  : HITROLL       by 3
+ Item is  : MAGIC
+ Class    : mace
+ Damage   : 3D5
+
+a granite sword
+ Object 'sword granite'
+ Item Type: WEAPON
+ Mat Class: natural      Material: stone
+ Weight   : 10           Value   : 350
+
+ Affects  : DAMROLL       by 1
+ Item is  : MAGIC BLESS ANTI_GOOD
+ Immune   : IMMUNE_HEAT
+ Class    : long_sword
+ Damage   : 3D6
+
+
+a burnished copper gladiator's pauldron
+ Object 'pauldron gladiator's gladiator copper burnished'
+ Item Type: ARMOR
+ Mat Class: metal        Material: copper
+ Weight   : 8            Value   : 400
+
+ Affects  : CON           by 1
+ Affects  : STR           by 1
+ Item is  : MAGIC
+ Restricts: NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a long ash bow
+ Object 'bow ash long'
+ Item Type: BOW
+ Mat Class: wood         Material: rosewood
+ Weight   : 10           Value   : 180
+
+ Affects  : RANGED_DAMROL by 2
+ Affects  : RANGED_HITROL by 3
+ Speed    : 9
+ Power    : 11
+ Accuracy : 9
+
+
+a golden eagle claw necklace
+ Object 'necklace gold eagle claw golden'
+ Item Type: WORN
+ Mat Class: metal        Material: gold
+ Weight   : 2            Value   : 300
+
+ Affects  : INT           by 1
+ Affects  : SAVING_BREATH by -2
+ Affects  : casting level by 1
+ Item is  : MAGIC
+ Restricts: NOTHIEF NOPALADIN NODRUID NOCLERIC NORANGER NOWARRIOR NODARK_KNIGHT NOBARBARIAN NOSHAMAN
+
+ LOAD     : Terzak, Terzak's Tower
+
+
+a bronze shield (neraka, talent orren)
+ Object 'shield bronze heavy'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 50           Value   : 300
+
+ Affects  : skill bash          by +10
+ Affects  : DEX           by -1
+ Item is  : MAGIC
+ Restricts: NOMAGE NOTHIEF NODRUID NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 8
+
+
+a bronze breastplate (talent orren, neraka)
+ Object 'breastplate breast plate bronze worn'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 25           Value   : 40
+
+ Affects  : HIT           by 15
+ Affects  : SAVING_SPELL  by -1
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 5
+
+
+a black shield of lemish
+ Object 'shield black lemish'
+ Item Type: ARMOR
+ Mat Class: metal        Material: bronze
+ Weight   : 35           Value   : 150
+
+ Affects  : skill bash          by +10
+ Item is  : MAGIC
+ Apply    : 7
+
+
+some embroidered desert sleeves
+ Object 'sleeves brown leather desert'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 10
+
+ Apply    : 5
+ This object is part of a larger set.
+
+
+a stylish black leather vest (khrisantath, brog chieftain)
+ Object 'vest black stylish leather'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 5            Value   : 45
+
+ Apply    : 9
+
+
+an ebony hilted scimitar (brog weaponsmaster)
+ Object 'scimitar ebony black'
+ Item Type: WEAPON
+ Mat Class: metal        Material: steel
+ Weight   : 4            Value   : 40
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Item is  : HUM MAGIC
+ Restricts: NOMAGE NOTHIEF NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Class    : scimitar
+ Damage   : 2D6
+
+
+a pair of spun mithril leggings
+ Object 'leggings pair mithril spun'
+ Item Type: ARMOR
+ Mat Class: metal        Material: mithril
+ Weight   : 5            Value   : 300
+
+ Affects  : HIT           by 10
+ Affects  : MOVE          by 20
+ Item is  : MAGIC BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+ This object is part of a larger set.
+
+a pair of spun mithril gauntlets
+ Object 'gauntlets pair spun mithril'
+ Item Type: ARMOR
+ Mat Class: metal        Material: mithril
+ Weight   : 5            Value   : 600
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Affects  : DEX           by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+ This object is part of a larger set.
+
+a pair of spun mithril sleeves
+ Object 'sleeves spun mithril pair'
+ Item Type: ARMOR
+ Mat Class: metal        Material: mithril
+ Weight   : 5            Value   : 600
+
+ Affects  : HITROLL       by 2
+ Affects  : DEX           by 1
+ Item is  : MAGIC BLESS
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBARBARIAN NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 10
+ This object is part of a larger set.
+
+a suit of spun mithril armour
+ Object 'armor suit spun mithril armour'
+ Item Type: ARMOR
+ Mat Class: metal        Material: mithril
+ Weight   : 5            Value   : 800
+
+ Affects  : DAMROLL       by 1
+ Affects  : HITROLL       by 1
+ Affects  : RESIST_ACID   by 10
+ Affects  : RESIST_MAGIC  by 10
+ Item is  : MAGIC BLESS ANTI_EVIL
+ Restricts: NOMAGE NOTHIEF NODRUID NOCLERIC NOBLACK_ROBE NORED_ROBE NOWHITE_ROBE NOSHAMAN
+ Apply    : 12
+ This object is part of a larger set.
+
+ Object 'boots leather fine pair black'
+ Item Type: ARMOR
+ Mat Class: leather      Material: rough_leather
+ Weight   : 10           Value   : 130
+
+ Affects  : DEX           by 1
+ Affects  : MOVE          by 10
+ Item is  : MAGIC
+ Apply    : 4
+ 
