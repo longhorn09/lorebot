@@ -77,8 +77,9 @@ Relevant scripts for stored procedures can be found in `./lorebot/sql/`
 ## Bulk loading Lores
 
 For lores accumulated in a plain text file, Lorebot has a utility [load_lores.js](https://github.com/longhorn09/lorebot/blob/master/utility/load_lores.js) to facilitate loading lores into Lorebot.  
-Currently the specified lore text file to load is hard-coded in [load_lores.js](https://github.com/longhorn09/lorebot/blob/master/utility/load_lores.js) and can be tweaked to suit your needs.  
-This will load lores directly from a text file into the MySQL database and bypass Discord parsing.  
+Currently the specified lore text file to load is hard-coded near the bottom in [load_lores.js](https://github.com/longhorn09/lorebot/blob/master/utility/load_lores.js) and can be tweaked to suit your needs.  
+```const INPUT_FILE = path.join(__dirname,'lores_2016_wipe.txt');```  
+This utility will load lores directly from a text file into the MySQL database and bypass Discord parsing.  
 
 ## Examples
 ```
