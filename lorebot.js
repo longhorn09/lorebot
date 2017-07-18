@@ -45,7 +45,7 @@ var parseLore = (pAuthor , pLore) => {
   let objRegex = /^Object\s'(.+)'$/;  //removed g flag
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
-  console.log(`in parseLore(): pLore: ${pLore}\npLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
+  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : pLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
 
   // need to still do regex text in case of: https://github.com/longhorn09/lorebot/issues/9
 
@@ -280,10 +280,15 @@ var formatAffects = (pArg) => {
       //console.log("matched: " + affectsArr[i]);
       //console.log(match[1].toUpperCase().padEnd(14) + "by " + match[2]);
       if (match[1].trim() === "casting level" ||
-          match[1].trim() === "skill bash" ||
           match[1].trim() === "spell slots" ) //keep these lower case
       {
           sb += "Affects".padEnd(9) + ": " + match[1].trim().padEnd(14) + "by " + match[2] + "\n";
+      }
+      else if (match[1].trim().toLowerCase().startsWith("skill ")) {  // lore formatting for skills
+          sb += "Affects".padEnd(9) + ": " + match[1].trim().toLowerCase().padEnd(20) + "by " + match[2] + "\n";
+      }
+      else if (match[1].trim().length >= 13) {
+        sb += "Affects".padEnd(9) + ": " + match[1].trim().toLowerCase() + " by  " + match[2] + "\n"; // note: 2 trailing spaces after by
       }
       else {
         sb += "Affects".padEnd(9) + ": " + match[1].trim().toUpperCase().padEnd(14) + "by " + match[2] + "\n";
