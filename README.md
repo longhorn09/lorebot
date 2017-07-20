@@ -6,7 +6,10 @@ Lorebot will also capture lores pasted in Discord chat, either singly or pasted 
 Lorebot was developed on Ubuntu Linux and is intended to run on Linux, however it can run on Windows.
 
 ## Messaging Lorebot on Discord
-Discord is case sensitive so capitalize the B in LoreBot to message and use LoreBot.
+Discord is case sensitive so capitalize the B in LoreBot to message and use LoreBot.  
+Lorebot can be found on the following Discord server: https://discord.gg/vNuGEpA
+
+
 ```
 @LoreBot#2504
 ```
