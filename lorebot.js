@@ -638,7 +638,7 @@ var ParseEqLook = (pSubmitter, pLookLog) => {
           shield = match[2].trim();
           break;
         case "worn about body":
-          body = match[2].trim();
+          about = match[2].trim();
           break;
         case "worn about waist":
           waist = match[2].trim();
