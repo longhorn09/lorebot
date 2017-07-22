@@ -33,6 +33,7 @@ npm start
 * !query
 * !version
 * !who  
+* !whoall
 * !recent
 
 ## Dependencies
