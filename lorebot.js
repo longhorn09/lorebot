@@ -1366,6 +1366,73 @@ var ProcessWho = (discordMsg) => {
 
 
 /**
+ * this function does all the processing for !whoall
+ */
+var ProcessWhoAll = (discordMsg) => {
+  let sqlStr = null;
+  let returnMsg = null;
+  let whoTarget = null;
+  let match = null;
+
+  //console.log(`in proc ${ProcessWhoAll.name}()`);
+
+  pool.getConnection((err,connection)=>{
+      if (err) {
+        connection.release();
+        res.json({"code":100,"status":`Error in db connecion in ${ProcessWhoAll.name} in pool.getConnect(callback)`});
+      }
+    sqlStr = `call GetPersonList();`;
+
+    connection.query(sqlStr,(err,rows) => {
+      connection.release();
+      //console.log(JSON.stringify(rows));
+      if (!err) {
+        if (rows != null && rows.length === 2 && rows[0].length > 0 ) {
+          console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : ${discordMsg.author.username.padEnd(30)} !whoall`);
+          returnMsg = `${rows[0].length} records found.\n`;
+          returnMsg += `-`.repeat(17) + "\n";
+          for (let i = 1; i < rows[0].length + 1; i++) {
+            //returnMsg += rows[0][i-1].CHARNAME.padEnd(17);
+            if (i > 0 && i % 5 === 0) {
+              returnMsg += rows[0][i-1].CHARNAME + "\n";
+            } //end modulo
+            else{
+              returnMsg += rows[0][i-1].CHARNAME.padEnd(17);
+            }
+          } //end resultset loop
+        }
+        else {
+          returnMsg = `No players found.`;
+        }
+
+        if (discordMsg.channel != null && discordMsg.channel.name === config.channel)
+        {
+          discordMsg.channel.send(returnMsg,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWhoAll(): ${err}`);
+          });
+        }
+        else {
+          discordMsg.author.send(returnMsg,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+            console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in ProcessWhoAll(): ${err}`);
+          });
+        }
+
+
+      } //end of !err
+      else {
+        console.log(`Error in ProcessWhoAll(): ${err}`);
+      }
+    });
+    connection.on('error',(err) => {
+      //res.json({"code":100,"status":"Error in connection database"});
+      console.log({"code":100,"status":"Error in connection database during ProcessWhoAll()"});
+      return;
+    });
+  });   //end of pool.getConnection() callback function
+
+}  //end of ProcessWhoAll()
+
+/**
  * WHERE clause for !stat, limited to MAX_ITEMS
  */
 function ProcessStat(message, isGchat)
@@ -1439,6 +1506,9 @@ client.on("message", (message) => {
       case "who":
         //message.author.send("!who in development");
         ProcessWho(message);
+        break;
+      case "whoall":
+        ProcessWhoAll(message);
         break;
       case "recent":
           // message.author.send(`!recent in development`)
@@ -1544,6 +1614,7 @@ function getHelp(pMsg) {
     "!mark    - example: !mark kaput rgb cleric, or !mark kaput rgb\n" +
     "!unmark  - unidentifies a character, example: !unmark kaput\n" +
     "!who     - shows character info, example: !who Drunoob\n" +
+    "!whoall  - shows all characters\n" +
     //"!gton    - turn on output group chat\n" +
     //"!gtoff   - turn off output to group chat\n" +
     "!query   - flexible query with multiple crieria, example: !query affects=damroll by 2\n" +
