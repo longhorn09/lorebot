@@ -96,5 +96,22 @@ This utility will load lores directly from a text file into the MySQL database a
 ```
 ![Discord Lorebot](/lorebot.PNG?raw=true "Example of brief and stat")
 
+
+## Troubleshooting
+
+There are typically 2 trouble spots. One is due to the way the SQL script is created, if loading the entire database from the script file, the MySQL database is expecting a user that doesn't exist. To rectify that, use the following
+
+```
+GRANT ALL ON *.* TO 'ntang'@'%' IDENTIFIED BY 'complex-password';
+FLUSH PRIVILEGES;
+```
+
+The other trouble spot relates to the version of Node. The way to resolve this type of issue is to install and use node version manager (https://github.com/creationix/nvm).
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+```
+
+
 ## License
 Lorebot is distributed under the [MIT license](https://github.com/longhorn09/lorebot/blob/master/LICENSE.md).
