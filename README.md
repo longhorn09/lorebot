@@ -5,6 +5,12 @@ The original Lorebot was written in 2003 for IRC by Troggs and subsequently port
 Lorebot will also capture lores pasted in Discord chat, either singly or pasted in bulk.  
 Lorebot was developed on Ubuntu Linux and is intended to run on Linux, however it can run on Windows.
 
+## Adding Lorebot
+To add Lorebot to your server, simply copy/paste the below into your browser.
+```
+https://discordapp.com/oauth2/authorize?client_id=318198538611720192&scope=bot&permissions=0
+```
+
 ## Messaging Lorebot on Discord
 Discord is case sensitive so capitalize the B in LoreBot to message and use LoreBot.  
 Lorebot can be found on the following Discord server: https://discord.gg/vNuGEpA
