@@ -24,7 +24,7 @@ Lorebot can be found on the following Discord server: https://discord.gg/vNuGEpA
 ```
 git clone https://github.com/longhorn09/lorebot.git
 cd lorebot
-mv config-sample.json config.json
+cp config-sample.json config.json
 npm install
 npm start
 ```
@@ -87,6 +87,30 @@ from Linux bash shell
 The SQL script will populate the `Person` and `Lore` tables.      
 You may still need to load the stored procedures as well.  
 Relevant scripts for stored procedures can be found in `./lorebot/sql/`
+
+## Permissions and Authentication
+
+Your MySQL username and password will be setup in your config.json
+
+```
+{
+  "prefix":"!",
+  "token":"discord_token_here" ,
+  "ownerID":"discord_id_here",
+  "password":"mysql_password_here",
+  "username":"mysql_username_here",
+  "database":"Lorebot",
+  "channel": "lorebot"
+}
+```
+
+You'll want to make sure your MySQL privileges correspond with whatever you set in config.json   
+Within MySQL:
+
+```
+CREATE USER 'mysql_username_here'@'%' IDENTIFIED BY 'mysql_password_here';
+GRANT ALL PRIVILEGES ON Lorebot.* TO 'mysql_username_here'@'%';
+```
 
 ## Bulk loading lores from a text file
 
