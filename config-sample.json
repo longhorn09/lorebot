@@ -1,0 +1,9 @@
+{
+  "prefix":"!",
+  "token":"xxxxx" ,
+  "ownerID":"xxxx#1234",
+  "password":"password_here",
+  "username":"lorebotjs",
+  "database":"Lorebot",
+  "channel": "lorebot"
+}
