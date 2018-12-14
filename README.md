@@ -90,7 +90,7 @@ Relevant scripts for stored procedures can be found in `./lorebot/sql/`
 
 ## Permissions and Authentication
 
-Your MySQL username and password will be setup in your config.json
+Your MySQL username and password that Lorebot uses to query MySQL will be setup in your config.json
 
 ```
 {
