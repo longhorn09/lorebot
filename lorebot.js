@@ -45,7 +45,7 @@ var parseLore = (pAuthor , pLore) => {
   let objRegex = /^Object\s'(.+)'$/;  //removed g flag
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
-  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : pLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
+  //console.log(`${moment().format(MYSQL_DATETIME_FORMAT)} : pLore[0]: ${pLore.trim().split("\n")[0].trim()}`);
 
   // need to still do regex text in case of: https://github.com/longhorn09/lorebot/issues/9
 
