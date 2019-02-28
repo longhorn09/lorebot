@@ -1079,8 +1079,8 @@ function ProcessQuery(message)
                   half1 = null, half2 = null, match = null;             //initialize variables for regex pattern match results
                   if (affectsArr[i].trim().indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
                     //console.log(`affectsArr[${i}]: ${affectsArr[i].trim()}`);
-                    if (/^([A-Za-z_]+)\s+by\s+(\d+)$/.test(affectsArr[i].trim())) {
-                      match = /^([A-Za-z_]+)\s+by\s+(\d+)$/.exec(affectsArr[i].trim());
+                    if (/^([A-Za-z_]+)\s+by\s+(\-?\d+)$/.test(affectsArr[i].trim())) {
+                      match = /^([A-Za-z_]+)\s+by\s+(\-?\d+)$/.exec(affectsArr[i].trim());
                       if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
                         half1 = match[1];
                         half2 = match[2];
@@ -1101,8 +1101,8 @@ function ProcessQuery(message)
                 half1 = null, half2 = null, match = null;             //initialize variables for regex pattern match results
                 if (args[property].trim().indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
                   //console.log(`affectsArr[${i}]: ${affectsArr[i].trim()}`);
-                  if (/^([A-Za-z_]+)\s+by\s+(\d+)$/.test(args[property].trim())) {
-                    match = /^([A-Za-z_]+)\s+by\s+(\d+)$/.exec(args[property].trim());
+                  if (/^([A-Za-z_]+)\s+by\s+(\-?\d+)$/.test(args[property].trim())) {
+                    match = /^([A-Za-z_]+)\s+by\s+(\-?\d+)$/.exec(args[property].trim());
                     if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
                       half1 = match[1];
                       half2 = match[2];
