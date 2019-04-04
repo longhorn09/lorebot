@@ -1082,9 +1082,9 @@ function ProcessQuery(message)
                     if (/^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.test(affectsArr[i].trim())) {
                       match = /^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.exec(affectsArr[i].trim());
                       if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
-                        half1 = match[1];
+                        half1 = match[1].trim();
                         var temphalf2 = match[2];
-                        half2 = temphalf2.replace(/\+/g, '\\\\\+');  // replaces all "+" with "\\+"
+                        half2 = temphalf2.replace(/\+/g, '\\\\\+?');  // replaces all "+" with "\\+?"
                         
                         //console.log(`match[${i}]: ${half1} by ${half2}`);
                         whereClause += ` AND (Lore.${property.toUpperCase()} REGEXP '.*${half1}[[:space:]]+by[[:space:]]+${half2}.*' ) `
@@ -1106,9 +1106,9 @@ function ProcessQuery(message)
                   if (/^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.test(args[property].trim())) {
                     match = /^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.exec(args[property].trim());
                     if (match != null && match.length === 3) {      // think matching index [0,1,2] -> length = 3
-                      half1 = match[1];
+                      half1 = match[1].trim();
                       var temphalf2 = match[2];
-                      half2 = temphalf2.replace(/\+/g, '\\\\\+');  // replaces all "+" with "\\+"
+                      half2 = temphalf2.replace(/\+/g, '\\\\\+?');  // replaces all "+" with "\\+?"
                       
                       //console.log(`match[${i}]: ${half1} by ${half2}`);
                       whereClause += ` AND (Lore.${property.toUpperCase()} REGEXP '.*${half1}[[:space:]]+by[[:space:]]+${half2}.*' ) `
