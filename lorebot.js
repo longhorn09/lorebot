@@ -1028,7 +1028,7 @@ function ProcessQuery(message)
 
   //console.log(`${message.content.trim().length} : ${(config.prefix + "query").length}`);
   if (message.content.trim().length >(config.prefix + "query").length ) {
-    queryParams = message.content.trim().substring((config.prefix + "query").length,message.content.trim().length);
+    queryParams = message.content.trim().substring((config.prefix + "query").length,message.content.trim().length).replace(/\+/g, '%2B');
     queryParams = queryParams.trim();
     if (queryParams.indexOf("=") > 0 || queryParams.indexOf(">") > 0 || queryParams.indexOf("<") > 0)  {
       args = querystring.parse(queryParams.trim());
