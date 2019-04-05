@@ -803,7 +803,9 @@ function handle_database(pMsg,whereClause,pItem){
  */
 function DoFlexQueryDetail(pMsg,pSQL) {
   let sb = "";
-  let totalItems = 0;
+  let sb1 = "";       // used as the 2nd part of a msg that broke 2000 characters
+  let msg2 = false;   // used to flag the 2nd part of msg to be sent
+  let totalItems = 0; 
 
   pool.getConnection((err,connection)=>{
       if (err) {
@@ -818,11 +820,15 @@ function DoFlexQueryDetail(pMsg,pSQL) {
         if (rows.length > 0) {
           totalItems = rows[0]["LIST_COUNT"];
           for (let i = 0; i < Math.min(rows.length,BRIEF_LIMIT);i++) {
-              sb += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              if (sb.length < 1900) {
+                sb += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              } else {
+                if (!msg2) {msg2 = true;}
+                sb1 += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              }
           }
           //console.log(`sb.length: ${sb.length}`); // for debugging: discord has a 2,000 character limit
           if (totalItems > BRIEF_LIMIT) {
-
             pMsg.author.send("```" + `${totalItems} items found. Displaying first ${BRIEF_LIMIT} items.\n` +
                     sb + "```");
           }
@@ -837,9 +843,19 @@ function DoFlexQueryDetail(pMsg,pSQL) {
             else {
               if (totalItems == 1) {pMsg.author.send(`${totalItems} item found.`) ;}
               else {pMsg.author.send(`${totalItems} items found.`) ;}
-              pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
-              });
+              if (msg2) {
+                pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+                pMsg.channel.send(sb1,{code: true}).catch( (err,msg) => {
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              } 
+              else {
+                pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              }
             }
 
           }
