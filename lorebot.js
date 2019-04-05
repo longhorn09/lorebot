@@ -836,13 +836,6 @@ function DoFlexQueryDetail(pMsg,pSQL) {
             if (pMsg.channel != null && pMsg.channel.name === config.channel) {
               if (totalItems == 1) {pMsg.channel.send(`${totalItems} item found.`) ;}
               else {pMsg.channel.send(`${totalItems} items found.`) ;}
-              pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
-              });
-            }
-            else {
-              if (totalItems == 1) {pMsg.author.send(`${totalItems} item found.`) ;}
-              else {pMsg.author.send(`${totalItems} items found.`) ;}
               if (msg2) {
                 pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
                   console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
@@ -857,7 +850,23 @@ function DoFlexQueryDetail(pMsg,pSQL) {
                 });
               }
             }
-
+            else {
+              if (totalItems == 1) {pMsg.author.send(`${totalItems} item found.`) ;}
+              else {pMsg.author.send(`${totalItems} items found.`) ;}
+              if (msg2) {
+                pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+                pMsg.author.send(sb1,{code: true}).catch( (err,msg) => {
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              } 
+              else {
+                pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+               });
+              }
+            }
           }
         }
         else {
