@@ -137,7 +137,7 @@ var parseLore = (pAuthor , pLore) => {
               immune = attribValue;
               break;
             case "apply":
-              apply  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+              apply  = /^(-?\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "class":      ///// weapon class?
               weapClass = attribValue;
@@ -206,7 +206,7 @@ var parseLore = (pAuthor , pLore) => {
                 immune = attribValue2.trim();
                 break;
               case "apply":
-                apply  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                apply  =  /^(-?\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
                 break;
               case "class":      ///// weapon class?
                 weapClass = attribValue2.trim();
