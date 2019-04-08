@@ -493,6 +493,31 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
 function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restricts,weapClass,matClass,material,itemValue,extra,
                           immune,effects,weight,capacity,itemLevel,containerSize,charges,speed,accuracy,power,damage,callback) {
   let sqlStr = "";
+  
+  if (objName != null) {objName = objName.toString();}
+  if (itemType != null) {itemType = itemType.toString();}
+  if (itemIs != null) {itemIs = itemIs.toString();}
+  if (submitter != null) {submitter = submitter.toString();}
+  if (affects != null) {affects = affects.toString();}
+  if (apply != null) {apply = apply.toString();}
+  if (restricts != null) {restricts = restricts.toString();}
+  if (weapClass != null) {weapClass = weapClass.toString();}
+  if (matClass != null) {matClass = matClass.toString();}
+  if (material != null) {material = material.toString();}
+  if (itemValue != null) {itemValue = itemValue.toString();}
+  if (extra != null) {extra = extra.toString();}
+  if (immune != null) {immune = immune.toString();}
+  if (effects != null) {effects = effects.toString();}
+  if (weight != null) {weight = weight.toString();}
+  if (capacity != null) {capacity = capacity.toString();}
+  if (itemLevel != null) {itemLevel = itemLevel.toString();}
+  if (containerSize != null) {containerSize = containerSize.toString();}
+  if (charges != null) {charges = charges.toString();}
+  if (speed != null) {speed = speed.toString();}
+  if (accuracy != null) {accuracy = accuracy.toString();}
+  if (power != null) {power = power.toString();}
+  if (damage != null) {damage = damage.toString();}
+  
   pool.getConnection((err,connection)=>{
       if (err) {
         connection.release();
