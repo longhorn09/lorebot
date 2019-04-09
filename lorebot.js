@@ -137,7 +137,7 @@ var parseLore = (pAuthor , pLore) => {
               immune = attribValue;
               break;
             case "apply":
-              apply  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
+              apply  = /^(-?\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "class":      ///// weapon class?
               weapClass = attribValue;
@@ -206,7 +206,7 @@ var parseLore = (pAuthor , pLore) => {
                 immune = attribValue2.trim();
                 break;
               case "apply":
-                apply  =  /^(\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
+                apply  =  /^(-?\d+)$/g.test(attribValue2) ?  Number.parseInt(attribValue2.trim()) : null;
                 break;
               case "class":      ///// weapon class?
                 weapClass = attribValue2.trim();
@@ -493,6 +493,31 @@ var CreateUpdatePerson =  (charName,light,ring1,ring2,neck1,neck2,body,head,legs
 function CreateUpdateLore(objName,itemType,itemIs,submitter,affects,apply,restricts,weapClass,matClass,material,itemValue,extra,
                           immune,effects,weight,capacity,itemLevel,containerSize,charges,speed,accuracy,power,damage,callback) {
   let sqlStr = "";
+  
+  if (objName != null) {objName = objName.toString();}
+  if (itemType != null) {itemType = itemType.toString();}
+  if (itemIs != null) {itemIs = itemIs.toString();}
+  if (submitter != null) {submitter = submitter.toString();}
+  if (affects != null) {affects = affects.toString();}
+  if (apply != null) {apply = apply.toString();}
+  if (restricts != null) {restricts = restricts.toString();}
+  if (weapClass != null) {weapClass = weapClass.toString();}
+  if (matClass != null) {matClass = matClass.toString();}
+  if (material != null) {material = material.toString();}
+  if (itemValue != null) {itemValue = itemValue.toString();}
+  if (extra != null) {extra = extra.toString();}
+  if (immune != null) {immune = immune.toString();}
+  if (effects != null) {effects = effects.toString();}
+  if (weight != null) {weight = weight.toString();}
+  if (capacity != null) {capacity = capacity.toString();}
+  if (itemLevel != null) {itemLevel = itemLevel.toString();}
+  if (containerSize != null) {containerSize = containerSize.toString();}
+  if (charges != null) {charges = charges.toString();}
+  if (speed != null) {speed = speed.toString();}
+  if (accuracy != null) {accuracy = accuracy.toString();}
+  if (power != null) {power = power.toString();}
+  if (damage != null) {damage = damage.toString();}
+  
   pool.getConnection((err,connection)=>{
       if (err) {
         connection.release();
@@ -803,7 +828,9 @@ function handle_database(pMsg,whereClause,pItem){
  */
 function DoFlexQueryDetail(pMsg,pSQL) {
   let sb = "";
-  let totalItems = 0;
+  let sb1 = "";       // used as the 2nd part of a msg that broke 2000 characters
+  let msg2 = false;   // used to flag the 2nd part of msg to be sent
+  let totalItems = 0; 
 
   pool.getConnection((err,connection)=>{
       if (err) {
@@ -818,11 +845,15 @@ function DoFlexQueryDetail(pMsg,pSQL) {
         if (rows.length > 0) {
           totalItems = rows[0]["LIST_COUNT"];
           for (let i = 0; i < Math.min(rows.length,BRIEF_LIMIT);i++) {
-              sb += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              if (sb.length < 1900) {
+                sb += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              } else {
+                if (!msg2) {msg2 = true;}
+                sb1 += `Object '${rows[i]['OBJECT_NAME'].trim()}'\n`;
+              }
           }
           //console.log(`sb.length: ${sb.length}`); // for debugging: discord has a 2,000 character limit
           if (totalItems > BRIEF_LIMIT) {
-
             pMsg.author.send("```" + `${totalItems} items found. Displaying first ${BRIEF_LIMIT} items.\n` +
                     sb + "```");
           }
@@ -830,18 +861,37 @@ function DoFlexQueryDetail(pMsg,pSQL) {
             if (pMsg.channel != null && pMsg.channel.name === config.channel) {
               if (totalItems == 1) {pMsg.channel.send(`${totalItems} item found.`) ;}
               else {pMsg.channel.send(`${totalItems} items found.`) ;}
-              pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
-              });
+              if (msg2) {
+                pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+                pMsg.channel.send(sb1,{code: true}).catch( (err,msg) => {
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              } 
+              else {
+                pMsg.channel.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              }
             }
             else {
               if (totalItems == 1) {pMsg.author.send(`${totalItems} item found.`) ;}
               else {pMsg.author.send(`${totalItems} items found.`) ;}
-              pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
-                console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
-              });
+              if (msg2) {
+                pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+                pMsg.author.send(sb1,{code: true}).catch( (err,msg) => {
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+                });
+              } 
+              else {
+                pMsg.author.send(sb,{code: true}).catch( (err,msg) => {     //take care of UnhandledPromiseRejection
+                  console.log(`${moment().format(MYSQL_DATETIME_FORMAT)}: in handle_database(): ${err}`);
+               });
+              }
             }
-
           }
         }
         else {
