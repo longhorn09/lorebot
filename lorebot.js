@@ -1151,7 +1151,7 @@ function ProcessQuery(message)
               }
               else {  //affects property value does not contain a comma ','
                 half1 = null, half2 = null, match = null;             //initialize variables for regex pattern match results
-                if (args[property].trim().indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
+                if (args[property].indexOf(' by ') > 0) {       // !query affects=damroll by 2,hitroll by 2
                   //console.log(`affectsArr[${i}]: ${affectsArr[i].trim()}`);
                   if (/^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.test(args[property].trim())) {
                     match = /^([A-Za-z_\s]+)\s+by\s+([+-]?\d+(?:[A-Za-z_\s\d]+)?)$/.exec(args[property].trim());
