@@ -41,7 +41,7 @@ var parseLore = (pAuthor , pLore) => {
   let match = null;
   let splitArr = [];
   let is2part = false;
-  let attribRegex = /^([A-Z][A-Za-z\s]+)\:(.+)$/;   //do not use /g here or matching issues
+  let attribRegex = /^([A-Z][0-9A-Za-z\s]+)\:(.+)$/;   //do not use /g here or matching issues
   let objRegex = /^Object\s'(.+)'$/;  //removed g flag
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
   //The behavior associated with the 'g' flag is different when the .exec() method is used.
@@ -61,6 +61,7 @@ var parseLore = (pAuthor , pLore) => {
       //make sure to reset capture variables to null each loop
       attribName = null, attribValue = null,
       attribName2 = null, attribValue2 = null;
+      attribValueX = null;
       match = null;
       is2part = false;
 
@@ -86,6 +87,13 @@ var parseLore = (pAuthor , pLore) => {
           else {    // 1-parter
             attribValue = match[2].trim();
           }
+
+          let levelRegex = /^Level\s(\d+)$/;
+		        if (levelRegex.test(attribName.trim())) {
+			      let levelnumber = levelRegex.exec(attribName.trim());
+			      attribName = "level";
+			      attribValueX = levelnumber[1] + " : " + attribValue;
+		      }
 
           switch(attribName.toLowerCase().trim()){
             case "item type":
@@ -128,7 +136,7 @@ var parseLore = (pAuthor , pLore) => {
               charges  = /^(\d+)$/g.test(attribValue) ?  Number.parseInt(attribValue.trim()) : null;
               break;
             case "level":
-              spell = attribValue;    //varchar(80)
+              spell = attribValueX;    //varchar(80)
               break;
             case "restricts":
               restricts = attribValue;
