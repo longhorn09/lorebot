@@ -88,7 +88,7 @@ var parseLore = (pAuthor , pLore) => {
             attribValue = match[2].trim();
           }
 
-          let levelRegex = /^Level\s(\d+)$/;
+          let levelRegex = /^Level\s+(\d+)$/;
 		        if (levelRegex.test(attribName.trim())) {
 			      let levelnumber = levelRegex.exec(attribName.trim());
 			      attribName = "level";
