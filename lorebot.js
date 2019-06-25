@@ -30,7 +30,7 @@ var pool = mysql.createPool({
 */
 var parseLore = (pAuthor , pLore) => {
   let affects = null, objName = null, tmpStr = null;
-  let attribName = null,attribName2 = null,attribValue2 = null,attribValue = null;
+  let attribName = null,attribName2 = null,attribValue2 = null,attribValue = null,attribValueX = null;
   let itemType = null,matClass = null,material = null,weight = null,value = null,speed = null, power = null
                ,accuracy = null,effects = null,itemIs  = null,charges = null, containerSize = null, capacity = null;
   let spell = null; // level
