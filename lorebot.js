@@ -10,6 +10,7 @@ var router = express.Router();
 var path = require('path');
 var mysql = require('mysql');
 var isGroupChat = false;
+var botname = config.botname || "lorebot";
 const MAX_ITEMS = 3;
 const BRIEF_LIMIT = 50;
 const MYSQL_DATETIME_FORMAT = "YYYY-MM-DD HH:mm:ss"; // for use with moment().format(MYSQL_DATETIME_FORMAT)
@@ -1540,7 +1541,7 @@ function ProcessStat(message, isGchat)
 //##############################################################################
 client.on("message", (message) => {
   let cmd = "";
-  if (message.content.startsWith(config.prefix)) {
+if (message.content.startsWith(config.prefix)) {
     cmd = message.content.substring(1,message.content.length);
     //message.channel.send("pong!");
     //console.log("cmd: " + cmd);
@@ -1606,7 +1607,7 @@ client.on("message", (message) => {
     //message.author.sendMessage("Your message here.")
   }
   else if (message.content.trim().indexOf("Object '") >= 0   //need to do this way because lore might be pasted in middle of conversation
-        && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
+        && message.author.username.substring(0,botname.length).toLowerCase() !== botname)
   {
     let loreArr = null, cleanArr = [];
     //need to scrub the lore message for processing
@@ -1626,7 +1627,7 @@ client.on("message", (message) => {
     cleanArr = null;  //freeup for gc()
   }
   else if (message.content.trim().indexOf(" is using:") >0
-        && message.author.username.substring(0,"lorebot".length).toLowerCase() !== "lorebot")
+        && message.author.username.substring(0,botname.length).toLowerCase() !== botname)
   {
     let lookArr = null, cleanArr = [], charName = null;
     lookArr = message.content.trim().split(/([A-Z][a-z]+) is using:/);

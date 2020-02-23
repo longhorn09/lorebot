@@ -5,6 +5,7 @@
   "password":"ntang",
   "username":"ntang",
   "database":"Lorebot",
-  "host": "db",
+  "host": "localhost",
+  "botname": "lorebot",
   "channel": "lorebot"
 }
