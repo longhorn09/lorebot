@@ -16,7 +16,7 @@ const MYSQL_DATETIME_FORMAT = "YYYY-MM-DD HH:mm:ss"; // for use with moment().fo
 
 var pool = mysql.createPool({
   connectionLimit: 100,
-  host:'localhost',
+  host: config.host || 'localhost',
   user: config.username,
   password: config.password,
   database: config.database,
