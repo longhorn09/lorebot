@@ -2,8 +2,10 @@
   "prefix":"!",
   "token":"xxxxx" ,
   "ownerID":"xxxx#1234",
-  "password":"password_here",
-  "username":"lorebotjs",
+  "password":"ntang",
+  "username":"ntang",
   "database":"Lorebot",
+  "host": "localhost",
+  "botname": "lorebot",
   "channel": "lorebot"
 }

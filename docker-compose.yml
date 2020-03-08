@@ -1,0 +1,36 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'Lorebot'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'ntang'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'ntang'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    expose:
+      - '3306'
+    volumes:
+#      - ../../data/lorebot/mysql:/var/lib/mysql
+      - ./sql:/lorebot/sql
+    networks:
+      - lorenet
+
+  lorebot:
+    tty: true # Enables debugging capabilities when attached to this container.
+    image: wanfactory/lorebot:0.1
+    container_name: lorebot
+    depends_on:
+      - db
+    volumes:
+      - ./lorebot.js:/code/lorebot.js
+      - ./config.json:/code/config.json
+    networks:
+      - lorenet
+
+networks:
+  lorenet:
