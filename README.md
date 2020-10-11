@@ -32,15 +32,15 @@ npm start
 
 
 ## Commands
-* !stat
-* !brief
-* !help
-* !roll
-* !query
-* !version
-* !who  
-* !whoall
-* !recent
+* `!stat`
+* `!brief`
+* `!help`
+* `!roll`
+* `!query`
+* `!version`
+* `!who`
+* `!whoall`
+* `!recent`
 
 ## Dependencies
 ```
