@@ -59,7 +59,7 @@ npm install moment
 # For ES6+ functionality, primarily used for string.padEnd()
 npm install --save babel-polyfill
 
-
+npm install
 ```
 
 ## Run Lorebot as a service
@@ -69,7 +69,7 @@ This will allow lorebot to continue running even after logging off the terminal.
 It's not required to run lorebot, but highly recommended. 
 
 ```
-npm install -g forever
+sudo npm install -g forever
 forever start lorebot.js
 ```
 ## Loading the SQL database
