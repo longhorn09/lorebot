@@ -21,7 +21,7 @@ Lorebot can be found on the following Discord server: https://discord.gg/vNuGEpA
 ```
 
 ## Installation
-```
+```bash
 git clone https://github.com/longhorn09/lorebot.git
 cd lorebot
 cp config-sample.json config.json
@@ -43,7 +43,7 @@ npm start
 * `!recent`
 
 ## Dependencies
-```
+```bash
 # NodeJS, a javascript runtime and package manager
 sudo apt-get update -y
 sudo apt-get install nodejs
@@ -71,7 +71,7 @@ The following will daemonize lorebot.
 This will allow lorebot to continue running even after logging off the terminal.  
 It's not required to run lorebot, but highly recommended. 
 
-```
+```bash
 sudo npm install -g forever
 forever start lorebot.js
 ```
