@@ -96,7 +96,7 @@ Relevant scripts for stored procedures can be found in `./lorebot/sql/`
 Your MySQL username and password that Lorebot uses to query MySQL will be setup in your config.json  
 To lookup your various permissions you'll want to visit [https://discordapp.com/developers/applications](https://discordapp.com/developers/applications)
 
-```
+```json
 {
   "prefix":"!",
   "token":"discord_token_here" ,
