@@ -148,8 +148,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 
 ## Sponsor
 
-Lorebot is hosted on an instance which costs ~$10/mo.  
-Please check out this [link](https://paypal.me/normstorm) if you'd like to help sponsor and continue to support Lorebot.
+Lorebot is hosted on an instance which costs about $10 per month.  
+Please help [support](https://paypal.me/normstorm) Lorebot. 
 
 ## License
 Lorebot is distributed under the [MIT license](https://github.com/longhorn09/lorebot/blob/master/LICENSE.md).
