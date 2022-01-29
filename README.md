@@ -146,6 +146,10 @@ The other trouble spot relates to the version of Node. The way to resolve this t
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ```
 
+## Sponsor
+
+Lorebot is hosted on an instance which costs ~$10/mo.  
+Please check out this [link](https://paypal.me/normstorm) if you'd like to help sponsor and continue to support Lorebot.
 
 ## License
 Lorebot is distributed under the [MIT license](https://github.com/longhorn09/lorebot/blob/master/LICENSE.md).
