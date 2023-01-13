@@ -6,7 +6,7 @@ Lorebot will also capture lores pasted in Discord chat, either singly or pasted 
 Lorebot was developed on Ubuntu Linux and is intended to run on Linux, however it can run on Windows.
 
 ## Adding Lorebot
-To add Lorebot to your server, simply copy/paste the below into your browser.
+To add Lorebot to your server, copy/paste the below into your browser.
 ```
 https://discordapp.com/oauth2/authorize?client_id=318198538611720192&scope=bot&permissions=0
 ```
