@@ -1,10 +1,12 @@
 "use strict";
 require("babel-polyfill"); //https://babeljs.io/docs/usage/polyfill/
 const Discord = require("discord.js");
+//const {Client, Intents} = require('discord.js');  // for discord v13+
 var moment = require('moment');     // npm install moment
 const config = require('./config.json');
 const querystring = require('querystring'); //for parsing commands specified in !query
-const client = new Discord.Client();
+const client = new Discord.Client(); // for version 12 discordjs
+//const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); // v13+ discordjs
 var express = require('express');
 var router = express.Router();
 var path = require('path');
