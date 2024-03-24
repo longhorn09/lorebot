@@ -21,7 +21,9 @@
     "@mysql/xdevapi": "8.0.32",
     "discord.js": "^11.6.4",
     "express": "^4.15.3",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.2",
+    "node": "^20.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
