@@ -1,4 +1,11 @@
-# lorebot
+# Lorebot is DEPRECATED
+
+Please check current code development of Lorebot based on a GraphQL microservice backend.
+
+[lorebot-graphql-api](https://github.com/longhorn09/lorebot-graphql-api)
+[lorebot-discord-client](https://github.com/longhorn09/lorebot-discord-client)
+
+## lorebot
 Lorebot is a Discord bot written in JS to support a text-based RPG called [Arctic](http://mud.arctic.org).  
 The bot will respond to commands prefixed by the prefix '!' specified in config.json.  
 The original Lorebot was written in 2003 for IRC by Troggs and subsequently ported to Skype.  
