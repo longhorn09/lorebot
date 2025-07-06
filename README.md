@@ -1,6 +1,6 @@
 # Lorebot is DEPRECATED
 
-Please check current code development of Lorebot based on a GraphQL microservice backend.
+Please check current code development of Lorebot based on a GraphQL microservice backend.  
 This repo is no longer maintained.
 
 [lorebot-graphql-api](https://github.com/longhorn09/lorebot-graphql-api)  
