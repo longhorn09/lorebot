@@ -2,7 +2,7 @@
 
 Please check current code development of Lorebot based on a GraphQL microservice backend.
 
-[lorebot-graphql-api](https://github.com/longhorn09/lorebot-graphql-api)
+[lorebot-graphql-api](https://github.com/longhorn09/lorebot-graphql-api)  
 [lorebot-discord-client](https://github.com/longhorn09/lorebot-discord-client)
 
 ## lorebot
